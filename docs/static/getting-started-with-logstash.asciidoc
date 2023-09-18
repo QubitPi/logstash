@@ -22,25 +22,25 @@ include::jvm.asciidoc[]
 [[installing-binary]]
 === Installing from a Downloaded Binary
 
-The {ls} binaries are available from 
+The {ls} binaries are available from
 https://www.elastic.co/downloads/logstash[https://www.elastic.co/downloads].
 Download the Logstash installation file for your host environment--TAR.GZ, DEB,
-ZIP, or RPM. 
+ZIP, or RPM.
 
 Unpack the file. Do not install Logstash into a directory path that
 contains colon (:) characters.
 
 [NOTE]
 --
-These packages are free to use under the Elastic license. They contain open 
-source and free commercial features and access to paid commercial features.  
-{kibana-ref}/managing-licenses.html[Start a 30-day trial] to try out all of the 
-paid commercial features. See the 
-https://www.elastic.co/subscriptions[Subscriptions] page for information about 
-Elastic license levels. 
+These packages are free to use under the Elastic license. They contain open
+source and free commercial features and access to paid commercial features.
+{kibana-ref}/managing-licenses.html[Start a 30-day trial] to try out all of the
+paid commercial features. See the
+https://www.elastic.co/subscriptions[Subscriptions] page for information about
+Elastic license levels.
 
-Alternatively, you can download an `oss` package, which contains only features 
-that are available under the Apache 2.0 license. 
+Alternatively, you can download an `oss` package, which contains only features
+that are available under the Apache 2.0 license.
 --
 
 On supported Linux operating systems, you can use a package manager to install Logstash.
@@ -90,12 +90,39 @@ endif::[]
 
 ifeval::["{release-state}"!="unreleased"]
 
+[NOTE]
+=========================
+
+If Logstash was trying to be installed after Elasticsearch on the same machie, we need to
+https://stackoverflow.com/a/71590261[clean up] first by
+
+[source,sh]
+-----------------------------------------------------
+sudo rm /etc/apt/sources.list.d/elastic-8.x.list
+sudo rm /usr/share/keyrings/elasticsearch-keyring.gpg
+-----------------------------------------------------
+
+=========================
+
 Download and install the Public Signing Key:
 
 [source,sh]
 --------------------------------------------------
 wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --dearmor -o /usr/share/keyrings/elastic-keyring.gpg
 --------------------------------------------------
+
+[NOTE]
+==================================================
+
+In the case of non-first-time invocation, we can automatically overwrite the previous output file by
+https://stackoverflow.com/a/9708556[adding `--batch --yes`]:
+
+[source,sh]
+-------------------------
+wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo gpg --batch --yes --dearmor -o /usr/share/keyrings/elastic-keyring.gpg
+-------------------------
+
+==================================================
 
 You may need to install the `apt-transport-https` package on Debian before proceeding:
 
@@ -248,7 +275,7 @@ the data to a destination.
 
 image::static/images/basic_logstash_pipeline.png[]
 
-To test your Logstash installation, run the most basic Logstash pipeline. 
+To test your Logstash installation, run the most basic Logstash pipeline.
 
 **MacOS, Linux**
 
