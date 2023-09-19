@@ -66,6 +66,18 @@ to work with the Beats framework, such as Packetbeat and Metricbeat, can also se
 <p>To install Filebeat on your data source machine, download the appropriate package from the Filebeat <a href="https://www.elastic.co/downloads/beats/filebeat" class="ulink" target="_top">product page</a>. You can also refer to
 <a href="https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-installation-configuration.html" class="ulink" target="_top">Filebeat quick start</a> for additional
 installation instructions.</p>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p><a href="https://www.elastic.co/guide/en/beats/filebeat/master/filebeat-installation-configuration.html" class="ulink" target="_top">Filebeat quick start</a> contains setup that is not needed for this
+setup and can <span class="strong strong"><strong>make things not work</strong></span> here. For simplicity, simply skip the link, install Filebeat with</p>
+<div class="pre_wrapper lang-shell">
+<pre class="programlisting prettyprint lang-shell">curl -L -O https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-8.9.2-amd64.deb
+sudo dpkg -i filebeat-8.9.2-amd64.deb</pre>
+</div>
+<p>, and proceed with the following instructions</p>
+</div>
+</div>
 <p>After installing Filebeat, you need to configure it. Open the <code class="literal">filebeat.yml</code> file located in your Filebeat installation
 directory, and replace the contents with the following lines. Make sure <code class="literal">paths</code> points to the example Apache log file,
 <code class="literal">logstash-tutorial.log</code>, that you downloaded earlier:</p>
@@ -75,7 +87,7 @@ directory, and replace the contents with the following lines. Make sure <code cl
   paths:
     - /path/to/file/logstash-tutorial.log <a id="CO1-1"></a><i class="conum" data-value="1"></i>
 output.logstash:
-  hosts: ["localhost:5044"]</pre>
+  hosts: ["170.65.88.60:5044"] <a id="CO1-2"></a><i class="conum" data-value="2"></i></pre>
 </div>
 <div class="calloutlist">
 <table border="0" summary="Callout list">
@@ -85,6 +97,17 @@ output.logstash:
 </td>
 <td align="left" valign="top">
 <p>Absolute path to the file or files that Filebeat processes.</p>
+</td>
+</tr>
+<tr>
+<td align="left" valign="top" width="5%">
+<p><a href="#CO1-2"><i class="conum" data-value="2"></i></a></p>
+</td>
+<td align="left" valign="top">
+<p>The link in the list refers to a
+<a href="https://discuss.elastic.co/t/dns-lookup-failure-failed-to-connect-to-backoff-async-tcp-no-such-host/313111/4" class="ulink" target="_top"><span class="strong strong"><strong>TCP</strong></span> connection</a>,
+so make sure the link is NOT prefixed with "http://" or "https://". Note that <code class="literal">170.65.88.60</code> is the host running
+logstash instance and <code class="literal">5044</code> is the logstash port accepting the log lines.</p>
 </td>
 </tr>
 </table>
