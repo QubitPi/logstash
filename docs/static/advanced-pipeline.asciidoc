@@ -112,11 +112,11 @@ output {
 
 This skeleton is non-functional, because the input and output sections don’t have any valid options defined.
 
-To get started, copy and paste the skeleton configuration pipeline into a file named `first-pipeline.conf` in your home
-Logstash directory.
+To get started, copy and paste the skeleton configuration pipeline into a file named *first-pipeline.conf* under
+*/usr/share/logstash/* directory
 
 Next, configure your Logstash instance to use the Beats input plugin by adding the following lines to the `input` section
-of the `first-pipeline.conf` file:
+of the `/usr/share/logstash/first-pipeline.conf` file:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -133,7 +133,7 @@ to the `output` section so that the output is printed to stdout when you run Log
     stdout { codec => rubydebug }
 --------------------------------------------------------------------------------
 
-When you're done, the contents of `first-pipeline.conf` should look like this:
+When you're done, the contents of `/usr/share/logstash/first-pipeline.conf` should look like this:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -156,7 +156,7 @@ To verify your configuration, run the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-bin/logstash -f first-pipeline.conf --config.test_and_exit
+/usr/share/logstash/bin/logstash -f first-pipeline.conf --config.test_and_exit
 --------------------------------------------------------------------------------
 
 The `--config.test_and_exit` option parses your configuration file and reports any errors.
@@ -165,7 +165,7 @@ If the configuration file passes the configuration test, start Logstash with the
 
 [source,shell]
 --------------------------------------------------------------------------------
-bin/logstash -f first-pipeline.conf --config.reload.automatic
+/usr/share/logstash/bin/logstash -f first-pipeline.conf --config.reload.automatic
 --------------------------------------------------------------------------------
 
 The `--config.reload.automatic` option enables automatic config reloading so that you don't have to stop and restart Logstash
@@ -251,7 +251,7 @@ TIP: If you need help building grok patterns, try out the
 {kibana-ref}/xpack-grokdebugger.html[Grok Debugger]. The Grok Debugger is an
 {xpack} feature under the Basic License and is therefore *free to use*.
 
-Edit the `first-pipeline.conf` file and replace the entire `filter` section with the following text:
+Edit the `/usr/share/logstash/first-pipeline.conf` file and replace the entire `filter` section with the following text:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -262,7 +262,7 @@ filter {
 }
 --------------------------------------------------------------------------------
 
-When you're done, the contents of `first-pipeline.conf` should look like this:
+When you're done, the contents of `/usr/share/logstash/first-pipeline.conf` should look like this:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -354,7 +354,7 @@ data. As an example, the {logstash-ref}/plugins-filters-geoip.html[`geoip`] plug
 location information from the addresses, and adds that location information to the logs.
 
 Configure your Logstash instance to use the `geoip` filter plugin by adding the following lines to the `filter` section
-of the `first-pipeline.conf` file:
+of the `/usr/share/logstash/first-pipeline.conf` file:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -368,7 +368,7 @@ The `geoip` plugin configuration requires you to specify the name of the source 
 Since filters are evaluated in sequence, make sure that the `geoip` section is after the `grok` section of
 the configuration file and that both the `grok` and `geoip` sections are nested within the `filter` section.
 
-When you're done, the contents of `first-pipeline.conf` should look like this:
+When you're done, the contents of `/usr/share/logstash/first-pipeline.conf` should look like this:
 
 [source,json]
 --------------------------------------------------------------------------------
@@ -436,24 +436,46 @@ your data into Elasticsearch.
 
 TIP: {ess-leadin}
 
+In this section, we assume Elasticsearch is running on HTTPS, which means default security is enabled and Elasticsearch
+is using self-signed certs. First we should
+https://discuss.elastic.co/t/elasticsearch-unreachable-http-localhost-9200-manticore-clientprotocolexception-localhost-9200-failed-to-respond/325897/4[verify we can access Elasticsearch]
+by (assuming Logstash and Elasticsearch are running on the same instance):
+
+[source,bash]
+--
+
+curl -k -u elastic https://localhost:9200
+
+--
+
 The Logstash pipeline can index the data into an
-Elasticsearch cluster. Edit the `first-pipeline.conf` file and replace the entire `output` section with the following
+Elasticsearch cluster. Edit the `/usr/share/logstash/first-pipeline.conf` file and replace the entire `output` section with the following
 text:
 
 [source,json]
 --------------------------------------------------------------------------------
 output {
     elasticsearch {
-        hosts => [ "localhost:9200" ]
+        hosts => [ "https://localhost:9200" ]
+
+        ssl_certificate_verification => false
+
+        user => "elastic"
+
+        password => "<password of user 'elastic'>"
     }
 }
 --------------------------------------------------------------------------------
 
-With this configuration, Logstash uses http protocol to connect to Elasticsearch. The above example assumes that
+With this configuration, Logstash uses https protocol to connect to Elasticsearch. The above example assumes that
 Logstash and Elasticsearch are running on the same instance. You can specify a remote Elasticsearch instance by using
 the `hosts` configuration to specify something like `hosts => [ "es-machine:9092" ]`.
 
-At this point, your `first-pipeline.conf` file has input, filter, and output sections properly configured, and looks
+In addition, to prevent the 401 authentication error, also need to
+https://discuss.elastic.co/t/elasticsearch-unreachable-http-localhost-9200-manticore-clientprotocolexception-localhost-9200-failed-to-respond/325897/8[put Elasticsearch user and password]
+above
+
+At this point, your `/usr/share/logstash/first-pipeline.conf` file has input, filter, and output sections properly configured, and looks
 something like this:
 
 [source,json]
@@ -473,7 +495,13 @@ input {
 }
 output {
     elasticsearch {
-        hosts => [ "localhost:9200" ]
+        hosts => [ "https://localhost:9200" ]
+
+        ssl_certificate_verification => false
+
+        user => "elastic"
+
+        password => "<password of user 'elastic'>"
     }
 }
 --------------------------------------------------------------------------------
@@ -851,7 +879,7 @@ To verify your configuration, run the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-bin/logstash -f second-pipeline.conf --config.test_and_exit
+/usr/share/logstash/bin/logstash -f second-pipeline.conf --config.test_and_exit
 --------------------------------------------------------------------------------
 
 The `--config.test_and_exit` option parses your configuration file and reports any errors. When the configuration file
@@ -859,7 +887,7 @@ passes the configuration test, start Logstash with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-bin/logstash -f second-pipeline.conf
+/usr/share/logstash/bin/logstash -f second-pipeline.conf
 --------------------------------------------------------------------------------
 
 Use the `grep` utility to search in the target file to verify that information is present:
