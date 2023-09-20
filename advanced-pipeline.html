@@ -236,10 +236,10 @@ output {
 }</pre>
 </div>
 <p>This skeleton is non-functional, because the input and output sections don’t have any valid options defined.</p>
-<p>To get started, copy and paste the skeleton configuration pipeline into a file named <code class="literal">first-pipeline.conf</code> in your home
-Logstash directory.</p>
+<p>To get started, copy and paste the skeleton configuration pipeline into a file named <span class="strong strong"><strong>first-pipeline.conf</strong></span> under
+<span class="strong strong"><strong>/usr/share/logstash/</strong></span> directory</p>
 <p>Next, configure your Logstash instance to use the Beats input plugin by adding the following lines to the <code class="literal">input</code> section
-of the <code class="literal">first-pipeline.conf</code> file:</p>
+of the <code class="literal">/usr/share/logstash/first-pipeline.conf</code> file:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">    beats {
         port =&gt; "5044"
@@ -250,7 +250,7 @@ to the <code class="literal">output</code> section so that the output is printed
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">    stdout { codec =&gt; rubydebug }</pre>
 </div>
-<p>When you&#8217;re done, the contents of <code class="literal">first-pipeline.conf</code> should look like this:</p>
+<p>When you&#8217;re done, the contents of <code class="literal">/usr/share/logstash/first-pipeline.conf</code> should look like this:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">input {
     beats {
@@ -268,12 +268,12 @@ output {
 </div>
 <p>To verify your configuration, run the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">bin/logstash -f first-pipeline.conf --config.test_and_exit</pre>
+<pre class="programlisting prettyprint lang-shell">/usr/share/logstash/bin/logstash -f first-pipeline.conf --config.test_and_exit</pre>
 </div>
 <p>The <code class="literal">--config.test_and_exit</code> option parses your configuration file and reports any errors.</p>
 <p>If the configuration file passes the configuration test, start Logstash with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">bin/logstash -f first-pipeline.conf --config.reload.automatic</pre>
+<pre class="programlisting prettyprint lang-shell">/usr/share/logstash/bin/logstash -f first-pipeline.conf --config.reload.automatic</pre>
 </div>
 <p>The <code class="literal">--config.reload.automatic</code> option enables automatic config reloading so that you don&#8217;t have to stop and restart Logstash
 every time you modify the configuration file.</p>
@@ -485,7 +485,7 @@ User agent
 X-Pack feature under the Basic License and is therefore <span class="strong strong"><strong>free to use</strong></span>.</p>
 </div>
 </div>
-<p>Edit the <code class="literal">first-pipeline.conf</code> file and replace the entire <code class="literal">filter</code> section with the following text:</p>
+<p>Edit the <code class="literal">/usr/share/logstash/first-pipeline.conf</code> file and replace the entire <code class="literal">filter</code> section with the following text:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">filter {
     grok {
@@ -493,7 +493,7 @@ X-Pack feature under the Basic License and is therefore <span class="strong stro
     }
 }</pre>
 </div>
-<p>When you&#8217;re done, the contents of <code class="literal">first-pipeline.conf</code> should look like this:</p>
+<p>When you&#8217;re done, the contents of <code class="literal">/usr/share/logstash/first-pipeline.conf</code> should look like this:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">input {
     beats {
@@ -566,7 +566,7 @@ config file.</p>
 data. As an example, the <a href="https://www.elastic.co/guide/en/logstash/master/plugins-filters-geoip.html" class="ulink" target="_top"><code class="literal">geoip</code></a> plugin looks up IP addresses, derives geographic
 location information from the addresses, and adds that location information to the logs.</p>
 <p>Configure your Logstash instance to use the <code class="literal">geoip</code> filter plugin by adding the following lines to the <code class="literal">filter</code> section
-of the <code class="literal">first-pipeline.conf</code> file:</p>
+of the <code class="literal">/usr/share/logstash/first-pipeline.conf</code> file:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">    geoip {
         source =&gt; "clientip"
@@ -575,7 +575,7 @@ of the <code class="literal">first-pipeline.conf</code> file:</p>
 <p>The <code class="literal">geoip</code> plugin configuration requires you to specify the name of the source field that contains the IP address to look up. In this example, the <code class="literal">clientip</code> field contains the IP address.</p>
 <p>Since filters are evaluated in sequence, make sure that the <code class="literal">geoip</code> section is after the <code class="literal">grok</code> section of
 the configuration file and that both the <code class="literal">grok</code> and <code class="literal">geoip</code> sections are nested within the <code class="literal">filter</code> section.</p>
-<p>When you&#8217;re done, the contents of <code class="literal">first-pipeline.conf</code> should look like this:</p>
+<p>When you&#8217;re done, the contents of <code class="literal">/usr/share/logstash/first-pipeline.conf</code> should look like this:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">input {
     beats {
@@ -633,20 +633,36 @@ your data into Elasticsearch.</p>
 <p>You can run Elasticsearch on your own hardware or use our hosted Elasticsearch Service that is available on AWS, GCP, and Azure. <a href="https://www.elastic.co/cloud/elasticsearch-service/signup?page=docs&amp;placement=docs-body" class="ulink" target="_top">Try the Elasticsearch Service for free</a>.</p>
 </div>
 </div>
+<p>In this section, we assume Elasticsearch is running on HTTPS, which means default security is enabled and Elasticsearch
+is using self-signed certs. First we should
+<a href="https://discuss.elastic.co/t/elasticsearch-unreachable-http-localhost-9200-manticore-clientprotocolexception-localhost-9200-failed-to-respond/325897/4" class="ulink" target="_top">verify we can access Elasticsearch</a>
+by (assuming Logstash and Elasticsearch are running on the same instance):</p>
+<div class="pre_wrapper lang-bash">
+<pre class="programlisting prettyprint lang-bash">curl -k -u elastic https://localhost:9200</pre>
+</div>
 <p>The Logstash pipeline can index the data into an
-Elasticsearch cluster. Edit the <code class="literal">first-pipeline.conf</code> file and replace the entire <code class="literal">output</code> section with the following
+Elasticsearch cluster. Edit the <code class="literal">/usr/share/logstash/first-pipeline.conf</code> file and replace the entire <code class="literal">output</code> section with the following
 text:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">output {
     elasticsearch {
-        hosts =&gt; [ "localhost:9200" ]
+        hosts =&gt; [ "https://localhost:9200" ]
+
+        ssl_certificate_verification =&gt; false
+
+        user =&gt; "elastic"
+
+        password =&gt; "&lt;password of user 'elastic'&gt;"
     }
 }</pre>
 </div>
-<p>With this configuration, Logstash uses http protocol to connect to Elasticsearch. The above example assumes that
+<p>With this configuration, Logstash uses https protocol to connect to Elasticsearch. The above example assumes that
 Logstash and Elasticsearch are running on the same instance. You can specify a remote Elasticsearch instance by using
 the <code class="literal">hosts</code> configuration to specify something like <code class="literal">hosts =&gt; [ "es-machine:9092" ]</code>.</p>
-<p>At this point, your <code class="literal">first-pipeline.conf</code> file has input, filter, and output sections properly configured, and looks
+<p>In addition, to prevent the 401 authentication error, also need to
+<a href="https://discuss.elastic.co/t/elasticsearch-unreachable-http-localhost-9200-manticore-clientprotocolexception-localhost-9200-failed-to-respond/325897/8" class="ulink" target="_top">put Elasticsearch user and password</a>
+above</p>
+<p>At this point, your <code class="literal">/usr/share/logstash/first-pipeline.conf</code> file has input, filter, and output sections properly configured, and looks
 something like this:</p>
 <div class="pre_wrapper lang-json">
 <pre class="programlisting prettyprint lang-json">input {
@@ -664,7 +680,13 @@ something like this:</p>
 }
 output {
     elasticsearch {
-        hosts =&gt; [ "localhost:9200" ]
+        hosts =&gt; [ "https://localhost:9200" ]
+
+        ssl_certificate_verification =&gt; false
+
+        user =&gt; "elastic"
+
+        password =&gt; "&lt;password of user 'elastic'&gt;"
     }
 }</pre>
 </div>

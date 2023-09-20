@@ -182,12 +182,12 @@ indexing this information to three nodes in an Elasticsearch cluster as well as 
 won’t be any answer on that port, so any messages you see regarding failure to connect on that port are normal for now.</p>
 <p>To verify your configuration, run the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">bin/logstash -f second-pipeline.conf --config.test_and_exit</pre>
+<pre class="programlisting prettyprint lang-shell">/usr/share/logstash/bin/logstash -f second-pipeline.conf --config.test_and_exit</pre>
 </div>
 <p>The <code class="literal">--config.test_and_exit</code> option parses your configuration file and reports any errors. When the configuration file
 passes the configuration test, start Logstash with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">bin/logstash -f second-pipeline.conf</pre>
+<pre class="programlisting prettyprint lang-shell">/usr/share/logstash/bin/logstash -f second-pipeline.conf</pre>
 </div>
 <p>Use the <code class="literal">grep</code> utility to search in the target file to verify that information is present:</p>
 <div class="pre_wrapper lang-shell">
