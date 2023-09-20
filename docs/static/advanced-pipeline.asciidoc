@@ -78,12 +78,13 @@ At the data source machine, run Filebeat with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-sudo ./filebeat -e -c filebeat.yml -d "publish"
+sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"
 --------------------------------------------------------------------------------
 
-NOTE: If you run Filebeat as root, you need to change ownership of the configuration file (see
-{beats-ref}/config-file-permissions.html[Config File Ownership and Permissions]
-in the _Beats Platform Reference_).
+NOTE: If you run Filebeat as root, you need to change ownership of the configuration file with
+`sudo chown root /etc/filebeat/filebeat.yml` (see
+{beats-ref}/config-file-permissions.html[Config File Ownership and Permissions] in the _Beats Platform Reference_ for
+more info).
 
 Filebeat will attempt to connect on port 5044. Until Logstash starts with an active Beats plugin, there
 won’t be any answer on that port, so any messages you see regarding failure to connect on that port are normal for now.
@@ -298,7 +299,7 @@ Next, restart Filebeat with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-sudo ./filebeat -e -c filebeat.yml -d "publish"
+sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"
 --------------------------------------------------------------------------------
 
 There might be a slight delay before Filebeat begins processing events if it needs to wait for Logstash to reload the
@@ -395,7 +396,7 @@ delete the registry file, and then restart Filebeat with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-sudo ./filebeat -e -c filebeat.yml -d "publish"
+sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"
 --------------------------------------------------------------------------------
 
 Notice that the event now contains geographic location information:
@@ -511,7 +512,7 @@ delete the registry file, and then restart Filebeat with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-sudo ./filebeat -e -c filebeat.yml -d "publish"
+sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"
 --------------------------------------------------------------------------------
 
 [float]
@@ -869,7 +870,7 @@ At the data source machine, run Filebeat with the following command:
 
 [source,shell]
 --------------------------------------------------------------------------------
-sudo ./filebeat -e -c filebeat.yml -d "publish"
+sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"
 --------------------------------------------------------------------------------
 
 Filebeat will attempt to connect on port 5044. Until Logstash starts with an active Beats plugin, there
