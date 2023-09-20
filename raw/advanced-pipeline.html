@@ -117,14 +117,15 @@ logstash instance and <code class="literal">5044</code> is the logstash port acc
 scenario.</p>
 <p>At the data source machine, run Filebeat with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">sudo ./filebeat -e -c filebeat.yml -d "publish"</pre>
+<pre class="programlisting prettyprint lang-shell">sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"</pre>
 </div>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
-<p>If you run Filebeat as root, you need to change ownership of the configuration file (see
-<a href="https://www.elastic.co/guide/en/beats/libbeat/master/config-file-permissions.html" class="ulink" target="_top">Config File Ownership and Permissions</a>
-in the <em>Beats Platform Reference</em>).</p>
+<p>If you run Filebeat as root, you need to change ownership of the configuration file with
+<code class="literal">sudo chown root /etc/filebeat/filebeat.yml</code> (see
+<a href="https://www.elastic.co/guide/en/beats/libbeat/master/config-file-permissions.html" class="ulink" target="_top">Config File Ownership and Permissions</a> in the <em>Beats Platform Reference</em> for
+more info).</p>
 </div>
 </div>
 <p>Filebeat will attempt to connect on port 5044. Until Logstash starts with an active Beats plugin, there
@@ -436,7 +437,7 @@ Filebeat registry file. For example, run:</p>
 Filebeat to read all the files it&#8217;s harvesting from scratch.</p>
 <p>Next, restart Filebeat with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">sudo ./filebeat -e -c filebeat.yml -d "publish"</pre>
+<pre class="programlisting prettyprint lang-shell">sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"</pre>
 </div>
 <p>There might be a slight delay before Filebeat begins processing events if it needs to wait for Logstash to reload the
 config file.</p>
@@ -513,7 +514,7 @@ output {
 <p>Save your changes. To force Filebeat to read the log file from scratch, as you did earlier, shut down Filebeat (press Ctrl+C),
 delete the registry file, and then restart Filebeat with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">sudo ./filebeat -e -c filebeat.yml -d "publish"</pre>
+<pre class="programlisting prettyprint lang-shell">sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"</pre>
 </div>
 <p>Notice that the event now contains geographic location information:</p>
 <div class="pre_wrapper lang-json">
@@ -609,7 +610,7 @@ output {
 <p>Save your changes. To force Filebeat to read the log file from scratch, as you did earlier, shut down Filebeat (press Ctrl+C),
 delete the registry file, and then restart Filebeat with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">sudo ./filebeat -e -c filebeat.yml -d "publish"</pre>
+<pre class="programlisting prettyprint lang-shell">sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"</pre>
 </div>
 <h5><a id="testing-initial-pipeline"></a>Testing Your Pipeline<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/advanced-pipeline.asciidoc">edit</a></h5>
 <p>Now that the Logstash pipeline is configured to index the data into an

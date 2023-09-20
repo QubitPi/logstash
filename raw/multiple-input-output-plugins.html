@@ -176,7 +176,7 @@ output {
 indexing this information to three nodes in an Elasticsearch cluster as well as writing to a file.</p>
 <p>At the data source machine, run Filebeat with the following command:</p>
 <div class="pre_wrapper lang-shell">
-<pre class="programlisting prettyprint lang-shell">sudo ./filebeat -e -c filebeat.yml -d "publish"</pre>
+<pre class="programlisting prettyprint lang-shell">sudo /usr/bin/filebeat -e -c filebeat.yml -d "publish"</pre>
 </div>
 <p>Filebeat will attempt to connect on port 5044. Until Logstash starts with an active Beats plugin, there
 won’t be any answer on that port, so any messages you see regarding failure to connect on that port are normal for now.</p>
