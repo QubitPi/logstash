@@ -40,7 +40,7 @@
 installed or uninstalled independently of Logstash.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_29"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_31"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the
 <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an
@@ -49,7 +49,7 @@ issue in <a href="https://github.com/logstash" class="ulink" target="_top">Githu
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_28"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_31"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Read events from standard input.</p>
 <p>By default, each event is assumed to be terminated by end-of-line. If you want events delimited in a different
@@ -61,14 +61,14 @@ method, you&#8217;ll need to use a codec with support for that encoding.</p>
 <h3 class="title"><a id="plugins-inputs-java_stdin-options"></a>Java_stdin Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
 </div></div></div>
 <p>There are no special configuration options for this plugin,
-but it does support the <a class="xref" href="plugins-inputs-java_stdin.html#plugins-inputs-java_stdin-common-options" title="Common Options">Common Options</a>.</p>
+but it does support the <a class="xref" href="plugins-inputs-java_stdin.html#plugins-inputs-java_stdin-common-options" title="Common options">Common options</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-java_stdin-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-java_stdin-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -117,13 +117,6 @@ but it does support the <a class="xref" href="plugins-inputs-java_stdin.html#plu
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_24"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-java_stdin-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/elastic/logstash/edit/main/docs/static/core-plugins/inputs/java_stdin.asciidoc">edit</a></h4>
@@ -196,6 +189,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 java_stdin inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   java_stdin {
     id =&gt; "my_plugin_id"

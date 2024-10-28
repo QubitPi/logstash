@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v3.0.9
+Plugin version: v3.0.10
 </li>
 <li class="listitem">
-Released on: 2023-06-14
+Released on: 2023-12-19
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-output-csv/blob/v3.0.9/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-output-csv/blob/v3.0.10/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2023-06-14
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-csv-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_65"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_68"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-output-csv" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_64"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_68"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>CSV output.</p>
 <p>Write events to disk in CSV or other delimited format
@@ -157,7 +157,7 @@ Uses the Ruby csv library internally</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-outputs-csv-options"></a>Csv Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-csv.html#plugins-outputs-csv-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-csv.html#plugins-outputs-csv-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -226,7 +226,7 @@ Uses the Ruby csv library internally</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-csv.html#plugins-outputs-csv-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-csv.html#plugins-outputs-csv-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -404,6 +404,7 @@ from the event as parts of the filename and/or path.</p>
 <p>By default, this output writes one event per line in <span class="strong strong"><strong>json</strong></span> format.
 You can customise the line format using the <code class="literal">line</code> codec like:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">output {
  file {
    path =&gt; ...
@@ -444,9 +445,9 @@ may not make the values safe in your spreadsheet application</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-csv-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-csv-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-csv/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -535,6 +536,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 csv outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   csv {
     id =&gt; "my_plugin_id"
@@ -595,6 +597,9 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -606,16 +611,19 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

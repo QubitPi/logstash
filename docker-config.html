@@ -9,7 +9,7 @@
 <link rel="home" href="index.html" title="Logstash Reference"/>
 <link rel="up" href="setup-logstash.html" title="Setting Up and Running Logstash"/>
 <link rel="prev" href="docker.html" title="Running Logstash on Docker"/>
-<link rel="next" href="running-logstash-windows.html" title="Running Logstash on Windows"/>
+<link rel="next" href="running-logstash-kubernetes.html" title="Running Logstash on Kubernetes"/>
 <meta class="elastic" name="product_version" content=""/>
 <meta class="elastic" name="product_name" content=""/>
 <meta class="elastic" name="website_area" content="documentation"/>
@@ -112,7 +112,7 @@
 <a href="docker.html">« Running Logstash on Docker</a>
 </span>
 <span class="next">
-<a href="running-logstash-windows.html">Running Logstash on Windows »</a>
+<a href="running-logstash-kubernetes.html">Running Logstash on Kubernetes »</a>
 </span>
 </div>
 <div class="section">
@@ -131,7 +131,8 @@ found by Logstash. By default, the container will look in
 <p>In this example we use a bind-mounted volume to provide the
 configuration via the <code class="literal">docker run</code> command:</p>
 <div class="pre_wrapper lang-sh">
-<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/pipeline/:/usr/share/logstash/pipeline/ docker.elastic.co/logstash/logstash:8.10.0</pre>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/pipeline/:/usr/share/logstash/pipeline/ docker.elastic.co/logstash/logstash:8.15.0</pre>
 </div>
 <p>Every file in the host directory <code class="literal">~/pipeline/</code> will then be parsed
 by Logstash as pipeline configuration.</p>
@@ -141,6 +142,7 @@ minimal config that listens for messages from the
 received to <code class="literal">stdout</code>. In this case, the startup logs will be similar
 to the following:</p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties.
 [2016-10-26T05:11:34,992][INFO ][logstash.inputs.beats    ] Beats inputs: Starting input listener {:address=&gt;"0.0.0.0:5044"}
 [2016-10-26T05:11:35,068][INFO ][logstash.pipeline        ] Starting pipeline {"id"=&gt;"main", "pipeline.workers"=&gt;4, "pipeline.batch.size"=&gt;125, "pipeline.batch.delay"=&gt;5, "pipeline.max_inflight"=&gt;500}
@@ -171,11 +173,13 @@ expects to find them at <code class="literal">/usr/share/logstash/config/</code>
 <p>It&#8217;s possible to provide an entire directory containing all needed
 files:</p>
 <div class="pre_wrapper lang-sh">
-<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/settings/:/usr/share/logstash/config/ docker.elastic.co/logstash/logstash:8.10.0</pre>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/settings/:/usr/share/logstash/config/ docker.elastic.co/logstash/logstash:8.15.0</pre>
 </div>
 <p>Alternatively, a single file can be mounted:</p>
 <div class="pre_wrapper lang-sh">
-<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/settings/logstash.yml:/usr/share/logstash/config/logstash.yml docker.elastic.co/logstash/logstash:8.10.0</pre>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-sh">docker run --rm -it -v ~/settings/logstash.yml:/usr/share/logstash/config/logstash.yml docker.elastic.co/logstash/logstash:8.15.0</pre>
 </div>
 <div class="note admon">
 <div class="icon"></div>
@@ -197,7 +201,8 @@ prefer the <em>Immutable Infrastructure</em> approach, you can prepare a
 custom image containing your configuration by using a <code class="literal">Dockerfile</code>
 like this one:</p>
 <div class="pre_wrapper lang-dockerfile">
-<pre class="programlisting prettyprint lang-dockerfile">FROM docker.elastic.co/logstash/logstash:8.10.0
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-dockerfile">FROM docker.elastic.co/logstash/logstash:8.15.0
 RUN rm -f /usr/share/logstash/pipeline/logstash.conf
 COPY pipeline/ /usr/share/logstash/pipeline/
 COPY config/ /usr/share/logstash/config/</pre>
@@ -311,7 +316,7 @@ images:</p>
 <tr>
 <td valign="top">
 <p>
-<code class="literal">http.host</code>
+<code class="literal">api.http.host</code>
 </p>
 </td>
 <td valign="top">
@@ -370,7 +375,7 @@ file at <code class="literal">/usr/share/logstash/config/log4j2.properties</code
 <a href="docker.html">« Running Logstash on Docker</a>
 </span>
 <span class="next">
-<a href="running-logstash-windows.html">Running Logstash on Windows »</a>
+<a href="running-logstash-kubernetes.html">Running Logstash on Kubernetes »</a>
 </span>
 </div>
 </div>
@@ -407,6 +412,9 @@ file at <code class="literal">/usr/share/logstash/config/log4j2.properties</code
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -418,16 +426,19 @@ file at <code class="literal">/usr/share/logstash/config/log4j2.properties</code
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

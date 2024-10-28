@@ -42,13 +42,13 @@
 A component of the <a class="xref" href="plugins-integrations-elastic_enterprise_search.html" title="Elastic Enterprise Search integration plugin">elastic_enterprise_search integration plugin</a>
 </li>
 <li class="listitem">
-Integration version: v2.2.1
+Integration version: v3.0.0
 </li>
 <li class="listitem">
-Released on: 2022-01-28
+Released on: 2023-11-07
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/blob/v2.2.1/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/blob/v3.0.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -56,16 +56,16 @@ Released on: 2022-01-28
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-elastic_workplace_search-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_70"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_73"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_69"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_73"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This output lets you send events to the <a href="https://www.elastic.co/workplace-search" class="ulink" target="_top">Elastic Workplace Search</a> solution.
 On receiving a batch of events from the Logstash pipeline, the plugin
@@ -90,7 +90,7 @@ to store the timestamp in a different field.</p>
 <h3 class="title"><a id="plugins-outputs-elastic_workplace_search-options"></a>Workplace Search Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the
-<a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-common-options" title="Common Options">Common Options</a> described later.</p>
+<a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -122,6 +122,41 @@ to store the timestamp in a different field.</p>
 <td align="left" valign="top"><p>Yes</p></td>
 </tr>
 <tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_certificate_authorities" title="ssl_certificate_authorities"><code class="literal">ssl_certificate_authorities</code></a></p></td>
+<td align="left" valign="top"><p>list of <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_cipher_suites" title="ssl_cipher_suites"><code class="literal">ssl_cipher_suites</code></a></p></td>
+<td align="left" valign="top"><p>list of <a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_supported_protocols" title="ssl_supported_protocols"><code class="literal">ssl_supported_protocols</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_truststore_password" title="ssl_truststore_password"><code class="literal">ssl_truststore_password</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_truststore_path" title="ssl_truststore_path"><code class="literal">ssl_truststore_path</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_truststore_type" title="ssl_truststore_type"><code class="literal">ssl_truststore_type</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_verification_mode" title="ssl_verification_mode"><code class="literal">ssl_verification_mode</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a>, one of <code class="literal">["full", "none"]</code></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-timestamp_destination" title="timestamp_destination"><code class="literal">timestamp_destination</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
@@ -134,7 +169,7 @@ to store the timestamp in a different field.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -203,6 +238,7 @@ the field is missing from the event.</p>
 </div>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   stdin {
     codec =&gt; json
@@ -224,6 +260,163 @@ output {
     url =&gt; "http://workplace.search.com:3002"
   }
 }</pre>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is a list of <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting
+</li>
+</ul>
+</div>
+<p>The .cer or .pem files to validate the server&#8217;s certificate.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>You cannot use this setting and <a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_truststore_path" title="ssl_truststore_path"><code class="literal">ssl_truststore_path</code></a> at the same time.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is a list of <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+There is no default value for this setting
+</li>
+</ul>
+</div>
+<p>The list of cipher suites to use, listed by priorities.
+Supported cipher suites vary depending on the Java and protocol versions.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+Allowed values are: <code class="literal">'TLSv1.1'</code>, <code class="literal">'TLSv1.2'</code>, <code class="literal">'TLSv1.3'</code>
+</li>
+<li class="listitem">
+Default depends on the JDK being used. With up-to-date Logstash, the default is <code class="literal">['TLSv1.2', 'TLSv1.3']</code>.
+<code class="literal">'TLSv1.1'</code> is not considered secure and is only provided for legacy applications.
+</li>
+</ul>
+</div>
+<p>List of allowed SSL/TLS versions to use when establishing a connection to the Elasticsearch cluster.</p>
+<p>For Java 8 <code class="literal">'TLSv1.3'</code> is supported only since <span class="strong strong"><strong>8u262</strong></span> (AdoptOpenJDK), but requires that you set the
+<code class="literal">LS_JAVA_OPTS="-Djdk.tls.client.protocols=TLSv1.3"</code> system property in Logstash.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>If you configure the plugin to use <code class="literal">'TLSv1.1'</code> on any recent JVM, such as the one packaged with Logstash,
+the protocol is disabled by default and needs to be enabled manually by changing <code class="literal">jdk.tls.disabledAlgorithms</code> in
+the <span class="strong strong"><strong>$JDK_HOME/conf/security/java.security</strong></span> configuration file. That is, <code class="literal">TLSv1.1</code> needs to be removed from the list.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_truststore_password"></a><code class="literal">ssl_truststore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#password" title="Password">password</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>Set the truststore password</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_truststore_path"></a><code class="literal">ssl_truststore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>The truststore to validate the server&#8217;s certificate.
+It can be either <code class="literal">.jks</code> or <code class="literal">.p12</code>.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>You cannot use this setting and <a class="xref" href="plugins-outputs-elastic_workplace_search.html#plugins-outputs-elastic_workplace_search-ssl_certificate_authorities" title="ssl_certificate_authorities"><code class="literal">ssl_certificate_authorities</code></a> at the same time.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_truststore_type"></a><code class="literal">ssl_truststore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">jks</code>, <code class="literal">pkcs12</code>
+</li>
+<li class="listitem">
+If not provided, the value will be inferred from the truststore filename.
+</li>
+</ul>
+</div>
+<p>The format of the truststore file. It must be either <code class="literal">jks</code> or <code class="literal">pkcs12</code>.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elastic_workplace_search-ssl_verification_mode"></a><code class="literal">ssl_verification_mode</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">full</code>, <code class="literal">none</code>
+</li>
+<li class="listitem">
+Default value is <code class="literal">full</code>
+</li>
+</ul>
+</div>
+<p>Defines how to verify the certificates presented by another party in the TLS connection:</p>
+<p><code class="literal">full</code> validates that the server certificate has an issue date that’s within
+the not_before and not_after dates; chains to a trusted Certificate Authority (CA), and
+has a hostname or IP address that matches the names within the certificate.</p>
+<p><code class="literal">none</code> performs no certificate validation.</p>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>Setting certificate verification to <code class="literal">none</code> disables many security benefits of SSL/TLS, which is very dangerous. For more information on disabling certificate verification please read <a href="https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf" class="ulink" target="_top">https://www.cs.utexas.edu/~shmat/shmat_ccs12.pdf</a></p>
+</div>
 </div>
 </div>
 
@@ -258,7 +451,7 @@ by default, the <code class="literal">@timestamp</code> field will be deleted.</
 Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
 </li>
 <li class="listitem">
-There is no default value
+Default value is <code class="literal">http://localhost:3002</code>
 </li>
 </ul>
 </div>
@@ -274,9 +467,9 @@ There is no default value
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-elastic_workplace_search-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-elastic_workplace_search-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-elastic_enterprise_search/edit/main/docs/output-elastic_workplace_search.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -343,6 +536,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 elastic_workplace_search outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   elastic_workplace_search {
     id =&gt; "my_plugin_id"

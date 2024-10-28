@@ -53,15 +53,15 @@ Released on: 2022-06-13
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-jms-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_31"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_33"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-jms" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_30"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_33"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Read events from a Jms Broker. Supports both Jms Queues and Topics.</p>
 <p>For more information about Jms, see <a href="https://javaee.github.io/tutorial/jms-concepts.html" class="ulink" target="_top">https://javaee.github.io/tutorial/jms-concepts.html</a>.
@@ -95,34 +95,35 @@ The JMS plugin can also be configured using JNDI if desired.</p>
 <h4 class="title"><a id="_logstash_confuguration_for_non_jndi_connection"></a>Logstash Confuguration for Non-JNDI Connection<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> input
  {
     jms {
-        broker_url =&gt; 'failover:(tcp://host1:61616,tcp://host2:61616)?initialReconnectDelay=100' <a id="CO37-1"></a><i class="conum" data-value="1"></i>
-        destination =&gt; 'myqueue' <a id="CO37-2"></a><i class="conum" data-value="2"></i>
-        factory =&gt; 'org.apache.activemq.ActiveMQConnectionFactory' <a id="CO37-3"></a><i class="conum" data-value="3"></i>
-        pub_sub =&gt; false <a id="CO37-4"></a><i class="conum" data-value="4"></i>
-        use_jms_timestamp =&gt; false <a id="CO37-5"></a><i class="conum" data-value="5"></i>
-        # JMS provider credentials if needed <a id="CO37-6"></a><i class="conum" data-value="6"></i>
+        broker_url =&gt; 'failover:(tcp://host1:61616,tcp://host2:61616)?initialReconnectDelay=100' <a id="CO41-1"></a><i class="conum" data-value="1"></i>
+        destination =&gt; 'myqueue' <a id="CO41-2"></a><i class="conum" data-value="2"></i>
+        factory =&gt; 'org.apache.activemq.ActiveMQConnectionFactory' <a id="CO41-3"></a><i class="conum" data-value="3"></i>
+        pub_sub =&gt; false <a id="CO41-4"></a><i class="conum" data-value="4"></i>
+        use_jms_timestamp =&gt; false <a id="CO41-5"></a><i class="conum" data-value="5"></i>
+        # JMS provider credentials if needed <a id="CO41-6"></a><i class="conum" data-value="6"></i>
         username =&gt; 'username'
         password =&gt; 'secret'
-        # JMS provider keystore and truststore details <a id="CO37-7"></a><i class="conum" data-value="7"></i>
+        # JMS provider keystore and truststore details <a id="CO41-7"></a><i class="conum" data-value="7"></i>
         keystore =&gt; '/Users/logstash-user/security/keystore.jks'
         keystore_password =&gt; 'another_secret'
         truststore =&gt; '/Users/logstash-user/security/truststore.jks'
         truststore_password =&gt; 'yet_another_secret'
-        # Parts of the JMS message to be included <a id="CO37-8"></a><i class="conum" data-value="8"></i>
+        # Parts of the JMS message to be included <a id="CO41-8"></a><i class="conum" data-value="8"></i>
         include_headers =&gt; false
         include_properties =&gt; false
         include_body =&gt; true
         # Message selector
-        selector =&gt; "string_property = 'this' OR int_property &lt; 3" <a id="CO37-9"></a><i class="conum" data-value="9"></i>
+        selector =&gt; "string_property = 'this' OR int_property &lt; 3" <a id="CO41-9"></a><i class="conum" data-value="9"></i>
         # Connection factory specific settings
-        factory_settings =&gt; { <a id="CO37-10"></a><i class="conum" data-value="10"></i>
+        factory_settings =&gt; { <a id="CO41-10"></a><i class="conum" data-value="10"></i>
                               exclusive_consumer =&gt; true
         }
         # Jar Files to include
-        require_jars =&gt; ['/usr/share/jms/activemq-all-5.15.9.jar'] <a id="CO37-11"></a><i class="conum" data-value="11"></i>
+        require_jars =&gt; ['/usr/share/jms/activemq-all-5.15.9.jar'] <a id="CO41-11"></a><i class="conum" data-value="11"></i>
     }
   }</pre>
 </div>
@@ -130,7 +131,7 @@ The JMS plugin can also be configured using JNDI if desired.</p>
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO41-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Url of the broker to connect to. Please consult your JMS provider documentation for the exact syntax to use
@@ -139,7 +140,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO41-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Name of the topic or queue that the plugin will listen to events from.</p>
@@ -147,7 +148,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO41-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Full name (including package name) of Java connection factory used to create a connection with your JMS provider.</p>
@@ -155,7 +156,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO41-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Determines whether the event source is a queue or a topic, set to <code class="literal">true</code> for topic, <code class="literal">false</code> for queue.</p>
@@ -163,7 +164,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-5"><i class="conum" data-value="5"></i></a></p>
+<p><a href="#CO41-5"><i class="conum" data-value="5"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Determines whether the JMSTimestamp header is used to populate the <code class="literal">@timestamp</code> field.</p>
@@ -171,7 +172,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-6"><i class="conum" data-value="6"></i></a></p>
+<p><a href="#CO41-6"><i class="conum" data-value="6"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Credentials to use when connecting to the JMS provider, if required.</p>
@@ -179,7 +180,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-7"><i class="conum" data-value="7"></i></a></p>
+<p><a href="#CO41-7"><i class="conum" data-value="7"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Keystore and Truststore to use when connecting to the JMS provider, if required.</p>
@@ -187,7 +188,7 @@ here, including how to enable failover.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-8"><i class="conum" data-value="8"></i></a></p>
+<p><a href="#CO41-8"><i class="conum" data-value="8"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Parts of the JMS Message to include in the event - headers, properties and the message body can be included or
@@ -196,7 +197,7 @@ excluded from the event.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-9"><i class="conum" data-value="9"></i></a></p>
+<p><a href="#CO41-9"><i class="conum" data-value="9"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Message selector: Use this to filter messages to be processed. The whole selector query should be double-quoted,
@@ -206,7 +207,7 @@ See JMS provider documentation for exact syntax.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-10"><i class="conum" data-value="10"></i></a></p>
+<p><a href="#CO41-10"><i class="conum" data-value="10"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Additional settings that are set directly on the ConnectionFactory object can be added here.</p>
@@ -214,7 +215,7 @@ See JMS provider documentation for exact syntax.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO37-11"><i class="conum" data-value="11"></i></a></p>
+<p><a href="#CO41-11"><i class="conum" data-value="11"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>List of jars required by the JMS provider. Paths should be the fully qualified location of all jar files required
@@ -230,9 +231,10 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <h4 class="title"><a id="_logstash_configuration_for_jndi_connection"></a>Logstash Configuration for JNDI Connection<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> input {
     jms {
-        # Logstash Configuration Settings. <a id="CO38-1"></a><i class="conum" data-value="1"></i>
+        # Logstash Configuration Settings. <a id="CO42-1"></a><i class="conum" data-value="1"></i>
         include_headers =&gt; false
         include_properties =&gt; false
         include_body =&gt; true
@@ -240,15 +242,15 @@ by the JMS provider. This list may also include dependent jars as well as specif
         destination =&gt; "myqueue"
         pub_sub =&gt; false
         # JNDI Settings
-        jndi_name =&gt; /jms/cf/default <a id="CO38-2"></a><i class="conum" data-value="2"></i>
-        jndi_context =&gt; { <a id="CO38-3"></a><i class="conum" data-value="3"></i>
+        jndi_name =&gt; /jms/cf/default <a id="CO42-2"></a><i class="conum" data-value="2"></i>
+        jndi_context =&gt; { <a id="CO42-3"></a><i class="conum" data-value="3"></i>
          'java.naming.factory.initial' =&gt; com.solacesystems.jndi.SolJNDIInitialContextFactory
          'java.naming.security.principal' =&gt; solace-cloud-client@user
          'java.naming.provider.url' =&gt; tcp://address.messaging.solace.cloud:20608
          'java.naming.security.credentials' =&gt; verysecret
         }
         # Jar files to be imported
-        require_jars=&gt; ['/usr/share/jms/commons-lang-2.6.jar', <a id="CO38-4"></a><i class="conum" data-value="4"></i>
+        require_jars=&gt; ['/usr/share/jms/commons-lang-2.6.jar', <a id="CO42-4"></a><i class="conum" data-value="4"></i>
                         '/usr/share/jms/sol-jms-10.5.0.jar',
                         '/usr/share/jms/geronimo-jms_1.1_spec-1.1.1.jar',
                         '/usr/share/jms/commons-lang-2.6.jar]'
@@ -259,7 +261,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO38-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO42-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Configuration settings. Note that there is no <code class="literal">broker_url</code> or <code class="literal">username</code> or <code class="literal">password</code> defined here - these are
@@ -268,7 +270,7 @@ defined in the <code class="literal">jndi_context</code> hash.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO38-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO42-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>JNDI name for this connection.</p>
@@ -276,7 +278,7 @@ defined in the <code class="literal">jndi_context</code> hash.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO38-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO42-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>JNDI context settings hash. Contains details of how to connect to JNDI server. See your JMS provider documentation for
@@ -285,7 +287,7 @@ implementation specific details.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO38-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO42-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>List of jars required by the JMS provider. Paths should be the fully qualified location of all jar files required
@@ -315,21 +317,22 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <h4 class="title"><a id="_logstash_configuration_for_non_jndi_connection_for_configs_including_yaml"></a>Logstash Configuration for Non-JNDI Connection (for configs including yaml)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> input {
     jms {
-        # Logstash Configuration File Settings <a id="CO39-1"></a><i class="conum" data-value="1"></i>
+        # Logstash Configuration File Settings <a id="CO43-1"></a><i class="conum" data-value="1"></i>
         include_headers =&gt; false
         include_properties =&gt; false
         include_body =&gt; true
         use_jms_timestamp =&gt; false
         destination =&gt; "myqueue"
         pub_sub =&gt; false
-        # JMS Provider credentials <a id="CO39-2"></a><i class="conum" data-value="2"></i>
+        # JMS Provider credentials <a id="CO43-2"></a><i class="conum" data-value="2"></i>
         username =&gt; xxxx
         password =&gt; xxxx
         # Location of yaml file, and which section to use for configuration
-        yaml_file =&gt; "~/jms.yml"  <a id="CO39-3"></a><i class="conum" data-value="3"></i>
-        yaml_section =&gt; "mybroker" <a id="CO39-4"></a><i class="conum" data-value="4"></i>
+        yaml_file =&gt; "~/jms.yml"  <a id="CO43-3"></a><i class="conum" data-value="3"></i>
+        yaml_section =&gt; "mybroker" <a id="CO43-4"></a><i class="conum" data-value="4"></i>
     }
  }</pre>
 </div>
@@ -337,7 +340,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO39-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO43-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Configuration settings</p>
@@ -345,7 +348,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO39-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO43-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Username and password for the connection.</p>
@@ -353,7 +356,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO39-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO43-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Full path to a yaml file containing the definition for the ConnectionFactory.</p>
@@ -361,7 +364,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO39-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO43-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Section name in the yaml file of the ConnectionFactory for this plugin definition</p>
@@ -376,11 +379,12 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <h4 class="title"><a id="_yaml_file_for_non_jndi_connection"></a>Yaml File for Non-JNDI Connection<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-yaml">
-<pre class="programlisting prettyprint lang-yaml">mybroker: <a id="CO40-1"></a><i class="conum" data-value="1"></i>
-  :broker_url: 'ssl://localhost:61617' <a id="CO40-2"></a><i class="conum" data-value="2"></i>
-  :factory: org.apache.activemq.ActiveMQConnectionFactory <a id="CO40-3"></a><i class="conum" data-value="3"></i>
-  :exclusive_consumer: true <a id="CO40-4"></a><i class="conum" data-value="4"></i>
-  :require_jars: <a id="CO40-5"></a><i class="conum" data-value="5"></i>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-yaml">mybroker: <a id="CO44-1"></a><i class="conum" data-value="1"></i>
+  :broker_url: 'ssl://localhost:61617' <a id="CO44-2"></a><i class="conum" data-value="2"></i>
+  :factory: org.apache.activemq.ActiveMQConnectionFactory <a id="CO44-3"></a><i class="conum" data-value="3"></i>
+  :exclusive_consumer: true <a id="CO44-4"></a><i class="conum" data-value="4"></i>
+  :require_jars: <a id="CO44-5"></a><i class="conum" data-value="5"></i>
     - /usr/share/jms/activemq-all-5.15.9.jar
     - /usr/share/jms/log4j-1.2.17.jar</pre>
 </div>
@@ -388,7 +392,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO40-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO44-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Section name for this broker definition. This should be the value of <code class="literal">yaml_section</code> in the logstash configuration file.
@@ -397,7 +401,7 @@ Note that multiple sections can co-exist in the same yaml file.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO40-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO44-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Full url of the broker. See your JMS Provider documentation for details.</p>
@@ -405,7 +409,7 @@ Note that multiple sections can co-exist in the same yaml file.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO40-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO44-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Full name (including package name) of Java connection factory used to create a connection with your JMS provider.</p>
@@ -413,7 +417,7 @@ Note that multiple sections can co-exist in the same yaml file.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO40-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO44-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Implementation specific configuration parameters to be used with the connection factory specified.
@@ -425,7 +429,7 @@ documentation for implementation specific details.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO40-5"><i class="conum" data-value="5"></i></a></p>
+<p><a href="#CO44-5"><i class="conum" data-value="5"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>List of jars required by the JMS provider. Paths should be the fully qualified location of all jar files required
@@ -449,9 +453,10 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <h4 class="title"><a id="_logstash_configuration_for_jndi_connection_for_configs_including_yaml"></a>Logstash Configuration for JNDI Connection (for configs including yaml)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> input {
     jms {
-        # Logstash specific configuration settings <a id="CO41-1"></a><i class="conum" data-value="1"></i>
+        # Logstash specific configuration settings <a id="CO45-1"></a><i class="conum" data-value="1"></i>
         include_headers =&gt; false
         include_properties =&gt; false
         include_body =&gt; true
@@ -459,8 +464,8 @@ by the JMS provider. This list may also include dependent jars as well as specif
         destination =&gt; "myqueue"
         pub_sub =&gt; false
         # Location of yaml file, and which section to use for configuration
-        yaml_file =&gt; "~/jms.yml"  <a id="CO41-2"></a><i class="conum" data-value="2"></i>
-        yaml_section =&gt; "mybroker" <a id="CO41-3"></a><i class="conum" data-value="3"></i>
+        yaml_file =&gt; "~/jms.yml"  <a id="CO45-2"></a><i class="conum" data-value="2"></i>
+        yaml_section =&gt; "mybroker" <a id="CO45-3"></a><i class="conum" data-value="3"></i>
     }
  }</pre>
 </div>
@@ -468,7 +473,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO41-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO45-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Configuration settings</p>
@@ -476,7 +481,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO41-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO45-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Full path to a yaml file containing the definition for the ConnectionFactory.</p>
@@ -484,7 +489,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO41-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO45-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Section name in the yaml file of the ConnectionFactory for this plugin definition</p>
@@ -499,14 +504,15 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <h4 class="title"><a id="_yaml_file_for_jndi_connection"></a>Yaml File for JNDI Connection<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-yaml">
-<pre class="programlisting prettyprint lang-yaml">solace: <a id="CO42-1"></a><i class="conum" data-value="1"></i>
-  :jndi_name: /jms/cf/default <a id="CO42-2"></a><i class="conum" data-value="2"></i>
-  :jndi_context: <a id="CO42-3"></a><i class="conum" data-value="3"></i>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-yaml">solace: <a id="CO46-1"></a><i class="conum" data-value="1"></i>
+  :jndi_name: /jms/cf/default <a id="CO46-2"></a><i class="conum" data-value="2"></i>
+  :jndi_context: <a id="CO46-3"></a><i class="conum" data-value="3"></i>
     java.naming.factory.initial: com.solacesystems.jndi.SolJNDIInitialContextFactory
     java.naming.security.principal: solace-cloud-client@user
     java.naming.provider.url: tcp://address.messaging.solace.cloud:20608
     java.naming.security.credentials: verysecret
-  :require_jars: <a id="CO42-4"></a><i class="conum" data-value="4"></i>
+  :require_jars: <a id="CO46-4"></a><i class="conum" data-value="4"></i>
     - /usr/share/jms/commons-lang-2.6.jar
     - /usr/share/jms/sol-jms-10.5.0.jar
     - /usr/share/jms/geronimo-jms_1.1_spec-1.1.1.jar
@@ -516,7 +522,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 <table border="0" summary="Callout list">
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO42-1"><i class="conum" data-value="1"></i></a></p>
+<p><a href="#CO46-1"><i class="conum" data-value="1"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Section name for this broker definition. This should be the value of <code class="literal">yaml_section</code> in the Logstash configuration file.</p>
@@ -524,7 +530,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO42-2"><i class="conum" data-value="2"></i></a></p>
+<p><a href="#CO46-2"><i class="conum" data-value="2"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>Name of JNDI entry at which the Factory can be found</p>
@@ -532,7 +538,7 @@ by the JMS provider. This list may also include dependent jars as well as specif
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO42-3"><i class="conum" data-value="3"></i></a></p>
+<p><a href="#CO46-3"><i class="conum" data-value="3"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>JNDI context settings. Contains details of how to connect to JNDI server. See your JMS provider documentation for
@@ -541,7 +547,7 @@ implementation specific details.</p>
 </tr>
 <tr>
 <td align="left" valign="top" width="5%">
-<p><a href="#CO42-4"><i class="conum" data-value="4"></i></a></p>
+<p><a href="#CO46-4"><i class="conum" data-value="4"></i></a></p>
 </td>
 <td align="left" valign="top">
 <p>List of jars required by the JMS provider. Paths should be the fully qualified location of all jar files required
@@ -566,6 +572,7 @@ This can be set in the yaml file, or in the main configuration if a yaml file is
 <h4 class="title"><a id="_logstash_configuration"></a>Logstash configuration<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> input {
     jms {
               :
@@ -594,19 +601,23 @@ This can be set in the yaml file, or in the main configuration if a yaml file is
  vendor requires to run. This issue can manifest in different ways, depending on where the missing jar file is discovered.</p>
 <p>Example log output:</p>
 <div class="pre_wrapper lang-txt">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-txt">  Failed to load JMS Connection, likely because a JMS Provider is not on the Logstash classpath or correctly
   specified by the plugin's `require_jars` directive
   {:exception=&gt;"cannot load Java class javax.jms.DeliveryMode"</pre>
 </div>
 <div class="pre_wrapper lang-txt">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-txt">  JMS Consumer Died {:exception=&gt;"Java::JavaxNaming::NoInitialContextException",
                      :exception_message=&gt;"Cannot instantiate class:"</pre>
 </div>
 <div class="pre_wrapper lang-txt">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-txt">  warning: thread "[main]&lt;jms" terminated with exception (report_on_exception is true):
   java.lang.NoClassDefFoundError: org/apache/commons/lang/exception/NestableException</pre>
 </div>
 <div class="pre_wrapper lang-txt">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-txt">  JMS Consumer Died {:exception=&gt;"Java::JavaxJms::JMSException", :exception_message=&gt;"io/netty/channel/epoll/Epoll",
   :root_cause=&gt;{:exception=&gt;"Java::JavaLang::NoClassDefFoundError", :exception_message=&gt;"io/netty/channel/epoll/Epoll"}</pre>
 </div>
@@ -659,6 +670,7 @@ single quoted, and numeric property values not quoted at all.</p>
 <p>Messages from certain JMS providers may contain headers or properties that Logstash cannot interpret, which can lead to
 error messages such as:</p>
 <div class="pre_wrapper lang-txt">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-txt">[2019-11-25T08:04:28,769][ERROR][logstash.inputs.jms      ] Failed to create event {:message=&gt;Java::ComSolacesystemsJmsMessage::SolTextMessage: ...
 Attributes: {:jms_correlation_id=&gt;"xxxx", :jms_delivery_mode_sym=&gt;:non_persistent, :jms_destination=&gt;"destination", :jms_expiration=&gt;0, :jms_message_id=&gt;"xxxxxx", :jms_priority=&gt;0, :jms_redelivered=&gt;false, :jms_reply_to=&gt;#&lt;Java::ComSolacesystemsJmsImpl::SolTopicImpl:0xdeadbeef&gt;, :jms_timestamp=&gt;1574669008862, :jms_type=&gt;nil}
 Properties: nil, :exception=&gt;org.logstash.MissingConverterException: Missing Converter handling for full class name=com.solacesystems.jms.impl.SolTopicImpl, simple name=SolTopicImpl, :backtrace=&gt;["org.logstash.Valuefier.fallbackConvert(Valuefier.java:98)..."]}
@@ -671,6 +683,7 @@ the offending header or property in the message.</p>
 <p><code class="literal">jms_reply_to=&gt;#&lt;Java::ComSolacesystemsJmsImpl::SolTopicImpl:0xdeadbeef&gt;</code></p>
 <p>To avoid this error, the configuration should include the following line:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">skip_headers =&gt; ["jms_reply_to"]</pre>
 </div>
 </div>
@@ -681,7 +694,7 @@ the offending header or property in the message.</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-jms-options"></a>Jms Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -885,7 +898,7 @@ the offending header or property in the message.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -1040,7 +1053,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 The value of this setting affects the <em>default</em> value of <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-headers_target" title="headers_target"><code class="literal">headers_target</code></a> and
 <a class="xref" href="plugins-inputs-jms.html#plugins-inputs-jms-properties_target" title="properties_target"><code class="literal">properties_target</code></a>.</p>
 </div>
@@ -1183,6 +1196,7 @@ Message Body (optional)
 <p>Include standard JMS message header field values in the event.
 Example headers:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    {
         "jms_message_id" =&gt; "ID:amqhost-39547-1636977297920-71:1:1:1:1",
         "jms_timestamp" =&gt; 1636977329102,
@@ -1665,9 +1679,9 @@ For some known examples, see <a href="https://github.com/reidmorrison/jruby-jms/
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-jms-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-jms-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -1716,13 +1730,6 @@ For some known examples, see <a href="https://github.com/reidmorrison/jruby-jms/
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_26"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-jms-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-jms/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -1795,6 +1802,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 jms inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   jms {
     id =&gt; "my_plugin_id"

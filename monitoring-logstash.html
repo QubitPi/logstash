@@ -141,7 +141,7 @@ Hot threads.
 <p>You can use <a class="xref" href="monitoring-logstash.html#monitoring" title="APIs for monitoring Logstash">monitoring APIs</a> provided by Logstash
 to retrieve these metrics. These APIs are available by default without
 requiring any extra configuration.</p>
-<p>Alternatively, you can <a class="xref" href="configuring-logstash.html" title="Monitoring Logstash">configure X-Pack monitoring</a> to send
+<p>Alternatively, you can <a class="xref" href="configuring-logstash.html" title="Monitoring Logstash (legacy)">configure X-Pack monitoring</a> to send
 data to a monitoring cluster.</p>
 <div class="note admon">
 <div class="icon"></div>
@@ -151,8 +151,7 @@ data to a monitoring cluster.</p>
 </div>
 </div>
 <h2><a id="monitoring"></a>APIs for monitoring Logstash<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h2>
-<p>Logstash provides monitoring APIs for retrieving runtime metrics
-about Logstash:</p>
+<p>Logstash provides monitoring APIs for retrieving runtime information about Logstash:</p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -167,18 +166,23 @@ about Logstash:</p>
 <li class="listitem">
 <a class="xref" href="hot-threads-api.html" title="Hot Threads API">Hot Threads API</a>
 </li>
+<li class="listitem">
+<a class="xref" href="logstash-health-report-api.html" title="Health report API">Health report API</a>
+</li>
 </ul>
 </div>
 <p>You can use the root resource to retrieve general information about the Logstash instance, including
 the host and version.</p>
 <div class="pre_wrapper lang-js">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-js">curl -XGET 'localhost:9600/?pretty'</pre>
 </div>
 <p>Example response:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">{
    "host": "skywalker",
-   "version": "8.10.0",
+   "version": "8.15.0",
    "http_address": "127.0.0.1:9600"
 }</pre>
 </div>
@@ -218,7 +222,7 @@ will be pretty formatted (use it for debugging only!).</p>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
-<p>For Logstash 8.10.0, the <code class="literal">human</code> option is supported for the <a class="xref" href="hot-threads-api.html" title="Hot Threads API">Hot Threads API</a>
+<p>For Logstash 8.15.0, the <code class="literal">human</code> option is supported for the <a class="xref" href="hot-threads-api.html" title="Hot Threads API">Hot Threads API</a>
 only. When you specify <code class="literal">human=true</code>, the results are returned in plain text instead of
 JSON format. The default is false.</p>
 </div>
@@ -231,6 +235,7 @@ to the query string. This makes sense when the stats results are
 being consumed by a monitoring tool, rather than intended for human
 consumption.  The default for the <code class="literal">human</code> flag is
 <code class="literal">false</code>.</p>
+
 
 
 
@@ -278,6 +283,9 @@ consumption.  The default for the <code class="literal">human</code> flag is
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -289,16 +297,19 @@ consumption.  The default for the <code class="literal">human</code> flag is
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

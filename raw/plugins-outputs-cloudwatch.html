@@ -42,13 +42,13 @@
 A component of the <a class="xref" href="plugins-integrations-aws.html" title="AWS Integration Plugin">aws integration plugin</a>
 </li>
 <li class="listitem">
-Integration version: v7.1.5
+Integration version: v7.1.8
 </li>
 <li class="listitem">
-Released on: 2023-08-04
+Released on: 2024-07-26
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-integration-aws/blob/v7.1.5/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-integration-aws/blob/v7.1.8/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -56,16 +56,16 @@ Released on: 2023-08-04
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-cloudwatch-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_64"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_67"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-aws" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_63"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_67"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This output lets you aggregate and send metric data to AWS CloudWatch</p>
 </div>
@@ -98,7 +98,7 @@ future version.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_56"></a>Details:<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_details"></a>Details:<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>There are two ways to configure this plugin, and they can be used in
 combination: event fields &amp; per-output defaults</p>
@@ -130,7 +130,7 @@ and the specific of API endpoint this output uses,
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-outputs-cloudwatch-options"></a>Cloudwatch Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-cloudwatch.html#plugins-outputs-cloudwatch-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-cloudwatch.html#plugins-outputs-cloudwatch-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -249,7 +249,7 @@ and the specific of API endpoint this output uses,
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-cloudwatch.html#plugins-outputs-cloudwatch-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-cloudwatch.html#plugins-outputs-cloudwatch-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -307,6 +307,7 @@ This file will only be loaded if <code class="literal">access_key_id</code> and
 <code class="literal">secret_access_key</code> aren&#8217;t set. The contents of the
 file should look like this:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    :access_key_id: "12345"
     :secret_access_key: "54321"</pre>
 </div>
@@ -653,9 +654,9 @@ If you set this option you should probably set the <code class="literal">unit</c
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-cloudwatch-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-cloudwatch-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-cloudwatch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -744,6 +745,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 cloudwatch outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   cloudwatch {
     id =&gt; "my_plugin_id"

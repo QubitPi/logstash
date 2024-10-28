@@ -137,15 +137,15 @@ Released on: 2022-01-24
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-ruby-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_153"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_158"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-ruby" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_151"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_157"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Execute ruby code. This filter accepts inline ruby code or a ruby file.
 The two options are mutually exclusive and have slightly different ways of working,
@@ -163,6 +163,7 @@ which are described below.</p>
 <p>To add inline ruby in your filter, place all code in the <code class="literal">code</code> option. This code will be executed for every event the filter receives. You can also place ruby code in the <code class="literal">init</code> option. It will be executed only once during the plugin&#8217;s register phase.</p>
 <p>For example, to cancel 90% of events, you can do this:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       ruby {
         # Cancel 90% of events
@@ -172,6 +173,7 @@ which are described below.</p>
 </div>
 <p>If you need to create additional events, you must use a specific syntax <code class="literal">new_event_block.call(event)</code> like in this example duplicating the input event</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">filter {
   ruby {
     code =&gt; "new_event_block.call(event.clone)"
@@ -192,6 +194,7 @@ which are described below.</p>
 </div></div></div>
 <p>As the inline code can become complex and hard to structure inside of a text string in <code class="literal">code</code>, it&#8217;s then preferable to place the Ruby code in a .rb file, using the <code class="literal">path</code> option.</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       ruby {
         # Cancel 90% of events
@@ -213,6 +216,7 @@ which are described below.</p>
 </div>
 <p>Below is an example implementation of the <code class="literal">drop_percentage.rb</code> ruby script that drops a configurable percentage of events:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"># the value of `params` is the value of the hash passed to `script_params`
 # in the logstash configuration
 def register(params)
@@ -246,6 +250,7 @@ prevent it from starting if a test fails.</p>
 <p>For example above, you can write at the bottom of the <code class="literal">drop_percentage.rb</code>
 ruby script the following test:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">def register(params)
   # ..
 end
@@ -268,6 +273,7 @@ end</pre>
 </div>
 <p>We can now test that the ruby script we&#8217;re using is implemented correctly:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">% bin/logstash -e "filter { ruby { path =&gt; '/etc/logstash/drop_percentage.rb' script_params =&gt; { 'drop_percentage' =&gt; 0.5 } } }" -t
 [2017-10-13T13:44:29,723][INFO ][logstash.filters.ruby.script] Test run complete {:script_path=&gt;"/etc/logstash/drop_percentage.rb", :results=&gt;{:passed=&gt;1, :failed=&gt;0, :errored=&gt;0}}
 Configuration OK
@@ -336,7 +342,7 @@ Constants: begin with a capital letter.
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-filters-ruby-options"></a>Ruby Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-ruby.html#plugins-filters-ruby-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-ruby.html#plugins-filters-ruby-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -385,7 +391,7 @@ Constants: begin with a capital letter.
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-filters-ruby.html#plugins-filters-ruby-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-filters-ruby.html#plugins-filters-ruby-common-options" title="Common options">Common options</a> for a list of options supported by all
 filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -504,9 +510,9 @@ and the exception message.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-ruby-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-filters-ruby-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-ruby/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all filter plugins:</p>
+<p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -578,6 +584,7 @@ Default value is <code class="literal">{}</code>
 Field names can be dynamic and include parts of the event using the <code class="literal">%{field}</code>.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       ruby {
         add_field =&gt; { "foo_%{somefield}" =&gt; "Hello world, from %{host}" }
@@ -585,6 +592,7 @@ Field names can be dynamic and include parts of the event using the <code class=
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple fields at once:
     filter {
       ruby {
@@ -620,6 +628,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       ruby {
         add_tag =&gt; [ "foo_%{somefield}" ]
@@ -627,6 +636,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple tags at once:
     filter {
       ruby {
@@ -676,6 +686,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 ruby filters.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       ruby {
         id =&gt; "ABC"
@@ -727,6 +738,7 @@ Default value is <code class="literal">[]</code>
 Fields names can be dynamic and include parts of the event using the %{field}
 Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       ruby {
         remove_field =&gt; [ "foo_%{somefield}" ]
@@ -734,6 +746,7 @@ Example:</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple fields at once:
     filter {
       ruby {
@@ -765,6 +778,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       ruby {
         remove_tag =&gt; [ "foo_%{somefield}" ]
@@ -772,6 +786,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple tags at once:
     filter {
       ruby {
@@ -829,6 +844,9 @@ would remove a sad, unwanted tag as well.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -840,16 +858,19 @@ would remove a sad, unwanted tag as well.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

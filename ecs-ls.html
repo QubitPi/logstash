@@ -119,7 +119,7 @@
 <div class="titlepage"><div><div>
 <h2 class="title"><a id="ecs-ls"></a>ECS in Logstash<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ecs-compatibility.asciidoc">edit</a></h2>
 </div></div></div>
-<p>The <a href="https://www.elastic.co/guide/en/ecs/8.10/index.html" class="ulink" target="_top">Elastic Common Schema (ECS)</a> is an open source specification, developed with support from the Elastic user community.
+<p>The <a href="https://www.elastic.co/guide/en/ecs/8.11/index.html" class="ulink" target="_top">Elastic Common Schema (ECS)</a> is an open source specification, developed with support from the Elastic user community.
 ECS defines a common set of fields to be used for storing event data, such as logs and metrics, in Elasticsearch.
 With ECS, users can normalize event data to better analyze, visualize, and correlate the data represented in their events.</p>
 <div class="section">
@@ -145,6 +145,7 @@ This can be helpful if you have very complex pipelines that were defined pre-ECS
 <p>Use a plugin&#8217;s <code class="literal">ecs_compatibility</code> option to override the default value on the plugin instance.</p>
 <p>For example, if you want a specific instance of the GeoIP Filter to behave without ECS compatibility, you can adjust its definition in your pipeline without affecting any other plugin instances.</p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">filter {
   geoip {
     source =&gt; "[host][ip]"
@@ -154,6 +155,7 @@ This can be helpful if you have very complex pipelines that were defined pre-ECS
 </div>
 <p>Alternatively, if you had a UDP input with a CEF codec, and wanted both to use an ECS mode while still running Logstash 7, you can adjust their definitions to specify the major version of ECS to use.</p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">input {
   udp {
     port =&gt; 1234
@@ -175,6 +177,7 @@ This setting will be used unless overridden by a specific plugin instance.
 If unspecified for an individual pipeline, the global value will be used.</p>
 <p>For example, setting <code class="literal">pipeline.ecs_compatibility: disabled</code> for a pipeline <em>locks in</em> that pipeline&#8217;s pre-Logstash 8 behavior.</p>
 <div class="pre_wrapper lang-yaml">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-yaml">- pipeline.id: my-legacy-pipeline
   path.config: "/etc/path/to/legacy-pipeline.config"
   pipeline.ecs_compatibility: disabled
@@ -190,6 +193,7 @@ If unspecified for an individual pipeline, the global value will be used.</p>
 </div></div></div>
 <p>Similarly, you can set the default value for the whole Logstash process by setting the <code class="literal">pipeline.ecs_compatibility</code> value in <code class="literal">config/logstash.yml</code>.</p>
 <div class="pre_wrapper lang-yaml">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-yaml">pipeline.ecs_compatibility: disabled</pre>
 </div>
 </div>
@@ -241,6 +245,9 @@ If unspecified for an individual pipeline, the global value will be used.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -252,16 +259,19 @@ If unspecified for an individual pipeline, the global value will be used.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

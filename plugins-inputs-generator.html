@@ -137,15 +137,15 @@ Released on: 2021-11-04
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-generator-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_18"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_20"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-generator" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_18"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_21"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Generate random log events.</p>
 <p>The general intention of this is to test performance of plugins.</p>
@@ -156,7 +156,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-generator-ecs"></a>Compatibility with the Elastic Common Schema (ECS)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin uses different field names depending on whether <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">ECS-compatibility</a>
+<p>This plugin uses different field names depending on whether <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">ECS-compatibility</a>
 in enabled (see also <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-ecs_compatibility" title="ecs_compatibility"><code class="literal">ecs_compatibility</code></a>).</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
@@ -192,7 +192,7 @@ in enabled (see also <a class="xref" href="plugins-inputs-generator.html#plugins
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-generator-options"></a>Generator Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -236,7 +236,7 @@ in enabled (see also <a class="xref" href="plugins-inputs-generator.html#plugins
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -281,10 +281,11 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator-ecs" title="Compatibility with the Elastic Common Schema (ECS)">Compatibility with the Elastic Common Schema (ECS)</a> for detailed information.</p>
 <p><span class="strong strong"><strong>Sample output: ECS enabled</strong></span></p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">{
     "message" =&gt; "Hello world!",
     "event" =&gt; {
@@ -297,6 +298,7 @@ See <a class="xref" href="plugins-inputs-generator.html#plugins-inputs-generator
 </div>
 <p><span class="strong strong"><strong>Sample output: ECS disabled</strong></span></p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">{
     "message" =&gt; "Hello world!",
     "sequence" =&gt; 0,
@@ -323,6 +325,7 @@ There is no default value for this setting.
 setting.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    input {
       generator {
         lines =&gt; [
@@ -378,9 +381,9 @@ Default value is <code class="literal">1</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-generator-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-generator-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -429,13 +432,6 @@ Default value is <code class="literal">1</code>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_13"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-generator-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-generator/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -508,6 +504,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 generator inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   generator {
     id =&gt; "my_plugin_id"
@@ -611,6 +608,9 @@ when sent to another Logstash server.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -622,16 +622,19 @@ when sent to another Logstash server.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

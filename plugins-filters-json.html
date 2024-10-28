@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v3.2.0
+Plugin version: v3.2.1
 </li>
 <li class="listitem">
-Released on: 2021-06-17
+Released on: 2023-12-18
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-filter-json/blob/v3.2.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-filter-json/blob/v3.2.1/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2021-06-17
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-json-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_144"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_149"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-json" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_142"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_148"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This is a JSON parsing filter. It takes an existing field which contains JSON and
 expands it into an actual data structure within the Logstash event.</p>
@@ -178,7 +178,7 @@ parsing fails, the field will be renamed to <code class="literal">_@timestamp</c
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-filters-json-options"></a>JSON Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-json.html#plugins-filters-json-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-json.html#plugins-filters-json-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -222,7 +222,7 @@ parsing fails, the field will be renamed to <code class="literal">_@timestamp</c
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-filters-json.html#plugins-filters-json-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-filters-json.html#plugins-filters-json-common-options" title="Common options">Common options</a> for a list of options supported by all
 filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -250,7 +250,7 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </ul>
 </div>
 <p>Controls this plugin&#8217;s compatibility with the
-<a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-filters-json.html#plugins-filters-json-ecs_metadata" title="Event Metadata and the Elastic Common Schema (ECS)">Event Metadata and the Elastic Common Schema (ECS)</a> for detailed information.</p>
 </div>
 
@@ -290,10 +290,12 @@ There is no default value for this setting.
 </div>
 <p>The configuration for the JSON filter:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    source =&gt; source_field</pre>
 </div>
 <p>For example, if you have JSON data in the <code class="literal">message</code> field:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       json {
         source =&gt; "message"
@@ -339,6 +341,7 @@ There is no default value for this setting.
 omitted, the JSON data will be stored at the root (top level) of the event.</p>
 <p>For example, if you want the data to be put in the <code class="literal">doc</code> field:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       json {
         target =&gt; "doc"
@@ -359,9 +362,9 @@ data structure in the <code class="literal">target</code> field.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-json-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-filters-json-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-json/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all filter plugins:</p>
+<p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -433,6 +436,7 @@ Default value is <code class="literal">{}</code>
 Field names can be dynamic and include parts of the event using the <code class="literal">%{field}</code>.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       json {
         add_field =&gt; { "foo_%{somefield}" =&gt; "Hello world, from %{host}" }
@@ -440,6 +444,7 @@ Field names can be dynamic and include parts of the event using the <code class=
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple fields at once:
     filter {
       json {
@@ -475,6 +480,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       json {
         add_tag =&gt; [ "foo_%{somefield}" ]
@@ -482,6 +488,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple tags at once:
     filter {
       json {
@@ -531,6 +538,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 json filters.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       json {
         id =&gt; "ABC"
@@ -582,6 +590,7 @@ Default value is <code class="literal">[]</code>
 Fields names can be dynamic and include parts of the event using the %{field}
 Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       json {
         remove_field =&gt; [ "foo_%{somefield}" ]
@@ -589,6 +598,7 @@ Example:</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple fields at once:
     filter {
       json {
@@ -620,6 +630,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       json {
         remove_tag =&gt; [ "foo_%{somefield}" ]
@@ -627,6 +638,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple tags at once:
     filter {
       json {
@@ -684,6 +696,9 @@ would remove a sad, unwanted tag as well.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -695,16 +710,19 @@ would remove a sad, unwanted tag as well.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

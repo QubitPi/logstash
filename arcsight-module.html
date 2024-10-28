@@ -9,7 +9,7 @@
 <link rel="home" href="index.html" title="Logstash Reference"/>
 <link rel="up" href="logstash-modules.html" title="Working with Logstash Modules"/>
 <link rel="prev" href="logstash-modules.html" title="Working with Logstash Modules"/>
-<link rel="next" href="netflow-module.html" title="Logstash Netflow Module"/>
+<link rel="next" href="filebeat-modules.html" title="Working with Filebeat Modules"/>
 <meta class="elastic" name="product_version" content=""/>
 <meta class="elastic" name="product_name" content=""/>
 <meta class="elastic" name="website_area" content="documentation"/>
@@ -112,7 +112,7 @@
 <a href="logstash-modules.html">« Working with Logstash Modules</a>
 </span>
 <span class="next">
-<a href="netflow-module.html">Logstash Netflow Module »</a>
+<a href="filebeat-modules.html">Working with Filebeat Modules »</a>
 </span>
 </div>
 <div class="section xpack">
@@ -120,6 +120,13 @@
 <h2 class="title"><a id="arcsight-module"></a>Logstash ArcSight Module<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/arcsight-module.asciidoc">edit</a></h2>
 </div></div></div>
 
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 8.16.0.</h3>
+<p>Replace by <a href="https://docs.elastic.co/integrations/cef" class="ulink" target="_top">Common Event Format (CEF)</a> from Elastic Integrations</p>
+</div>
+</div>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -134,6 +141,12 @@ information.</p>
 With a single command, the module taps directly into the ArcSight Smart Connector or the Event Broker,
 parses and indexes the security events into Elasticsearch, and installs a suite of Kibana dashboards
 to get you exploring your data immediately.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>The Logstash ArsSight Module has been deprecated and replaced by <a href="https://docs.elastic.co/integrations/cef" class="ulink" target="_top">Common Event Format (CEF)</a> from Elastic Integrations.</p>
+</div>
+</div>
 <div class="section">
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="arcsight-prereqs"></a>Prerequisites<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/arcsight-module.asciidoc">edit</a></h3>
@@ -198,6 +211,7 @@ Elasticsearch, Kibana and Logstash on separate hosts to consume data from ArcSig
 <p>Start the Logstash ArcSight module by running the following command in the
 Logstash install directory with your respective Smart Connector host and port:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash --modules arcsight --setup \
   -M "arcsight.var.input.smartconnector.port=smart_connect_port"  \
   -M "arcsight.var.elasticsearch.hosts=localhost:9200"  \
@@ -267,6 +281,7 @@ Elasticsearch, Kibana and Logstash on separate hosts to consume data from ArcSig
 <p>Start the Logstash ArcSight module by running the following command in the
 Logstash install directory with your respective Event Broker host and port:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash --modules arcsight --setup \
  -M "arcsight.var.input.eventbroker.bootstrap_servers=event_broker_host:event_broker_port"  \
  -M "arcsight.var.elasticsearch.hosts=localhost:9200"  \
@@ -415,6 +430,7 @@ like in the getting started. For more information about configuring modules, see
 <p>As an example, the following settings can be appended to <code class="literal">logstash.yml</code> to
 configure your module:</p>
 <div class="pre_wrapper lang-yaml">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-yaml">modules:
   - name: arcsight
     var.input.eventbroker.bootstrap_servers: "eb_host:39092"
@@ -706,6 +722,7 @@ There is no default value for this setting.
 <p>The Java Authentication and Authorization Service (JAAS) API supplies user authentication and authorization
 services for Kafka. This setting provides the path to the JAAS file. Sample JAAS file for Kafka client:</p>
 <div class="pre_wrapper lang-java">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-java">KafkaClient {
   com.sun.security.auth.module.Krb5LoginModule required
   useTicketCache=true
@@ -1218,7 +1235,7 @@ with Kibana.</p>
 <a href="logstash-modules.html">« Working with Logstash Modules</a>
 </span>
 <span class="next">
-<a href="netflow-module.html">Logstash Netflow Module »</a>
+<a href="filebeat-modules.html">Working with Filebeat Modules »</a>
 </span>
 </div>
 </div>
@@ -1255,6 +1272,9 @@ with Kibana.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1266,16 +1286,19 @@ with Kibana.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

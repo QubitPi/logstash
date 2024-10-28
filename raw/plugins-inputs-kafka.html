@@ -42,13 +42,13 @@
 A component of the <a class="xref" href="plugins-integrations-kafka.html" title="Kafka Integration Plugin">kafka integration plugin</a>
 </li>
 <li class="listitem">
-Integration version: v11.3.0
+Integration version: v11.5.2
 </li>
 <li class="listitem">
-Released on: 2023-07-04
+Released on: 2024-10-04
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-integration-kafka/blob/v11.3.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-integration-kafka/blob/v11.5.2/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -56,16 +56,16 @@ Released on: 2023-07-04
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-kafka-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_33"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_35"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-kafka" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_32"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_35"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This input will read events from a Kafka topic.</p>
 <p>This plugin uses Kafka Client 3.4. For broker compatibility, see the
@@ -146,7 +146,7 @@ inserted into your original event, you&#8217;ll have to use the <code class="lit
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-kafka-options"></a>Kafka Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports these configuration options plus the <a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports these configuration options plus the <a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-common-options" title="Common options">Common options</a> described later.</p>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -173,6 +173,11 @@ See the <a href="https://kafka.apache.org/34/documentation" class="ulink" target
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-auto_commit_interval_ms" title="auto_commit_interval_ms"><code class="literal">auto_commit_interval_ms</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#number" title="Number">number</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-auto_create_topics" title="auto_create_topics "><code class="literal">auto_create_topics</code> </a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#boolean" title="Boolean">boolean</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
@@ -331,6 +336,11 @@ See the <a href="https://kafka.apache.org/34/documentation" class="ulink" target
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-sasl_client_callback_handler_class" title="sasl_client_callback_handler_class"><code class="literal">sasl_client_callback_handler_class</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-sasl_jaas_config" title="sasl_jaas_config"><code class="literal">sasl_jaas_config</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
@@ -473,7 +483,7 @@ See the <a href="https://kafka.apache.org/34/documentation" class="ulink" target
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-kafka.html#plugins-inputs-kafka-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -693,7 +703,7 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 <code class="literal">basic</code>: record&#8217;s attributes are added
 </li>
 <li class="listitem">
-<code class="literal">extended</code>: record&#8217;s attributes, headers are added
+<code class="literal">extended</code>: record&#8217;s attributes, headers are added (limited to headers with values using UTF-8 encoding)
 </li>
 <li class="listitem">
 <code class="literal">false</code>: deprecated alias for <code class="literal">none</code>
@@ -730,6 +740,17 @@ This will add a field named <code class="literal">kafka</code> to the logstash e
 </li>
 </ul>
 </div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-kafka-auto_create_topics"></a><code class="literal">auto_create_topics</code> <a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h4>
+</div></div></div>
+<p>  * Value type is <a class="xref" href="configuration-file-structure.html#boolean" title="Boolean">boolean</a>
+  * Default value is <code class="literal">true</code></p>
+<p>Controls whether the topic is automatically created when subscribing to a non-existent topic.
+A topic will be auto-created only if this configuration is set to <code class="literal">true</code> and auto-topic creation is enabled on the broker using <code class="literal">auto.create.topics.enable</code>;
+otherwise auto-topic creation is not permitted. </p>
 </div>
 
 <div class="section">
@@ -952,6 +973,7 @@ There is no default value for this setting.
 <p>The Java Authentication and Authorization Service (JAAS) API supplies user authentication and authorization
 services for Kafka. This setting provides the path to the JAAS file. Sample JAAS file for Kafka client:</p>
 <div class="pre_wrapper lang-java">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-java">KafkaClient {
   com.sun.security.auth.module.Krb5LoginModule required
   useTicketCache=true
@@ -1208,6 +1230,23 @@ to a given topic partition. This avoids repeated fetching-and-failing in a tight
 
 <div class="section">
 <div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-kafka-sasl_client_callback_handler_class"></a><code class="literal">sasl_client_callback_handler_class</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>The SASL client callback handler class the specified SASL mechanism should use.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-kafka-sasl_jaas_config"></a><code class="literal">sasl_jaas_config</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="ulist itemizedlist">
@@ -1224,6 +1263,7 @@ There is no default value for this setting.
 <p>If both <code class="literal">sasl_jaas_config</code> and <code class="literal">jaas_path</code> configurations are set, the setting here takes precedence.</p>
 <p>Example (setting for Azure Event Hub):</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    input {
       kafka {
         sasl_jaas_config =&gt; "org.apache.kafka.common.security.plain.PlainLoginModule required username='auser'  password='apassword';"
@@ -1721,9 +1761,9 @@ Use either the value_deserializer_class config option or the
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-kafka-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-kafka-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -1772,13 +1812,6 @@ Use either the value_deserializer_class config option or the
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_28"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-kafka-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-kafka/edit/main/docs/input-kafka.asciidoc">edit</a></h4>
@@ -1851,6 +1884,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 kafka inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   kafka {
     id =&gt; "my_plugin_id"

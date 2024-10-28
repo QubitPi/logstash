@@ -8,7 +8,7 @@
 <link rel="home" href="index.html" title="Logstash Reference"/>
 <link rel="up" href="filter-plugins.html" title="Filter plugins"/>
 <link rel="prev" href="plugins-filters-drop.html" title="Drop filter plugin"/>
-<link rel="next" href="plugins-filters-elasticsearch.html" title="Elasticsearch filter plugin"/>
+<link rel="next" href="plugins-filters-elastic_integration.html" title="Elastic Integration filter plugin"/>
 <meta class="elastic" name="product_version" content=""/>
 <meta class="elastic" name="product_name" content=""/>
 <meta class="elastic" name="website_area" content="documentation"/>
@@ -28,7 +28,7 @@
 <a href="plugins-filters-drop.html">« Drop filter plugin</a>
 </span>
 <span class="next">
-<a href="plugins-filters-elasticsearch.html">Elasticsearch filter plugin »</a>
+<a href="plugins-filters-elastic_integration.html">Elastic Integration filter plugin »</a>
 </span>
 </div>
 <div class="section">
@@ -53,22 +53,22 @@ Released on: 2018-07-31
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-elapsed-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_installation_59"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_installation_58"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For plugins not bundled by default, it is easy to install by running <code class="literal">bin/logstash-plugin install logstash-filter-elapsed</code>. See <a href="https://www.elastic.co/guide/en/logstash/master/working-with-plugins.html" class="ulink" target="_top">Working with plugins</a> for more details.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_132"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_136"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-elapsed" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_130"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_135"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>The elapsed filter tracks a pair of start/end events and uses their
 timestamps to calculate the elapsed time between them.</p>
@@ -76,6 +76,7 @@ timestamps to calculate the elapsed time between them.</p>
 other long tasks.</p>
 <p>The configuration looks like this:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       elapsed {
         start_tag =&gt; "start event tag"
@@ -95,6 +96,7 @@ particular task. The name of this field is stored in <code class="literal">uniqu
 <p>You can use a Grok filter to prepare the events for the elapsed filter.
 An example of configuration can be:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       grok {
         match =&gt; { "message" =&gt; "%{TIMESTAMP_ISO8601} START id: (?&lt;task_id&gt;.*)" }
@@ -164,7 +166,7 @@ the field <code class="literal">elapsed_timestamp_start</code> with the timestam
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-filters-elapsed-options"></a>Elapsed Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-elapsed.html#plugins-filters-elapsed-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-elapsed.html#plugins-filters-elapsed-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -213,7 +215,7 @@ the field <code class="literal">elapsed_timestamp_start</code> with the timestam
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-filters-elapsed.html#plugins-filters-elapsed-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-filters-elapsed.html#plugins-filters-elapsed-common-options" title="Common options">Common options</a> for a list of options supported by all
 filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -341,9 +343,9 @@ the last one will be used.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elapsed-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-filters-elapsed-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elapsed/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all filter plugins:</p>
+<p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -415,6 +417,7 @@ Default value is <code class="literal">{}</code>
 Field names can be dynamic and include parts of the event using the <code class="literal">%{field}</code>.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       elapsed {
         add_field =&gt; { "foo_%{somefield}" =&gt; "Hello world, from %{host}" }
@@ -422,6 +425,7 @@ Field names can be dynamic and include parts of the event using the <code class=
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple fields at once:
     filter {
       elapsed {
@@ -457,6 +461,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       elapsed {
         add_tag =&gt; [ "foo_%{somefield}" ]
@@ -464,6 +469,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple tags at once:
     filter {
       elapsed {
@@ -513,6 +519,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 elapsed filters.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       elapsed {
         id =&gt; "ABC"
@@ -564,6 +571,7 @@ Default value is <code class="literal">[]</code>
 Fields names can be dynamic and include parts of the event using the %{field}
 Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       elapsed {
         remove_field =&gt; [ "foo_%{somefield}" ]
@@ -571,6 +579,7 @@ Example:</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple fields at once:
     filter {
       elapsed {
@@ -602,6 +611,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       elapsed {
         remove_tag =&gt; [ "foo_%{somefield}" ]
@@ -609,6 +619,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple tags at once:
     filter {
       elapsed {
@@ -629,7 +640,7 @@ would remove a sad, unwanted tag as well.</p>
 <a href="plugins-filters-drop.html">« Drop filter plugin</a>
 </span>
 <span class="next">
-<a href="plugins-filters-elasticsearch.html">Elasticsearch filter plugin »</a>
+<a href="plugins-filters-elastic_integration.html">Elastic Integration filter plugin »</a>
 </span>
 </div>
 </div>

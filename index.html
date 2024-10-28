@@ -108,9 +108,6 @@
 </div>
 <div class="book" lang="en">
 <div class="titlepage">
-<div class="breadcrumbs" id="title-page-breadcrumb">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-</div>
 <div>
 <div><h1 class="title"><a id="logstash-reference"></a>Logstash Reference</h1></div>
 </div>
@@ -163,6 +160,8 @@
 </li>
 <li><span class="section"><a href="docker-config.html">Configuring Logstash for Docker</a></span>
 </li>
+<li><span class="section"><a href="running-logstash-kubernetes.html">Running Logstash on Kubernetes</a></span>
+</li>
 <li><span class="section"><a href="running-logstash-windows.html">Running Logstash on Windows</a></span>
 </li>
 <li><span class="section"><a href="logging.html">Logging</a></span>
@@ -211,8 +210,6 @@
 </li>
 <li><span class="section"><a href="glob-support.html">Glob Pattern Support</a></span>
 </li>
-<li><span class="section"><a href="ingest-converter.html">Converting Ingest Node Pipelines</a></span>
-</li>
 </ul>
 </li>
 <li><span class="chapter"><a href="ls-to-ls.html">Logstash-to-Logstash communication</a></span>
@@ -220,6 +217,8 @@
 <li><span class="section"><a href="ls-to-ls-lumberjack.html">Logstash-to-Logstash: Lumberjack output to Beats input</a></span>
 </li>
 <li><span class="section"><a href="ls-to-ls-http.html">Logstash-to-Logstash: HTTP output to HTTP input</a></span>
+</li>
+<li><span class="section"><a href="ls-to-ls-native.html">Logstash-to-Logstash: Output to Input</a></span>
 </li>
 </ul>
 </li>
@@ -231,13 +230,11 @@
 </li>
 </ul>
 </li>
+<li><span class="chapter"><a href="ea-integrations.html">Using Logstash with Elastic Integrations</a></span>
+</li>
 <li><span class="chapter"><a href="logstash-modules.html">Working with Logstash Modules</a></span>
 <ul>
-<li><span class="section"><a href="arcsight-module.html">ArcSight Module</a></span>
-</li>
-<li><span class="section"><a href="netflow-module.html">Netflow Module (deprecated)</a></span>
-</li>
-<li><span class="section"><a href="azure-module.html">Azure Module (deprecated)</a></span>
+<li><span class="section"><a href="arcsight-module.html">ArcSight Module (deprecated)</a></span>
 </li>
 </ul>
 </li>
@@ -275,18 +272,34 @@
 </li>
 <li><span class="chapter"><a href="deploying-and-scaling.html">Deploying and Scaling Logstash</a></span>
 </li>
-<li><span class="chapter"><a href="performance-tuning.html">Performance Tuning</a></span>
+<li><span class="chapter"><a href="geoip-database-management.html">Managing GeoIP Databases</a></span>
 <ul>
-<li><span class="section"><a href="performance-troubleshooting.html">Performance Troubleshooting</a></span>
+<li><span class="section"><a href="logstash-geoip-database-management.html">GeoIP Database Management</a></span>
 </li>
-<li><span class="section"><a href="tuning-logstash.html">Tuning and Profiling Logstash Performance</a></span>
+<li><span class="section"><a href="configuring-geoip-database-management.html">Configure GeoIP Database Management</a></span>
 </li>
 </ul>
 </li>
-<li><span class="chapter"><a href="configuring-logstash.html">Monitoring Logstash</a></span>
+<li><span class="chapter"><a href="performance-tuning.html">Performance tuning</a></span>
 <ul>
-<li><span class="section"><a href="monitoring-with-elastic-agent.html">Elastic Agent collection</a></span>
+<li><span class="section"><a href="performance-troubleshooting.html">Performance troubleshooting</a></span>
 </li>
+<li><span class="section"><a href="tuning-logstash.html">Tuning and profiling logstash pipeline performance</a></span>
+</li>
+</ul>
+</li>
+<li><span class="chapter"><a href="monitoring-with-ea.html">Monitoring Logstash with Elastic Agent</a></span>
+<ul>
+<li><span class="section"><a href="dashboard-monitoring-with-elastic-agent.html">Collect monitoring data for dashboards</a></span>
+</li>
+<li><span class="section"><a href="serverless-monitoring-with-elastic-agent.html">Collect monitoring data for dashboards (serverless )</a></span>
+</li>
+<li><span class="section"><a href="monitoring-with-elastic-agent.html">Collect monitoring data for stack monitoring</a></span>
+</li>
+</ul>
+</li>
+<li><span class="chapter"><a href="configuring-logstash.html">Monitoring Logstash (legacy)</a></span>
+<ul>
 <li><span class="section"><a href="monitoring-with-metricbeat.html">Metricbeat collection</a></span>
 </li>
 <li><span class="section"><a href="monitoring-internal-collection-legacy.html">Legacy collection (deprecated)</a></span>
@@ -308,6 +321,8 @@
 <li><span class="section"><a href="node-stats-api.html">Node Stats API</a></span>
 </li>
 <li><span class="section"><a href="hot-threads-api.html">Hot Threads API</a></span>
+</li>
+<li><span class="section"><a href="logstash-health-report-api.html">Health report API</a></span>
 </li>
 </ul>
 </li>
@@ -335,7 +350,11 @@
 </li>
 <li><span class="section"><a href="plugins-integrations-kafka.html">kafka</a></span>
 </li>
+<li><span class="section"><a href="plugins-integrations-logstash.html">logstash</a></span>
+</li>
 <li><span class="section"><a href="plugins-integrations-rabbitmq.html">rabbitmq</a></span>
+</li>
+<li><span class="section"><a href="plugins-integrations-snmp.html">snmp</a></span>
 </li>
 </ul>
 </li>
@@ -398,6 +417,8 @@
 <li><span class="section"><a href="plugins-inputs-kafka.html">kafka</a></span>
 </li>
 <li><span class="section"><a href="plugins-inputs-kinesis.html">kinesis</a></span>
+</li>
+<li><span class="section"><a href="plugins-inputs-logstash.html">logstash</a></span>
 </li>
 <li><span class="section"><a href="plugins-inputs-log4j.html">log4j</a></span>
 </li>
@@ -511,6 +532,8 @@
 </li>
 <li><span class="section"><a href="plugins-outputs-librato.html">librato</a></span>
 </li>
+<li><span class="section"><a href="plugins-outputs-logstash.html">logstash</a></span>
+</li>
 <li><span class="section"><a href="plugins-outputs-loggly.html">loggly</a></span>
 </li>
 <li><span class="section"><a href="plugins-outputs-lumberjack.html">lumberjack</a></span>
@@ -602,6 +625,8 @@
 <li><span class="section"><a href="plugins-filters-drop.html">drop</a></span>
 </li>
 <li><span class="section"><a href="plugins-filters-elapsed.html">elapsed</a></span>
+</li>
+<li><span class="section"><a href="plugins-filters-elastic_integration.html">elastic_integration</a></span>
 </li>
 <li><span class="section"><a href="plugins-filters-elasticsearch.html">elasticsearch</a></span>
 </li>
@@ -743,6 +768,10 @@
 </li>
 <li><span class="section"><a href="ts-plugins.html">Troubleshooting specific plugins</a></span>
 </li>
+<li><span class="section"><a href="health-report-pipeline-status.html">Health Report Pipeline Status</a></span>
+</li>
+<li><span class="section"><a href="health-report-pipeline-flow-worker-utilization.html">Health Report Pipeline Flow: Worker Utilization</a></span>
+</li>
 </ul>
 </li>
 <li><span class="chapter"><a href="contributing-to-logstash.html">Contributing to Logstash</a></span>
@@ -795,6 +824,56 @@
 </li>
 <li><span class="chapter"><a href="releasenotes.html">Release Notes</a></span>
 <ul>
+<li><span class="section"><a href="logstash-8-15-2.html">Logstash 8.15.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-15-1.html">Logstash 8.15.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-15-0.html">Logstash 8.15.0 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-14-3.html">Logstash 8.14.3 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-14-2.html">Logstash 8.14.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-14-1.html">Logstash 8.14.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-14-0.html">Logstash 8.14.0 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-13-4.html">Logstash 8.13.4 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-13-3.html">Logstash 8.13.3 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-13-2.html">Logstash 8.13.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-13-1.html">Logstash 8.13.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-13-0.html">Logstash 8.13.0 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-12-2.html">Logstash 8.12.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-12-1.html">Logstash 8.12.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-12-0.html">Logstash 8.12.0 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-11-4.html">Logstash 8.11.4 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-11-3.html">Logstash 8.11.3 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-11-2.html">Logstash 8.11.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-11-1.html">Logstash 8.11.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-11-0.html">Logstash 8.11.0 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-10-4.html">Logstash 8.10.4 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-10-3.html">Logstash 8.10.3 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-10-2.html">Logstash 8.10.2 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-10-1.html">Logstash 8.10.1 Release Notes</a></span>
+</li>
+<li><span class="section"><a href="logstash-8-10-0.html">Logstash 8.10.0 Release Notes</a></span>
+</li>
 <li><span class="section"><a href="logstash-8-9-2.html">Logstash 8.9.2 Release Notes</a></span>
 </li>
 <li><span class="section"><a href="logstash-8-9-1.html">Logstash 8.9.1 Release Notes</a></span>
@@ -908,6 +987,9 @@
 
 
 
+
+
+
 </div>
 </div><div class="navfooter">
 <span class="prev">
@@ -949,6 +1031,9 @@
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -960,16 +1045,19 @@
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

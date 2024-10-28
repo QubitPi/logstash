@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v4.4.4
+Plugin version: v4.4.6
 </li>
 <li class="listitem">
-Released on: 2022-09-20
+Released on: 2023-12-13
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-input-file/blob/v4.4.4/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-input-file/blob/v4.4.6/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2022-09-20
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-file-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_15"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_17"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-file" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_15"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_18"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Stream events from files, normally by tailing them in a manner
 similar to <code class="literal">tail -0F</code> but optionally reading them from the
@@ -220,7 +220,7 @@ was not ideal and a dedicated Read mode is an improvement.</p>
 <h3 class="title"><a id="plugins-inputs-file-ecs"></a>Compatibility with the Elastic Common Schema (ECS)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This plugin adds metadata about event&#8217;s source, and can be configured to do so
-in an <a href="https://www.elastic.co/guide/en/ecs/8.10/index.html" class="ulink" target="_top">ECS-compatible</a> way with <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-ecs_compatibility" title="ecs_compatibility"><code class="literal">ecs_compatibility</code></a>.
+in an <a href="https://www.elastic.co/guide/en/ecs/8.11/index.html" class="ulink" target="_top">ECS-compatible</a> way with <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-ecs_compatibility" title="ecs_compatibility"><code class="literal">ecs_compatibility</code></a>.
 This metadata is added after the event has been decoded by the appropriate codec,
 and will never overwrite existing values.</p>
 <div class="informaltable">
@@ -348,7 +348,7 @@ The truncation will be detected and the "last read" position updated to zero.</p
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-file-options"></a>File Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-common-options" title="Common options">Common options</a> described later.</p>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -485,7 +485,7 @@ see <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-string_du
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-file.html#plugins-inputs-file-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -610,7 +610,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </ul>
 </div>
 <p>Controls this plugin&#8217;s compatibility with the
-<a href="https://www.elastic.co/guide/en/ecs/8.10/index.html" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
+<a href="https://www.elastic.co/guide/en/ecs/8.11/index.html" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
 </div>
 
 <div class="section">
@@ -630,10 +630,12 @@ There is no default value for this setting.
 <p>Exclusions (matched against the filename, not full path). Filename
 patterns are valid here, too. For example, if you have</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    path =&gt; "/var/log/*"</pre>
 </div>
 <p>In Tail mode, you might want to exclude gzipped files:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    exclude =&gt; "*.gz"</pre>
 </div>
 </div>
@@ -1014,9 +1016,9 @@ the pipeline is congested. So the overall loop time is a combination of the
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-file-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-file-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -1065,13 +1067,6 @@ the pipeline is congested. So the overall loop time is a combination of the
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_10"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-file-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-file/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -1144,6 +1139,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 file inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   file {
     id =&gt; "my_plugin_id"
@@ -1322,6 +1318,9 @@ So "45s" and "45 s" are both valid.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1333,16 +1332,19 @@ So "45s" and "45 s" are both valid.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

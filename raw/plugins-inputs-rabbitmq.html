@@ -42,13 +42,13 @@
 A component of the <a class="xref" href="plugins-integrations-rabbitmq.html" title="Rabbitmq Integration Plugin">rabbitmq integration plugin</a>
 </li>
 <li class="listitem">
-Integration version: v7.3.3
+Integration version: v7.4.0
 </li>
 <li class="listitem">
-Released on: 2023-06-09
+Released on: 2024-09-16
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/blob/v7.3.3/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/blob/v7.4.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -56,16 +56,16 @@ Released on: 2023-06-09
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-rabbitmq-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_40"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_43"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-rabbitmq" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_39"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_43"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Pull events from a <a href="http://www.rabbitmq.com/" class="ulink" target="_top">RabbitMQ</a> queue.</p>
 <p>The default settings will create an entirely transient queue and listen for all messages by default.
@@ -141,6 +141,7 @@ into the Logstash event&#8217;s <code class="literal">@timestamp</code> field, u
 filter to parse the <code class="literal">[@metadata][rabbitmq_properties][timestamp]</code>
 field:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       if [@metadata][rabbitmq_properties][timestamp] {
         date {
@@ -157,7 +158,7 @@ field:</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-rabbitmq-options"></a>Rabbitmq Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-rabbitmq.html#plugins-inputs-rabbitmq-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-rabbitmq.html#plugins-inputs-rabbitmq-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -311,7 +312,7 @@ field:</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-rabbitmq.html#plugins-inputs-rabbitmq-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-rabbitmq.html#plugins-inputs-rabbitmq-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -921,9 +922,9 @@ slash.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-rabbitmq-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-rabbitmq-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -972,13 +973,6 @@ slash.</p>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_35"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-rabbitmq-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-rabbitmq/edit/main/docs/input-rabbitmq.asciidoc">edit</a></h4>
@@ -1051,6 +1045,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 rabbitmq inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   rabbitmq {
     id =&gt; "my_plugin_id"

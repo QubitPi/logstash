@@ -53,22 +53,22 @@ Released on: 2017-11-07
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-environment-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_installation_60"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_installation_59"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For plugins not bundled by default, it is easy to install by running <code class="literal">bin/logstash-plugin install logstash-filter-environment</code>. See <a href="https://www.elastic.co/guide/en/logstash/master/working-with-plugins.html" class="ulink" target="_top">Working with plugins</a> for more details.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_134"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_139"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-environment" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_132"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_138"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This filter stores environment variables as subfields in the <code class="literal">@metadata</code> field.
 You can then use these values in other parts of the pipeline.</p>
@@ -98,7 +98,7 @@ the older versions to <code class="literal">add_metadata_from_env</code> in the 
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-filters-environment-options"></a>Environment Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-environment.html#plugins-filters-environment-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-environment.html#plugins-filters-environment-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -122,7 +122,7 @@ the older versions to <code class="literal">add_metadata_from_env</code> in the 
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-filters-environment.html#plugins-filters-environment-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-filters-environment.html#plugins-filters-environment-common-options" title="Common options">Common options</a> for a list of options supported by all
 filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -156,9 +156,9 @@ value you want imported into Logstash. For example:</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-environment-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-filters-environment-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-environment/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all filter plugins:</p>
+<p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -230,6 +230,7 @@ Default value is <code class="literal">{}</code>
 Field names can be dynamic and include parts of the event using the <code class="literal">%{field}</code>.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       environment {
         add_field =&gt; { "foo_%{somefield}" =&gt; "Hello world, from %{host}" }
@@ -237,6 +238,7 @@ Field names can be dynamic and include parts of the event using the <code class=
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple fields at once:
     filter {
       environment {
@@ -272,6 +274,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       environment {
         add_tag =&gt; [ "foo_%{somefield}" ]
@@ -279,6 +282,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple tags at once:
     filter {
       environment {
@@ -328,6 +332,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 environment filters.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       environment {
         id =&gt; "ABC"
@@ -379,6 +384,7 @@ Default value is <code class="literal">[]</code>
 Fields names can be dynamic and include parts of the event using the %{field}
 Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       environment {
         remove_field =&gt; [ "foo_%{somefield}" ]
@@ -386,6 +392,7 @@ Example:</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple fields at once:
     filter {
       environment {
@@ -417,6 +424,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       environment {
         remove_tag =&gt; [ "foo_%{somefield}" ]
@@ -424,6 +432,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple tags at once:
     filter {
       environment {

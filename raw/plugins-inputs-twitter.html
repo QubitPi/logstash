@@ -39,13 +39,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v4.1.0
+Plugin version: v4.1.1
 </li>
 <li class="listitem">
-Released on: 2021-11-18
+Released on: 2023-11-16
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-input-twitter/blob/v4.1.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-input-twitter/blob/v4.1.1/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -53,19 +53,20 @@ Released on: 2021-11-18
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-twitter-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_55"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_58"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-twitter" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_54"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_58"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Ingest events from the Twitter Streaming API.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    input {
       twitter {
         consumer_key =&gt; '...'
@@ -78,6 +79,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 </div>
 <p>Sample event fields generated:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    {
         "@timestamp" =&gt; 2019-09-23T16:41:53.000Z,
         "message" =&gt; "I forgot how fun it is to write @logstash configs !!! Thank you @jordansissel and @elastic !!!"
@@ -100,7 +102,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-twitter-ecs"></a>Compatibility with the Elastic Common Schema (ECS)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>Twitter streams are very specific and do not map easily to the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<p>Twitter streams are very specific and do not map easily to the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 We recommend setting a <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-target" title="target"><code class="literal">target</code></a> when <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-ecs_compatibility" title="ecs_compatibility">ECS compatibility mode</a> is enabled.
 The plugin issues a warning in the log when a <code class="literal">target</code> isn&#8217;t set.</p>
 </div>
@@ -109,7 +111,7 @@ The plugin issues a warning in the log when a <code class="literal">target</code
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-twitter-options"></a>Twitter Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -213,7 +215,7 @@ The plugin issues a warning in the log when a <code class="literal">target</code
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-twitter.html#plugins-inputs-twitter-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -298,7 +300,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
 </div>
 
 <div class="section">
@@ -583,9 +585,9 @@ When the <code class="literal">target</code> is set to a field reference, the tw
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-twitter-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-twitter-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -634,13 +636,6 @@ When the <code class="literal">target</code> is set to a field reference, the tw
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_49"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-twitter-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-twitter/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -713,6 +708,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 twitter inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   twitter {
     id =&gt; "my_plugin_id"

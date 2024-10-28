@@ -145,6 +145,9 @@ environment variable is undefined.
 You can add environment variable references in any plugin option type: string, number, boolean, array, or hash.
 </li>
 <li class="listitem">
+Environment variables for list-type URI parameters can support lists of space-delimited values. Currently, other non-URI based options do not support lists of values. See <a class="xref" href="plugin-concepts.html" title="Cross-plugin concepts and features">Cross-plugin concepts and features</a>
+</li>
+<li class="listitem">
 Environment variables are immutable. If you update the environment variable, you&#8217;ll have to restart Logstash to pick up the updated value.
 </li>
 </ul>
@@ -163,6 +166,7 @@ configuration options.</p>
 </div></div></div>
 <p>Here&#8217;s an example that uses an environment variable to set the TCP port:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   tcp {
     port =&gt; "${TCP_PORT}"
@@ -171,10 +175,12 @@ configuration options.</p>
 </div>
 <p>Now let&#8217;s set the value of <code class="literal">TCP_PORT</code>:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">export TCP_PORT=12345</pre>
 </div>
 <p>At startup, Logstash uses this configuration:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   tcp {
     port =&gt; 12345
@@ -184,6 +190,7 @@ configuration options.</p>
 <p>If the <code class="literal">TCP_PORT</code> environment variable is not set, Logstash returns a configuration error.</p>
 <p>You can fix this problem by specifying a default value:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   tcp {
     port =&gt; "${TCP_PORT:54321}"
@@ -192,6 +199,7 @@ configuration options.</p>
 </div>
 <p>Now, instead of returning a configuration error if the variable is undefined, Logstash uses the default:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   tcp {
     port =&gt; 54321
@@ -207,6 +215,7 @@ configuration options.</p>
 </div></div></div>
 <p>Here&#8217;s an example that uses an environment variable to set the value of a tag:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">filter {
   mutate {
     add_tag =&gt; [ "tag1", "${ENV_TAG}" ]
@@ -215,10 +224,12 @@ configuration options.</p>
 </div>
 <p>Let&#8217;s set the value of <code class="literal">ENV_TAG</code>:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">export ENV_TAG="tag2"</pre>
 </div>
 <p>At startup, Logstash uses this configuration:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">filter {
   mutate {
     add_tag =&gt; [ "tag1", "tag2" ]
@@ -233,6 +244,7 @@ configuration options.</p>
 </div></div></div>
 <p>Here&#8217;s an example that uses an environment variable to set the path to a log file:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">filter {
   mutate {
     add_field =&gt; {
@@ -243,10 +255,12 @@ configuration options.</p>
 </div>
 <p>Let&#8217;s set the value of <code class="literal">HOME</code>:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">export HOME="/path"</pre>
 </div>
 <p>At startup, Logstash uses the following configuration:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">filter {
   mutate {
     add_field =&gt; {
@@ -302,6 +316,9 @@ configuration options.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -313,16 +330,19 @@ configuration options.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

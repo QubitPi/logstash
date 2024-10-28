@@ -39,13 +39,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v3.0.5
+Plugin version: v3.0.6
 </li>
 <li class="listitem">
-Released on: 2023-05-31
+Released on: 2024-08-09
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/blob/v3.0.5/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/blob/v3.0.6/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -53,22 +53,22 @@ Released on: 2023-05-31
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-datadog_metrics-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_installation_25"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_installation_24"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For plugins not bundled by default, it is easy to install by running <code class="literal">bin/logstash-plugin install logstash-output-datadog_metrics</code>. See <a href="https://www.elastic.co/guide/en/logstash/master/working-with-plugins.html" class="ulink" target="_top">Working with plugins</a> for more details.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_67"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_70"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-output-datadog_metrics" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_66"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_70"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This output lets you send metrics to
 DataDogHQ based on Logstash events.
@@ -80,7 +80,7 @@ If you do not use Datadog for alerting, consider raising these thresholds.</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-outputs-datadog_metrics-options"></a>Datadog_metrics Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -100,6 +100,11 @@ If you do not use Datadog for alerting, consider raising these thresholds.</p>
 <td align="left" valign="top"><p><a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-api_key" title="api_key"><code class="literal">api_key</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
 <td align="left" valign="top"><p>Yes</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-api_url" title="api_url"><code class="literal">api_url</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-dd_tags" title="dd_tags"><code class="literal">dd_tags</code></a></p></td>
@@ -144,7 +149,7 @@ If you do not use Datadog for alerting, consider raising these thresholds.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-datadog_metrics.html#plugins-outputs-datadog_metrics-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -165,6 +170,23 @@ There is no default value for this setting.
 </ul>
 </div>
 <p>Your DatadogHQ API key. <a href="https://app.datadoghq.com/account/settings#api" class="ulink" target="_top">https://app.datadoghq.com/account/settings#api</a></p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-datadog_metrics-api_url"></a><code class="literal">api_url</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+Default value is <code class="literal">"https://api.datadoghq.com/api/v1/series"</code>
+</li>
+</ul>
+</div>
+<p>Set the api endpoint for Datadog EU Site users</p>
 </div>
 
 <div class="section">
@@ -309,9 +331,9 @@ Default value is <code class="literal">10</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-datadog_metrics-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-datadog_metrics-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-datadog_metrics/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -400,6 +422,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 datadog_metrics outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   datadog_metrics {
     id =&gt; "my_plugin_id"

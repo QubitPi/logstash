@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v11.16.0
+Plugin version: v11.22.9
 </li>
 <li class="listitem">
-Released on: 2023-08-09
+Released on: 2024-09-13
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v11.16.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-output-elasticsearch/blob/v11.22.9/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2023-08-09
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-elasticsearch-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_71"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_74"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-output-elasticsearch" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_70"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_74"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Elasticsearch provides near real-time search and analytics for all types of
 data. The Elasticsearch output plugin can store both time series datasets (such
@@ -167,13 +167,44 @@ ensure your template uses the <code class="literal">_doc</code> document-type be
 connecting to Elasticsearch 7.x.</p>
 </div>
 </div>
-<div class="section">
-<div class="titlepage"><div><div>
-<h4 class="title"><a id="_hosted_elasticsearch_service_on_elastic_cloud"></a>Hosted Elasticsearch Service on Elastic Cloud<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
-</div></div></div>
-<p>You can run Elasticsearch on your own hardware or use our hosted Elasticsearch Service that is available on AWS, GCP, and Azure. <a href="https://www.elastic.co/cloud/elasticsearch-service/signup?page=docs&amp;placement=docs-body" class="ulink" target="_top">Try the Elasticsearch Service for free</a>.</p>
 </div>
 
+<div class="section">
+<div class="titlepage"><div><div>
+<h3 class="title"><a id="plugins-outputs-elasticsearch-serverless"></a>Logstash to Elasticsearch on serverless<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+</div></div></div>
+<p>You can use this plugin to send your Logstash data to Elasticsearch on serverless.
+Some differences to note between Elasticsearch on serverless and self-managed Elasticsearch:</p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Use <span class="strong strong"><strong>API keys</strong></span> to access Elastic Cloud serverless from Logstash.
+Any user-based security settings in your <a class="xref" href="plugins-outputs-elasticsearch.html" title="Elasticsearch output plugin">Elasticsearch output plugin</a> configuration are ignored and may cause errors.
+</li>
+<li class="listitem">
+Elasticsearch on serverless uses <span class="strong strong"><strong>data streams</strong></span> and <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/data-stream-lifecycle.html" class="ulink" target="_top">data lifecycle management (DLM)</a> instead of index lifecycle management (ILM).
+Any ILM settings in your <a class="xref" href="plugins-outputs-elasticsearch.html" title="Elasticsearch output plugin">Elasticsearch output plugin</a> configuration are ignored and may cause errors.
+</li>
+<li class="listitem">
+<span class="strong strong"><strong>Logstash monitoring</strong></span> is available through the <a href="https://github.com/elastic/integrations/blob/main/packages/logstash/_dev/build/docs/README.md" class="ulink" target="_top">Logstash Integration</a> in <a href="https://docs.elastic.co/serverless/observability/what-is-observability-serverless" class="ulink" target="_top">Elastic Observability</a> on Elastic Cloud serverless.
+</li>
+</ul>
+</div>
+<div class="sidebar">
+<div class="titlepage"><div><div>
+<p class="title"><strong>Known issue for Logstash to Elasticsearch on serverless</strong></p>
+</div></div></div>
+<p>The logstash-output-elasticsearch <code class="literal">hosts</code> setting on serverless defaults the port to 9200 when omitted.
+Set the value to port :443 instead.</p>
+</div>
+<p>For more info on sending data from Logstash to Elasticsearch on serverless, check out the <a href="https://docs.elastic.co/serverless/elasticsearch/what-is-elasticsearch-serverless" class="ulink" target="_top">Elasticsearch on serverless docs</a>.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h3 class="title"><a id="plugins-outputs-elasticsearch-ess"></a>Hosted Elasticsearch Service on Elastic Cloud<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+</div></div></div>
+<p>You can run Elasticsearch on your own hardware or use our hosted Elasticsearch Service that is available on AWS, GCP, and Azure. <a href="https://www.elastic.co/cloud/elasticsearch-service/signup?page=docs&amp;placement=docs-body" class="ulink" target="_top">Try the Elasticsearch Service for free</a>.</p>
 </div>
 
 <div class="section">
@@ -198,8 +229,8 @@ and will correctly reject events with fields that conflict and cannot be coerced
 </div></div></div>
 <p>The Elasticsearch output plugin can store both time series datasets (such
 as logs, events, and metrics) and non-time series data in Elasticsearch.</p>
-<p>The data stream options are recommended for indexing time series datasets (such
-as logs, metrics, and events) into Elasticsearch:</p>
+<p>Use the data stream options for indexing time series datasets (such
+as logs, metrics, and events) into Elasticsearch and Elasticsearch on serverless:</p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -222,12 +253,19 @@ as logs, metrics, and events) into Elasticsearch:</p>
 </li>
 </ul>
 </div>
+<div class="important admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p><a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-ecs_compatibility" title="ecs_compatibility">ECS compatibility</a> must be enabled (set to <code class="literal">v1</code> or <code class="literal">v8</code>) for data streams to work properly.</p>
+</div>
+</div>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-outputs-elasticsearch-ds-examples"></a>Data stream configuration examples<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <p><span class="strong strong"><strong>Example: Basic default configuration</strong></span></p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">output {
     elasticsearch {
         hosts =&gt; "hostname"
@@ -237,9 +275,10 @@ as logs, metrics, and events) into Elasticsearch:</p>
 </div>
 <p>This example shows the minimal settings for processing data streams. Events
 with <code class="literal">data_stream.*`</code> fields are routed to the appropriate data streams. If the
-fields are missing, routing defaults to <code class="literal">logs-generic-logstash</code>.</p>
+fields are missing, routing defaults to <code class="literal">logs-generic-default</code>.</p>
 <p><span class="strong strong"><strong>Example: Customize data stream name</strong></span></p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">output {
     elasticsearch {
         hosts =&gt; "hostname"
@@ -293,6 +332,7 @@ fill up the queue), it is usually more efficient to have a single Elasticsearch
 output.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    output {
       elasticsearch {
         index =&gt; "%{[some_field][sub_field]}-%{+YYYY.MM.dd}"
@@ -306,6 +346,7 @@ to set the destination index for each event. The <code class="literal">[@metadat
 be sent to Elasticsearch.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    filter {
       if [log_type] in [ "test", "staging" ] {
         mutate { add_field =&gt; { "[@metadata][target_index]" =&gt; "test-%{+YYYY.MM}" } }
@@ -365,30 +406,36 @@ but should be used only in motivated cases.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-elasticsearch-ilm"></a>Index Lifecycle Management<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-elasticsearch-ilm"></a>Index lifecycle management (ILM)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
-<p>The Index Lifecycle Management feature requires plugin version <code class="literal">9.3.1</code> or higher.</p>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+The Index lifecycle management (ILM) feature does not apply for Elasticsearch on serverless.
+Any ILM settings in your plugin configuration are ignored and may cause errors.
+</li>
+<li class="listitem">
+The ILM feature requires plugin version <code class="literal">9.3.1</code> or higher.
+</li>
+<li class="listitem">
+This feature requires an Elasticsearch instance of 6.6.0 or higher with at least a Basic license
+</li>
+</ul>
 </div>
 </div>
-<div class="note admon">
-<div class="icon"></div>
-<div class="admon_content">
-<p>This feature requires an Elasticsearch instance of 6.6.0 or higher with at least a Basic license</p>
 </div>
-</div>
-<p>Logstash can use <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/index-lifecycle-management.html" class="ulink" target="_top">Index Lifecycle
-Management</a> to automate the management of indices over time.</p>
-<p>The use of Index Lifecycle Management is controlled by the <code class="literal">ilm_enabled</code>
+<p>Logstash can use <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/index-lifecycle-management.html" class="ulink" target="_top">index lifecycle management</a> to automate the management of indices over time.</p>
+<p>The use of index lifecycle management is controlled by the <code class="literal">ilm_enabled</code>
 setting. By default, this setting detects whether the Elasticsearch instance
 supports ILM, and uses it if it is available. <code class="literal">ilm_enabled</code> can also be set to
 <code class="literal">true</code> or <code class="literal">false</code> to override the automatic detection, or disable ILM.</p>
 <p>This will overwrite the index settings and adjust the Logstash template to write
 the necessary settings for the template to support index lifecycle management,
 including the index policy and rollover alias to be used.</p>
-<p>Logstash will create a rollover alias for the indices to be written to,
+<p>Logstash creates a rollover alias for the indices to be written to,
 including a pattern for how the actual indices will be named, and unless an ILM
 policy that already exists has been specified, a default policy will also be
 created. The default policy is configured to rollover an index when it reaches
@@ -402,6 +449,7 @@ API documentation</a> for more details on naming.</p>
 <p>The rollover alias, ilm pattern and policy can be modified.</p>
 <p>See config below for an example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    output {
       elasticsearch {
         ilm_rollover_alias =&gt; "custom"
@@ -413,21 +461,21 @@ API documentation</a> for more details on naming.</p>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
-<p>Custom ILM policies must already exist on the Elasticsearch cluster before they can be used.</p>
-</div>
-</div>
-<div class="note admon">
-<div class="icon"></div>
-<div class="admon_content">
-<p>If the rollover alias or pattern is modified, the index template will need to be
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Custom ILM policies must already exist on the Elasticsearch cluster before they can be used.
+</li>
+<li class="listitem">
+If the rollover alias or pattern is modified, the index template will need to be
 overwritten as the settings <code class="literal">index.lifecycle.name</code> and
-<code class="literal">index.lifecycle.rollover_alias</code> are automatically written to the template</p>
+<code class="literal">index.lifecycle.rollover_alias</code> are automatically written to the template
+</li>
+<li class="listitem">
+If the index property is supplied in the output definition, it will be overwritten by the rollover alias.
+</li>
+</ul>
 </div>
-</div>
-<div class="note admon">
-<div class="icon"></div>
-<div class="admon_content">
-<p>If the index property is supplied in the output definition, it will be overwritten by the rollover alias.</p>
 </div>
 </div>
 </div>
@@ -460,8 +508,8 @@ not reevaluate its DNS value while the keepalive is in effect.</p>
 <h3 class="title"><a id="_http_compression"></a>HTTP Compression<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This plugin always reads compressed responses from Elasticsearch.
-It <em>can be configured</em> to send compressed bulk requests to Elasticsearch.</p>
-<p>If you are concerned about bandwidth, you can enable <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-http_compression" title="http_compression"><code class="literal">http_compression</code></a> to trade a small amount of CPU capacity for a significant reduction in network IO.</p>
+By default, it sends compressed bulk requests to Elasticsearch.</p>
+<p>If you are concerned about bandwidth, you can set a higher <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-compression_level" title="compression_level"><code class="literal">compression_level</code></a> to trade CPU capacity for a reduction in network IO.</p>
 </div>
 
 <div class="section">
@@ -484,10 +532,18 @@ checks.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
+<h3 class="title"><a id="plugins-outputs-elasticsearch-handling-non-utf-8"></a>Handling non UTF-8 data<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+</div></div></div>
+<p>This plugin transmits events to Elasticsearch using a JSON API, and therefore requires that all string values in events to be valid UTF-8.
+When a string value on an event contains one or more byte sequences that are not valid in UTF-8, each offending byte sequence is replaced with the UTF-8 replacement character (<code class="literal">\uFFFD</code>).</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-outputs-elasticsearch-options"></a>Elasticsearch Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the
-<a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-common-options" title="Common Options">Common Options</a> and the <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-deprecated-options" title="Elasticsearch Output Deprecated Configuration Options">Elasticsearch Output Deprecated Configuration Options</a> described later.</p>
+<a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-common-options" title="Common options">Common options</a> and the <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-deprecated-options" title="Elasticsearch Output Deprecated Configuration Options">Elasticsearch Output Deprecated Configuration Options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -531,6 +587,11 @@ checks.</p>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-cloud_id" title="cloud_id"><code class="literal">cloud_id</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-compression_level" title="compression_level"><code class="literal">compression_level</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#number" title="Number">number</a>, one of <code class="literal">[0 ~ 9]</code></p></td>
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
@@ -876,7 +937,7 @@ checks.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -951,12 +1012,13 @@ Elasticsearch <a href="https://www.elastic.co/guide/en/elasticsearch/reference/m
 Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
 </li>
 <li class="listitem">
-There is no default value for this setting.
+The default value for this settings is <code class="literal">/_bulk?filter_path=errors,items.*.error,items.*.status</code>
 </li>
 </ul>
 </div>
 <p>HTTP Path to perform the _bulk requests to
-this defaults to a concatenation of the path parameter and "_bulk"</p>
+* This default bulk path is the concatenation of the value of <code class="literal">path</code> parameter and <code class="literal">/_bulk?filter_path=errors,items.*.error,items.*.status</code>
+* The <code class="literal">filter_path</code> query parameter is appended to the bulk path to reduce the payload between logstash and elasticsearch. However, if a custom <code class="literal">filter_path</code> query parameter is included in the <code class="literal">bulk_path</code> setting, then that value will be used.</p>
 </div>
 
 <div class="section">
@@ -1020,6 +1082,25 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-outputs-elasticsearch-compression_level"></a><code class="literal">compression_level</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">0</code>, <code class="literal">1</code>, <code class="literal">2</code>, <code class="literal">3</code>, <code class="literal">4</code>, <code class="literal">5</code>, <code class="literal">6</code>, <code class="literal">7</code>, <code class="literal">8</code>, <code class="literal">9</code>
+</li>
+<li class="listitem">
+Default value is <code class="literal">1</code>
+</li>
+</ul>
+</div>
+<p>The gzip compression level. Setting this value to <code class="literal">0</code> disables compression.
+The compression level must be in the range of <code class="literal">1</code> (best speed) to <code class="literal">9</code> (best compression).</p>
+<p>Increasing the compression level will reduce the network usage but will increase the CPU usage.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-outputs-elasticsearch-data_stream"></a><code class="literal">data_stream</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="ulist itemizedlist">
@@ -1035,7 +1116,8 @@ Default is <code class="literal">false</code> in Logstash 7.x and <code class="l
 <p>Defines whether data will be indexed into an Elasticsearch data stream.
 The other <code class="literal">data_stream_*</code> settings will be used only if this setting is enabled.</p>
 <p>Logstash handles the output as a data stream when the supplied configuration
-is compatible with data streams and this value is set to <code class="literal">auto</code>.</p>
+is compatible with data streams and this value is set to <code class="literal">auto</code>.
+Note that <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-ecs_compatibility" title="ecs_compatibility">ECS compatibility</a> must be enabled (set to <code class="literal">v1</code> or <code class="literal">v8</code>) for data streams to work properly.</p>
 </div>
 
 <div class="section">
@@ -1300,7 +1382,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema
 (ECS)</a>, including the installation of ECS-compatible index templates. The value
 of this setting affects the <em>default</em> values of:</p>
 <div class="ulist itemizedlist">
@@ -1357,7 +1439,7 @@ There is no default value for this setting.
 <p>Pass a set of key value pairs as the headers sent in each request to
 an elasticsearch node. The headers will be used for any kind of request
 (_bulk request, template installation, health checks and sniffing).
-These custom headers will be overidden by settings like <code class="literal">http_compression</code>.</p>
+These custom headers will be overidden by settings like <code class="literal">compression_level</code>.</p>
 </div>
 
 <div class="section">
@@ -1416,6 +1498,13 @@ should reference only data or client nodes in Elasticsearch.</p>
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-outputs-elasticsearch-http_compression"></a><code class="literal">http_compression</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 11.17.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-compression_level" title="compression_level"><code class="literal">compression_level</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -1426,7 +1515,7 @@ Default value is <code class="literal">false</code>
 </li>
 </ul>
 </div>
-<p>Enable gzip compression on requests.</p>
+<p>Setting <code class="literal">true</code> enables gzip compression level 1 on requests.</p>
 <p>This setting allows you to reduce this plugin&#8217;s outbound network traffic by
 compressing each bulk <em>request</em> to Elasticsearch.</p>
 <div class="note admon">
@@ -1614,7 +1703,9 @@ ECS Compatibility enabled: <code class="literal">"ecs-logstash-%{+yyyy.MM.dd}"</
 </li>
 </ul>
 </div>
-<p>The index to write events to. This can be dynamic using the <code class="literal">%{foo}</code> syntax.
+<p>The indexing target to write events to.
+Can point to an <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/index-mgmt.html" class="ulink" target="_top">index</a>, <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/aliases.html" class="ulink" target="_top">alias</a>, or <a href="https://www.elastic.co/guide/en/elasticsearch/reference/master/data-streams.html" class="ulink" target="_top">data stream</a>.
+This can be dynamic using the <code class="literal">%{foo}</code> syntax.
 The default value will partition your indices by day so you can more easily
 delete old data or only search specific date ranges.
 Indexes may not contain uppercase characters.
@@ -1912,6 +2003,7 @@ Default value is <code class="literal">""</code>
 <p>Set script name for scripted update mode</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    output {
       elasticsearch {
         script =&gt; "ctx._source.message = params.event.get('message')"
@@ -2009,11 +2101,12 @@ Default value is <code class="literal">[]</code>
 </div>
 <p>Defines the list of Elasticsearch errors that you don&#8217;t want to log.
 A useful example is when you want to skip all 409 errors
-which are <code class="literal">document_already_exists_exception</code>.</p>
+which are <code class="literal">version_conflict_engine_exception</code>.</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    output {
       elasticsearch {
-        silence_errors_in_log =&gt; ["document_already_exists_exception"]
+        silence_errors_in_log =&gt; ["version_conflict_engine_exception"]
       }
     }</pre>
 </div>
@@ -2179,7 +2272,14 @@ There is no default value for this setting.
 </li>
 </ul>
 </div>
-<p>OpenSSL-style RSA private key that corresponds to the <a class="xref" href="plugins-outputs-elasticsearch.html#plugins-outputs-elasticsearch-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a>.</p>
+<p>SSL key to use.
+This key must be in the PKCS8 format and PEM encoded.
+You can use the <a href="https://www.openssl.org/docs/man1.1.1/man1/openssl-pkcs8.html" class="ulink" target="_top">openssl pkcs8</a> command to complete the conversion.
+For example, the command to convert a PEM encoded PKCS1 private key to a PEM encoded, non-encrypted PKCS8 key is:</p>
+<div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-sh">openssl pkcs8 -inform PEM -in path/to/logstash.key -topk8 -nocrypt -outform PEM -out path/to/logstash.pkcs8.key</pre>
+</div>
 <div class="note admon">
 <div class="icon"></div>
 <div class="admon_content">
@@ -2833,9 +2933,9 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-elasticsearch-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-elasticsearch-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -2902,6 +3002,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 elasticsearch outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   elasticsearch {
     id =&gt; "my_plugin_id"
@@ -2962,6 +3063,9 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -2973,16 +3077,19 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

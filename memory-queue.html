@@ -180,7 +180,7 @@ Doubling both will <em>quadruple</em> the capacity (and usage).</p>
 <p>Each pipeline has its own queue.</p>
 </div>
 </div>
-<p>See <a class="xref" href="tuning-logstash.html" title="Tuning and Profiling Logstash Performance">Tuning and Profiling Logstash Performance</a> for more info on the effects of adjusting <code class="literal">pipeline.batch.size</code> and <code class="literal">pipeline.workers</code>.</p>
+<p>See <a class="xref" href="tuning-logstash.html" title="Tuning and profiling logstash pipeline performance">Tuning and profiling logstash pipeline performance</a> for more info on the effects of adjusting <code class="literal">pipeline.batch.size</code> and <code class="literal">pipeline.workers</code>.</p>
 <p>If you need to absorb bursts of traffic, consider using <a class="xref" href="persistent-queues.html" title="Persistent queues (PQ)">persistent queues</a> instead.
 Persistent queues are bound to allocated capacity on disk.</p>
 <div class="section">
@@ -268,6 +268,9 @@ without overwhelming outputs like Elasticsearch.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -279,16 +282,19 @@ without overwhelming outputs like Elasticsearch.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

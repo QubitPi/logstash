@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v7.2.13
+Plugin version: v7.3.1
 </li>
 <li class="listitem">
-Released on: 2023-02-07
+Released on: 2024-10-11
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-filter-geoip/blob/v7.2.13/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-filter-geoip/blob/v7.3.1/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2023-02-07
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-geoip-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_137"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_142"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-geoip" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_135"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_141"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>The GeoIP filter adds information about the geographical location of IP addresses,
 based on data from the MaxMind GeoLite2 databases.</p>
@@ -224,6 +224,7 @@ Events will be tagged with <code class="literal">_geoip_expired_database</code> 
 <p>If you can&#8217;t connect directly to the Elastic GeoIP endpoint, consider setting up
 an HTTP proxy server. You can then specify the proxy with <code class="literal">http_proxy</code> environment variable.</p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">export http_proxy="http://PROXY_IP:PROXY_PORT"</pre>
 </div>
 <p><span class="strong strong"><strong>Use a custom endpoint (air-gapped environments)</strong></span></p>
@@ -244,6 +245,7 @@ Copy both database files to a single directory.
 <li class="listitem">
 <p>From your Elasticsearch directory, run:</p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">./bin/elasticsearch-geoip -s my/database/dir</pre>
 </div>
 </li>
@@ -251,6 +253,7 @@ Copy both database files to a single directory.
 <p>Serve the static database files from your directory. For example, you can use
 Docker to serve the files from nginx server:</p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">docker run -p 8080:80 -v my/database/dir:/usr/share/nginx/html:ro nginx</pre>
 </div>
 </li>
@@ -333,10 +336,12 @@ including:</p>
 </ul>
 </div>
 <div class="pre_wrapper lang-js">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-js">curl -XGET 'localhost:9600/_node/stats/geoip_download_manager?pretty'</pre>
 </div>
 <p>Example response:</p>
 <div class="pre_wrapper lang-js">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-js">{
   "geoip_download_manager" : {
     "database" : {
@@ -389,6 +394,41 @@ When ECS compatibility is enabled, the fields are structured to fit into an ECS 
 <td align="left" valign="top"><p><code class="literal">12.34.56.78</code></p></td>
 </tr>
 <tr>
+<td align="left" valign="top"><p><code class="literal">anonymous</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][anonymous]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">false</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">anonymous_vpn</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][anonymous_vpn]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">false</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">hosting_provider</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][hosting_provider]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">true</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">network</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][network]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">12.34.56.78/20</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">public_proxy</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][public_proxy]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">true</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">residential_proxy</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][residential_proxy]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">false</code></p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><code class="literal">tor_exit_node</code></p></td>
+<td align="left" valign="top"><p><code class="literal">[ip_traits][tor_exit_node]</code></p></td>
+<td align="left" valign="top"><p><code class="literal">true</code></p></td>
+</tr>
+<tr>
 <td align="left" valign="top"><p><code class="literal">city_name</code></p></td>
 <td align="left" valign="top"><p><code class="literal">[geo][city_name]</code></p></td>
 <td align="left" valign="top"><p><code class="literal">Seattle</code></p></td>
@@ -417,10 +457,10 @@ When ECS compatibility is enabled, the fields are structured to fit into an ECS 
 <td align="left" valign="top"><p><code class="literal">country_code3</code></p></td>
 <td align="left" valign="top"><p><em>N/A</em></p></td>
 <td align="left" valign="top"><p><code class="literal">US</code></p>
-<p>                                                    <em>maintained for legacy
-                                                    support, but populated
-                                                    with 2-character country
-                                                    code</em></p></td>
+<p>                                                           <em>maintained for legacy
+                                                           support, but populated
+                                                           with 2-character country
+                                                           code</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><code class="literal">postal_code</code></p></td>
@@ -505,7 +545,7 @@ When ECS compatibility is enabled, the fields are structured to fit into an ECS 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_57"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_details_2"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>When using a City database, the enrichment is aborted if no latitude/longitude pair is available.</p>
 <p>The <code class="literal">location</code> field combines the latitude and longitude into a structure called <a href="https://datatracker.ietf.org/doc/html/rfc7946" class="ulink" target="_top">GeoJSON</a>.
@@ -531,7 +571,7 @@ MaxMind GeoLite database and support IPv4 lookups only.</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-filters-geoip-options"></a>Geoip Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -590,7 +630,7 @@ MaxMind GeoLite database and support IPv4 lookups only.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-common-options" title="Common options">Common options</a> for a list of options supported by all
 filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -638,7 +678,7 @@ If not specified, the database defaults to the <code class="literal">GeoLite2 Ci
 <p>The path to MaxMind&#8217;s database file that Logstash should use.
 The default database is <code class="literal">GeoLite2-City</code>.
 This plugin supports several free databases (<code class="literal">GeoLite2-City</code>, <code class="literal">GeoLite2-Country</code>, <code class="literal">GeoLite2-ASN</code>)
-and a selection of commercially-licensed databases (<code class="literal">GeoIP2-City</code>, <code class="literal">GeoIP2-ISP</code>, <code class="literal">GeoIP2-Country</code>).</p>
+and a selection of commercially-licensed databases (<code class="literal">GeoIP2-City</code>, <code class="literal">GeoIP2-ISP</code>, <code class="literal">GeoIP2-Country</code>, <code class="literal">GeoIP2-Domain</code>, <code class="literal">GeoIP2-Enterprise</code>, <code class="literal">GeoIP2-Anonymous-IP</code>).</p>
 <p>Database auto-update applies to the default distribution.
 When <code class="literal">database</code> points to user&#8217;s database path, auto-update is disabled.
 See <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-database_license" title="Database License">Database License</a> for more information.</p>
@@ -721,7 +761,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 The value of this setting affects the <em>default</em> value of <a class="xref" href="plugins-filters-geoip.html#plugins-filters-geoip-target" title="target"><code class="literal">target</code></a>.</p>
 </div>
 
@@ -817,9 +857,9 @@ is still valid GeoJSON.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-geoip-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-filters-geoip-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-geoip/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all filter plugins:</p>
+<p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -891,6 +931,7 @@ Default value is <code class="literal">{}</code>
 Field names can be dynamic and include parts of the event using the <code class="literal">%{field}</code>.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       geoip {
         add_field =&gt; { "foo_%{somefield}" =&gt; "Hello world, from %{host}" }
@@ -898,6 +939,7 @@ Field names can be dynamic and include parts of the event using the <code class=
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple fields at once:
     filter {
       geoip {
@@ -933,6 +975,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       geoip {
         add_tag =&gt; [ "foo_%{somefield}" ]
@@ -940,6 +983,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also add multiple tags at once:
     filter {
       geoip {
@@ -989,6 +1033,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 geoip filters.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       geoip {
         id =&gt; "ABC"
@@ -1040,6 +1085,7 @@ Default value is <code class="literal">[]</code>
 Fields names can be dynamic and include parts of the event using the %{field}
 Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       geoip {
         remove_field =&gt; [ "foo_%{somefield}" ]
@@ -1047,6 +1093,7 @@ Example:</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple fields at once:
     filter {
       geoip {
@@ -1078,6 +1125,7 @@ Tags can be dynamic and include parts of the event using the <code class="litera
 syntax.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    filter {
       geoip {
         remove_tag =&gt; [ "foo_%{somefield}" ]
@@ -1085,6 +1133,7 @@ syntax.</p>
     }</pre>
 </div>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">    # You can also remove multiple tags at once:
     filter {
       geoip {
@@ -1142,6 +1191,9 @@ would remove a sad, unwanted tag as well.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1153,16 +1205,19 @@ would remove a sad, unwanted tag as well.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

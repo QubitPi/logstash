@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v4.3.0
+Plugin version: v4.5.0
 </li>
 <li class="listitem">
-Released on: 2022-11-02
+Released on: 2024-09-16
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/blob/v4.3.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/blob/v4.5.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,22 +137,22 @@ Released on: 2022-11-02
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/output-google_cloud_storage-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_installation_31"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_installation_30"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For plugins not bundled by default, it is easy to install by running <code class="literal">bin/logstash-plugin install logstash-output-google_cloud_storage</code>. See <a href="https://www.elastic.co/guide/en/logstash/master/working-with-plugins.html" class="ulink" target="_top">Working with plugins</a> for more details.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_78"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_81"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_77"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_81"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>A plugin to upload log events to Google Cloud Storage (GCS), rolling
 files based on the date pattern provided as a configuration setting. Events
@@ -175,6 +175,7 @@ uploading the log files and in terms of storage costs as well.</p>
 </div></div></div>
 <p>This is an example of logstash config:</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
    google_cloud_storage {
      bucket =&gt; "my_bucket"                                     (required)
@@ -245,7 +246,7 @@ exposed by Ruby API client)
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-outputs-google_cloud_storage-options"></a>Google_cloud_storage Output Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -307,11 +308,6 @@ exposed by Ruby API client)
 <td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p><a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-key_path" title="key_path"><code class="literal">key_path</code></a></p></td>
-<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
-<td align="left" valign="top"><p><span class="strong strong"><strong>Obsolete</strong></span></p></td>
-</tr>
-<tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-log_file_prefix" title="log_file_prefix"><code class="literal">log_file_prefix</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
@@ -349,7 +345,7 @@ exposed by Ruby API client)
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-outputs-google_cloud_storage.html#plugins-outputs-google_cloud_storage-common-options" title="Common options">Common options</a> for a list of options supported by all
 output plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -550,35 +546,6 @@ Default value is <code class="literal">"notasecret"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-outputs-google_cloud_storage-key_path"></a><code class="literal">key_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
-</div></div></div>
-<div class="ulist itemizedlist">
-<ul class="itemizedlist">
-<li class="listitem">
-Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
-</li>
-</ul>
-</div>
-<p><span class="strong strong"><strong>Obsolete:</strong></span> The PKCS12 key file format is no longer supported.
-Please use one of the following mechanisms:</p>
-<div class="ulist itemizedlist">
-<ul class="itemizedlist">
-<li class="listitem">
-<a href="https://cloud.google.com/docs/authentication/production" class="ulink" target="_top">Application Default Credentials (ADC)</a>,
-configured via environment variables on Compute Engine, Kubernetes Engine, App Engine, or
-Cloud Functions.
-</li>
-<li class="listitem">
-A JSON authentication key file. You can generate them in the console for the service account
-like you did with the <code class="literal">.P12</code> file or with the following command:
-<code class="literal">gcloud iam service-accounts keys create key.json --iam-account my-sa-123@my-project-123.iam.gserviceaccount.com</code>
-</li>
-</ul>
-</div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-outputs-google_cloud_storage-log_file_prefix"></a><code class="literal">log_file_prefix</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="ulist itemizedlist">
@@ -722,9 +689,9 @@ around one hour).</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-outputs-google_cloud_storage-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-outputs-google_cloud_storage-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-output-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all output plugins:</p>
+<p>These configuration options are supported by all output plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -813,6 +780,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type. For example, if you have 2 google_cloud_storage outputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">output {
   google_cloud_storage {
     id =&gt; "my_plugin_id"
@@ -873,6 +841,9 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -884,16 +855,19 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

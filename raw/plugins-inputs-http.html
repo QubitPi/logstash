@@ -39,13 +39,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v3.7.2
+Plugin version: v3.9.1
 </li>
 <li class="listitem">
-Released on: 2023-06-29
+Released on: 2024-10-18
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-input-http/blob/v3.7.2/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-input-http/blob/v3.9.1/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -53,15 +53,15 @@ Released on: 2023-06-29
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-http-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_24"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_26"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-http" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_23"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_26"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Using this input you can receive single or multiline events over http(s).
 Applications can send an HTTP request to the endpoint started by this input and
@@ -196,7 +196,7 @@ for the request&#8217;s content-type is found in the <code class="literal">addit
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-http-options"></a>Http Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -323,8 +323,28 @@ for the request&#8217;s content-type is found in the <code class="literal">addit
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_keystore_type" title="ssl_keystore_type"><code class="literal">ssl_keystore_type</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_supported_protocols" title="ssl_supported_protocols"><code class="literal">ssl_supported_protocols</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#array" title="Array">array</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_truststore_password" title="ssl_truststore_password"><code class="literal">ssl_truststore_password</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_truststore_path" title="ssl_truststore_path"><code class="literal">ssl_truststore_path</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_truststore_type" title="ssl_truststore_type"><code class="literal">ssl_truststore_type</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
@@ -360,7 +380,7 @@ for the request&#8217;s content-type is found in the <code class="literal">addit
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -428,10 +448,11 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </ul>
 </div>
 <p>Controls this plugin&#8217;s compatibility with the
-<a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ecs_metadata" title="Event Metadata and the Elastic Common Schema (ECS)">Event Metadata and the Elastic Common Schema (ECS)</a> for detailed information.</p>
 <p><span class="strong strong"><strong>Sample output: ECS disabled</strong></span></p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">{
     "@version" =&gt; "1",
     "headers" =&gt; {
@@ -451,6 +472,7 @@ See <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ecs_metad
 </div>
 <p><span class="strong strong"><strong>Sample output: ECS enabled</strong></span></p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">{
     "@version" =&gt; "1",
     "user_agent" =&gt; {
@@ -888,7 +910,31 @@ There is no default value for this setting.
 </li>
 </ul>
 </div>
-<p>The JKS keystore to validate the client&#8217;s certificates</p>
+<p>The path for the keystore file that contains a private key and certificate.
+It must be either a Java keystore (jks) or a PKCS#12 file.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>You cannot use this setting and <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a> at the same time.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http-ssl_keystore_type"></a><code class="literal">ssl_keystore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">jks</code>, <code class="literal">pkcs12</code>
+</li>
+<li class="listitem">
+If not provided, the value will be inferred from the keystore filename.
+</li>
+</ul>
+</div>
+<p>The format of the keystore file. It must be either <code class="literal">jks</code> or <code class="literal">pkcs12</code>.</p>
 </div>
 
 <div class="section">
@@ -937,6 +983,63 @@ the protocol is disabled by default and needs to be enabled manually by changing
 the <span class="strong strong"><strong>$JDK_HOME/conf/security/java.security</strong></span> configuration file. That is, <code class="literal">TLSv1.1</code> needs to be removed from the list.</p>
 </div>
 </div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http-ssl_truststore_password"></a><code class="literal">ssl_truststore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#password" title="Password">password</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>Set the truststore password</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http-ssl_truststore_path"></a><code class="literal">ssl_truststore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>The path for the keystore that contains the certificates to trust. It must be either a Java keystore (jks) or a PKCS#12 file.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>You cannot use this setting and <a class="xref" href="plugins-inputs-http.html#plugins-inputs-http-ssl_certificate_authorities" title="ssl_certificate_authorities"><code class="literal">ssl_certificate_authorities</code></a> at the same time.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http-ssl_truststore_type"></a><code class="literal">ssl_truststore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">jks</code>, <code class="literal">pkcs12</code>
+</li>
+<li class="listitem">
+If not provided, the value will be inferred from the truststore filename.
+</li>
+</ul>
+</div>
+<p>The format of the truststore file. It must be either <code class="literal">jks</code> or <code class="literal">pkcs12</code>.</p>
 </div>
 
 <div class="section">
@@ -1072,9 +1175,9 @@ Default value is <code class="literal">"none"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-http-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-http-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -1123,13 +1226,6 @@ Default value is <code class="literal">"none"</code>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_19"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -1202,6 +1298,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 http inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   http {
     id =&gt; "my_plugin_id"

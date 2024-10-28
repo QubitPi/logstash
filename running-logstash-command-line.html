@@ -124,18 +124,20 @@
 <div class="admon_content">
 <h3>macOS Gatekeeper warnings</h3>
 <p>Apple&#8217;s rollout of stricter notarization requirements affected the notarization
-of the 8.10.0 Logstash artifacts. If macOS Catalina displays a dialog when you
+of the 8.15.0 Logstash artifacts. If macOS Catalina displays a dialog when you
 first run Logstash that interrupts it, you will need to take an action to allow it
 to run.
 To prevent Gatekeeper checks on the Logstash files, run the following command on the
 downloaded <code class="literal">.tar.gz</code> archive or the directory to which was extracted:</p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">xattr -d -r com.apple.quarantine &lt;archive-or-directory&gt;</pre>
 </div>
 <p>For example, if the <code class="literal">.tar.gz</code> file was extracted to the default
-logstash-8.10.0 directory, the command is:</p>
+logstash-8.15.0 directory, the command is:</p>
 <div class="pre_wrapper lang-sh">
-<pre class="programlisting prettyprint lang-sh">xattr -d -r com.apple.quarantine logstash-8.10.0</pre>
+<div class="console_code_copy" title="Copy to clipboard"></div>
+<pre class="programlisting prettyprint lang-sh">xattr -d -r com.apple.quarantine logstash-8.15.0</pre>
 </div>
 <p>Alternatively, you can add a security override if a Gatekeeper popup appears by
 following the instructions in the <em>How to open an app that hasn’t been notarized
@@ -145,10 +147,12 @@ or is from an unidentified developer</em> section of
 </div>
 <p>To run Logstash from the command line, use the following command:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash [options]</pre>
 </div>
 <p>To run Logstash from the Windows command line, use the following command:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash.bat [options]</pre>
 </div>
 <p>Where <code class="literal">options</code> are <a class="xref" href="running-logstash-command-line.html#command-line-flags" title="Command-Line Flags">command-line</a> flags that you can
@@ -158,6 +162,7 @@ your system.</p>
 <p>The following example runs Logstash and loads the Logstash config defined in
 the <code class="literal">mypipeline.conf</code> file:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash -f mypipeline.conf</pre>
 </div>
 <p>Any flags that you set at the command line override the corresponding settings
@@ -202,6 +207,7 @@ is the same as <code class="literal">-f bar</code>).
 be loaded in the order described above. For example, you can use the wildcard feature to
 load specific files by name:</p>
 <div class="pre_wrapper lang-shell">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-shell">bin/logstash --debug -f '/tmp/{one,two,three}'</pre>
 </div>
 <p>With this command, Logstash concatenates three config files, <code class="literal">/tmp/one</code>, <code class="literal">/tmp/two</code>, and
@@ -489,6 +495,14 @@ Specify if Logstash should write its own logs in JSON form (one event per line) 
 </dd>
 <dt>
 <span class="term">
+<span class="strong strong"><strong><code class="literal">--log.format.json.fix_duplicate_message_fields ENABLED</code></strong></span>
+</span>
+</dt>
+<dd>
+Avoid <code class="literal">message</code> field collision using JSON log format. Possible values are <code class="literal">true</code> (default) and <code class="literal">false</code>.
+</dd>
+<dt>
+<span class="term">
 <span class="strong strong"><strong><code class="literal">--path.settings SETTINGS_DIR</code></strong></span>
 </span>
 </dt>
@@ -571,6 +585,9 @@ Print help
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -582,16 +599,19 @@ Print help
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

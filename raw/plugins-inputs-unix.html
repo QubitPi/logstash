@@ -53,15 +53,15 @@ Released on: 2022-10-03
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-unix-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_57"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_60"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-unix" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_56"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_60"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Read events over a UNIX socket.</p>
 <p>Like <code class="literal">stdin</code> and <code class="literal">file</code> inputs, each event is assumed to be one line of text.</p>
@@ -75,7 +75,7 @@ depending on <code class="literal">mode</code>.</p>
 </div></div></div>
 <p>This plugin adds extra fields about the event&#8217;s source.
 Configure the <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-ecs_compatibility" title="ecs_compatibility"><code class="literal">ecs_compatibility</code></a> option if you want
-to ensure that these fields are compatible with <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">ECS</a>.</p>
+to ensure that these fields are compatible with <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">ECS</a>.</p>
 <p>These fields are added after the event has been decoded by the appropriate codec,
 and will not overwrite existing values.</p>
 <div class="informaltable">
@@ -112,7 +112,7 @@ and will not overwrite existing values.</p>
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-unix-options"></a>Unix Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -161,7 +161,7 @@ and will not overwrite existing values.</p>
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -207,10 +207,11 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-ecs" title="Compatibility with the Elastic Common Schema (ECS)">Compatibility with the Elastic Common Schema (ECS)</a> for detailed information.</p>
 <p><span class="strong strong"><strong>Sample output: ECS enabled</strong></span></p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">{
     "@timestamp" =&gt; 2021-11-16T13:20:06.308Z,
     "file" =&gt; {
@@ -224,6 +225,7 @@ See <a class="xref" href="plugins-inputs-unix.html#plugins-inputs-unix-ecs" titl
 </div>
 <p><span class="strong strong"><strong>Sample output: ECS disabled</strong></span></p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">{
     "@timestamp" =&gt; 2021-11-16T13:20:06.308Z,
     "path" =&gt; "/tmp/sock41299",
@@ -315,9 +317,9 @@ Only positive values are allowed.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-unix-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-unix-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -366,13 +368,6 @@ Only positive values are allowed.</p>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_51"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-unix-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-unix/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -445,6 +440,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 unix inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   unix {
     id =&gt; "my_plugin_id"

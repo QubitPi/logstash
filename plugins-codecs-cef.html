@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v6.2.7
+Plugin version: v6.2.8
 </li>
 <li class="listitem">
-Released on: 2023-05-12
+Released on: 2024-10-22
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-codec-cef/blob/v6.2.7/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-codec-cef/blob/v6.2.8/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2023-05-12
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/codec-cef-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_168"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-codec-cef/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_173"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-codec-cef/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-codec-cef" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_166"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-codec-cef/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_172"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-codec-cef/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Implementation of a Logstash codec for the ArcSight Common Event Format (CEF).
 It is based on <a href="https://www.microfocus.com/documentation/arcsight/arcsight-smartconnectors/pdfdoc/common-event-format-v25/common-event-format-v25.pdf" class="ulink" target="_top">Implementing ArcSight CEF Revision 25, September 2017</a>.</p>
@@ -161,6 +161,7 @@ produces an event with the payload as the <em>message</em> field and a <em>_cefp
 It can also be used <em>without</em> ECS, encoding and decoding events using only CEF-defined field names and keys.</p>
 <p>The ECS Compatibility mode for a specific plugin instance can be controlled by setting <a class="xref" href="plugins-codecs-cef.html#plugins-codecs-cef-ecs_compatibility" title="ecs_compatibility"><code class="literal">ecs_compatibility</code></a> when defining the codec:</p>
 <div class="pre_wrapper lang-sh">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-sh">    input {
       tcp {
         # ...
@@ -1335,6 +1336,11 @@ Localized timestamps are parsed using the provided <a class="xref" href="plugins
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-codecs-cef.html#plugins-codecs-cef-raw_data_field" title="raw_data_field"><code class="literal">raw_data_field</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-codecs-cef.html#plugins-codecs-cef-reverse_mapping" title="reverse_mapping"><code class="literal">reverse_mapping</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#boolean" title="Boolean">boolean</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
@@ -1423,6 +1429,7 @@ this to be that delimiter.</p>
 </div>
 <p><span class="strong strong"><strong>Example</strong></span></p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    input {
       tcp {
         codec =&gt; cef { delimiter =&gt; "\r\n" }
@@ -1520,7 +1527,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 </li>
 </ul>
 </div>
-<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
+<p>Controls this plugin&#8217;s compatibility with the <a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.</p>
 </div>
 
 <div class="section">
@@ -1620,6 +1627,23 @@ Option has no effect when <em>decoding</em>
 <p>When this codec is used in an Output Plugin, this option can be used to specify the
 value of the device product field in CEF header. The new value can include <code class="literal">%{foo}</code> strings
 to help you build a new value from other parts of the event.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-codecs-cef-raw_data_field"></a><code class="literal">raw_data_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-codec-cef/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+There is no default value for this setting
+</li>
+</ul>
+</div>
+<p>Store the raw data to the field, for example <code class="literal">[event][original]</code>. Existing target field will be overriden.</p>
 </div>
 
 <div class="section">
@@ -1778,6 +1802,9 @@ to help you build a new value from other parts of the event.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1789,16 +1816,19 @@ to help you build a new value from other parts of the event.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

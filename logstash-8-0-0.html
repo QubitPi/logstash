@@ -183,7 +183,7 @@ This feature allows users to run the Benchmark CLI in a custom test case with a 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_plugins_16"></a>Plugins</h3>
+<h3 class="title"><a id="_plugins_32"></a>Plugins</h3>
 </div></div></div>
 <p>Logstash 8.0.0 includes the same versions of all bundled plugins as Logstash 7.17.0.
 If you upgrade to 7.17 before upgrading to 8.0 (as recommended), you won&#8217;t see any changes to plugin versions.</p>
@@ -549,6 +549,9 @@ Fix: typo in <code class="literal">BIN9_QUERYLOG</code> pattern (in ECS mode) <a
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -560,16 +563,19 @@ Fix: typo in <code class="literal">BIN9_QUERYLOG</code> pattern (in ECS mode) <a
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

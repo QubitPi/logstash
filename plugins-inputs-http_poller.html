@@ -123,13 +123,13 @@
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
-Plugin version: v5.4.0
+Plugin version: v5.6.0
 </li>
 <li class="listitem">
-Released on: 2022-06-14
+Released on: 2024-06-19
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-input-http_poller/blob/v5.4.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-input-http_poller/blob/v5.6.0/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -137,15 +137,15 @@ Released on: 2022-06-14
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-http_poller-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_25"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_27"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-http_poller" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_24"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_27"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>This Logstash input plugin allows you to call an HTTP API, decode the output of it into event(s), and
 send them on their merry way. The idea behind this plugins came from a need to read springboot
@@ -159,6 +159,7 @@ metrics endpoint, instead of configuring jmx to monitor my java application memo
 <p>Reads from a list of urls and decodes the body of the response with a codec.
 The config should look like this:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">input {
   http_poller {
     urls =&gt; {
@@ -192,10 +193,12 @@ output {
 <p>Using the HTTP poller with custom a custom CA or self signed cert.</p>
 <p>If you have a self signed cert you will need to convert your server&#8217;s certificate to a valid# <code class="literal">.jks</code> or <code class="literal">.p12</code> file. An easy way to do it is to run the following one-liner, substituting your server&#8217;s URL for the placeholder <code class="literal">MYURL</code> and <code class="literal">MYPORT</code>.</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">openssl s_client -showcerts -connect MYURL:MYPORT &lt;/dev/null 2&gt;/dev/null|openssl x509 -outform PEM &gt; downloaded_cert.pem; keytool -import -alias test -file downloaded_cert.pem -keystore downloaded_truststore.jks</pre>
 </div>
 <p>The above snippet will create two files <code class="literal">downloaded_cert.pem</code> and <code class="literal">downloaded_truststore.jks</code>. You will be prompted to set a password for the <code class="literal">jks</code> file during this process. To configure logstash use a config like the one that follows.</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby"> http_poller {
    urls =&gt; {
      myurl =&gt; "https://myhostname:1234"
@@ -325,7 +328,7 @@ output {
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-http_poller-options"></a>Http_poller Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -349,17 +352,17 @@ output {
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-cacert" title="cacert"><code class="literal">cacert</code></a></p></td>
 <td align="left" valign="top"><p>a valid filesystem path</p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-client_cert" title="client_cert"><code class="literal">client_cert</code></a></p></td>
 <td align="left" valign="top"><p>a valid filesystem path</p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-client_key" title="client_key"><code class="literal">client_key</code></a></p></td>
 <td align="left" valign="top"><p>a valid filesystem path</p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-connect_timeout" title="connect_timeout"><code class="literal">connect_timeout</code></a></p></td>
@@ -389,17 +392,17 @@ output {
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-keystore" title="keystore"><code class="literal">keystore</code></a></p></td>
 <td align="left" valign="top"><p>a valid filesystem path</p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-keystore_password" title="keystore_password"><code class="literal">keystore_password</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-keystore_type" title="keystore_type"><code class="literal">keystore_type</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-metadata_target" title="metadata_target"><code class="literal">metadata_target</code></a></p></td>
@@ -447,13 +450,58 @@ output {
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
-<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_supported_protocols" title="ssl_supported_protocols"><code class="literal">ssl_supported_protocols</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate_authorities" title="ssl_certificate_authorities"><code class="literal">ssl_certificate_authorities</code></a></p></td>
+<td align="left" valign="top"><p>list of <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_cipher_suites" title="ssl_cipher_suites"><code class="literal">ssl_cipher_suites</code></a></p></td>
+<td align="left" valign="top"><p>list of <a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_enabled" title="ssl_enabled"><code class="literal">ssl_enabled</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#boolean" title="Boolean">boolean</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_password" title="ssl_keystore_password"><code class="literal">ssl_keystore_password</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_path" title="ssl_keystore_path"><code class="literal">ssl_keystore_path</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_type" title="ssl_keystore_type"><code class="literal">ssl_keystore_type</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_password" title="ssl_truststore_password"><code class="literal">ssl_truststore_password</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_path" title="ssl_truststore_path"><code class="literal">ssl_truststore_path</code></a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#path" title="Path">path</a></p></td>
+<td align="left" valign="top"><p>No</p></td>
+</tr>
+<tr>
+<td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_type" title="ssl_truststore_type"><code class="literal">ssl_truststore_type</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_verification_mode" title="ssl_verification_mode"><code class="literal">ssl_verification_mode</code></a></p></td>
-<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
+<td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a>, one of <code class="literal">["full", "none"]</code></p></td>
 <td align="left" valign="top"><p>No</p></td>
 </tr>
 <tr>
@@ -464,17 +512,17 @@ output {
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-truststore" title="truststore"><code class="literal">truststore</code></a></p></td>
 <td align="left" valign="top"><p>a valid filesystem path</p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-truststore_password" title="truststore_password"><code class="literal">truststore_password</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#password" title="Password">password</a></p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-truststore_type" title="truststore_type"><code class="literal">truststore_type</code></a></p></td>
 <td align="left" valign="top"><p><a class="xref" href="configuration-file-structure.html#string" title="String">string</a></p></td>
-<td align="left" valign="top"><p>No</p></td>
+<td align="left" valign="top"><p><em>Deprecated</em></p></td>
 </tr>
 <tr>
 <td align="left" valign="top"><p><a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-urls" title="urls"><code class="literal">urls</code></a></p></td>
@@ -494,7 +542,7 @@ output {
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -520,6 +568,13 @@ Note: if <code class="literal">retry_non_idempotent</code> is set only GET, HEAD
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-cacert"></a><code class="literal">cacert</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate_authorities" title="ssl_certificate_authorities"><code class="literal">ssl_certificate_authorities</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -537,6 +592,13 @@ There is no default value for this setting.
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-client_cert"></a><code class="literal">client_cert</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -554,6 +616,13 @@ There is no default value for this setting.
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-client_key"></a><code class="literal">client_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_key" title="ssl_key"><code class="literal">ssl_key</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -627,11 +696,12 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </ul>
 </div>
 <p>Controls this plugin&#8217;s compatibility with the
-<a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ecs_metadata" title="Event Metadata and the Elastic Common Schema (ECS)">Event Metadata and the Elastic Common Schema (ECS)</a> for detailed information.</p>
 <p>Example output:</p>
 <p><span class="strong strong"><strong>Sample output: ECS disabled</strong></span></p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">{
     "http_poller_data" =&gt; {
         "@version" =&gt; "1",
@@ -644,6 +714,7 @@ See <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_po
 </div>
 <p><span class="strong strong"><strong>Sample output: ECS enabled</strong></span></p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">{
     "http_poller_data" =&gt; {
         "status" =&gt; "UP",
@@ -659,6 +730,7 @@ See <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_po
 </div>
 <p><span class="strong strong"><strong>Sample error output: ECS enabled</strong></span></p>
 <div class="pre_wrapper lang-text">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-text">{
     "@timestamp" =&gt; 2021-07-09T09:53:48.721Z,
     "@version" =&gt; "1",
@@ -726,6 +798,13 @@ one with this to fix interactions with broken keepalive implementations.</p>
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-keystore"></a><code class="literal">keystore</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_path" title="ssl_keystore_path"><code class="literal">ssl_keystore_path</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -743,6 +822,13 @@ There is no default value for this setting.
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-keystore_password"></a><code class="literal">keystore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_password" title="ssl_keystore_password"><code class="literal">ssl_keystore_password</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -761,6 +847,13 @@ Note, most .jks files created with keytool require a password!</p>
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-keystore_type"></a><code class="literal">keystore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_keystore_type" title="ssl_keystore_type"><code class="literal">ssl_keystore_type</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -951,6 +1044,157 @@ Default value is <code class="literal">10</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_certificate"></a><code class="literal">ssl_certificate</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>SSL certificate to use to authenticate the client. This certificate should be an OpenSSL-style X.509 certificate file.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>This setting can be used only if <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_key" title="ssl_key"><code class="literal">ssl_key</code></a> is set.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is a list of <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting
+</li>
+</ul>
+</div>
+<p>The .cer or .pem CA files to validate the server&#8217;s certificate.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is a list of <a class="xref" href="configuration-file-structure.html#string" title="String">string</a>
+</li>
+<li class="listitem">
+There is no default value for this setting
+</li>
+</ul>
+</div>
+<p>The list of cipher suites to use, listed by priorities.
+Supported cipher suites vary depending on the Java and protocol versions.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_enabled"></a><code class="literal">ssl_enabled</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#boolean" title="Boolean">boolean</a>
+</li>
+<li class="listitem">
+Default value is <code class="literal">true</code>
+</li>
+</ul>
+</div>
+<p>Enable SSL/TLS secured communication. It must be <code class="literal">true</code> for other <code class="literal">ssl_</code> options
+to take effect.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_key"></a><code class="literal">ssl_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>OpenSSL-style RSA private key that corresponds to the <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a>.</p>
+<div class="note admon">
+<div class="icon"></div>
+<div class="admon_content">
+<p>This setting can be used only if <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_certificate" title="ssl_certificate"><code class="literal">ssl_certificate</code></a> is set.</p>
+</div>
+</div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_keystore_password"></a><code class="literal">ssl_keystore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#password" title="Password">password</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>Set the keystore password</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_keystore_path"></a><code class="literal">ssl_keystore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>The keystore used to present a certificate to the server.
+It can be either <code class="literal">.jks</code> or <code class="literal">.p12</code></p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_keystore_type"></a><code class="literal">ssl_keystore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">jks</code>, <code class="literal">pkcs12</code>
+</li>
+<li class="listitem">
+If not provided, the value will be inferred from the keystore filename.
+</li>
+</ul>
+</div>
+<p>The format of the keystore file. It must be either <code class="literal">jks</code> or <code class="literal">pkcs12</code>.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
 <div class="ulist itemizedlist">
@@ -978,6 +1222,58 @@ the protocol is disabled by default and needs to be enabled manually by changing
 the <span class="strong strong"><strong>$JDK_HOME/conf/security/java.security</strong></span> configuration file. That is, <code class="literal">TLSv1.1</code> needs to be removed from the list.</p>
 </div>
 </div>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_truststore_password"></a><code class="literal">ssl_truststore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#password" title="Password">password</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>Set the truststore password</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_truststore_path"></a><code class="literal">ssl_truststore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value type is <a class="xref" href="configuration-file-structure.html#path" title="Path">path</a>
+</li>
+<li class="listitem">
+There is no default value for this setting.
+</li>
+</ul>
+</div>
+<p>The truststore to validate the server&#8217;s certificate.
+It can be either <code class="literal">.jks</code> or <code class="literal">.p12</code>.</p>
+</div>
+
+<div class="section">
+<div class="titlepage"><div><div>
+<h4 class="title"><a id="plugins-inputs-http_poller-ssl_truststore_type"></a><code class="literal">ssl_truststore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
+</div></div></div>
+<div class="ulist itemizedlist">
+<ul class="itemizedlist">
+<li class="listitem">
+Value can be any of: <code class="literal">jks</code>, <code class="literal">pkcs12</code>
+</li>
+<li class="listitem">
+If not provided, the value will be inferred from the truststore filename.
+</li>
+</ul>
+</div>
+<p>The format of the truststore file. It must be either <code class="literal">jks</code> or <code class="literal">pkcs12</code>.</p>
 </div>
 
 <div class="section">
@@ -1034,6 +1330,13 @@ Example: <code class="literal">codec =&gt; json { target =&gt; "TARGET_FIELD_NAM
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-truststore"></a><code class="literal">truststore</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_path" title="ssl_truststore_path"><code class="literal">ssl_truststore_path</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -1051,6 +1354,13 @@ There is no default value for this setting.
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-truststore_password"></a><code class="literal">truststore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_password" title="ssl_truststore_password"><code class="literal">ssl_truststore_password</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -1069,6 +1379,13 @@ Note, most .jks files created with keytool require a password!</p>
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-truststore_type"></a><code class="literal">truststore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
 </div></div></div>
+<div class="warning admon">
+<div class="icon"></div>
+<div class="admon_content">
+<h3>Deprecated in 5.5.0.</h3>
+<p>Replaced by <a class="xref" href="plugins-inputs-http_poller.html#plugins-inputs-http_poller-ssl_truststore_type" title="ssl_truststore_type"><code class="literal">ssl_truststore_type</code></a></p>
+</div>
+</div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
 <li class="listitem">
@@ -1211,9 +1528,9 @@ stale (half-closed) while kept inactive in the pool."</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-http_poller-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-http_poller-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -1262,13 +1579,6 @@ stale (half-closed) while kept inactive in the pool."</p>
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_20"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-http_poller-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-http_poller/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -1341,6 +1651,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 http_poller inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   http_poller {
     id =&gt; "my_plugin_id"
@@ -1444,6 +1755,9 @@ when sent to another Logstash server.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1455,16 +1769,19 @@ when sent to another Logstash server.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

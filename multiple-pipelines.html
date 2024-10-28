@@ -122,6 +122,7 @@
 <p>If you need to run more than one pipeline in the same process, Logstash provides a way to do this through a configuration file called <code class="literal">pipelines.yml</code>.
 This file must be placed in the <code class="literal">path.settings</code> folder and follows this structure:</p>
 <div class="pre_wrapper lang-yaml">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-yaml">- pipeline.id: my-pipeline_1
   path.config: "/etc/path/to/p1.config"
   pipeline.workers: 3
@@ -185,6 +186,9 @@ The value of a setting that is not explicitly set in the <code class="literal">p
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -196,16 +200,19 @@ The value of a setting that is not explicitly set in the <code class="literal">p
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

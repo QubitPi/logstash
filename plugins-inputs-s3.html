@@ -126,13 +126,13 @@
 A component of the <a class="xref" href="plugins-integrations-aws.html" title="AWS Integration Plugin">aws integration plugin</a>
 </li>
 <li class="listitem">
-Integration version: v7.1.5
+Integration version: v7.1.8
 </li>
 <li class="listitem">
-Released on: 2023-08-04
+Released on: 2024-07-26
 </li>
 <li class="listitem">
-<a href="https://github.com/logstash-plugins/logstash-integration-aws/blob/v7.1.5/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
+<a href="https://github.com/logstash-plugins/logstash-integration-aws/blob/v7.1.8/CHANGELOG.md" class="ulink" target="_top">Changelog</a>
 </li>
 </ul>
 </div>
@@ -140,16 +140,16 @@ Released on: 2023-08-04
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-s3-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_44"></a>Getting Help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_getting_help_47"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-aws" class="ulink" target="_top">Github</a>.
-For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#matrix_logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
+For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_43"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="_description_47"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
 <p>Stream events from files from a S3 bucket.</p>
 <div class="important admon">
@@ -210,7 +210,7 @@ When ECS is enabled, the value is stored in the <code class="literal">@metadata<
 <div class="titlepage"><div><div>
 <h3 class="title"><a id="plugins-inputs-s3-options"></a>S3 Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-common-options" title="Common Options">Common Options</a> described later.</p>
+<p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -354,7 +354,7 @@ When ECS is enabled, the value is stored in the <code class="literal">@metadata<
 </tbody>
 </table>
 </div>
-<p>Also see <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-common-options" title="Common Options">Common Options</a> for a list of options supported by all
+<p>Also see <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-common-options" title="Common options">Common options</a> for a list of options supported by all
 input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
@@ -410,6 +410,7 @@ Default value is <code class="literal">{}</code>
 <p>Key-value pairs of settings and corresponding values used to parametrize
 the connection to s3. See full list in <a href="https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/S3/Client.html" class="ulink" target="_top">the AWS SDK documentation</a>. Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    input {
       s3 {
         access_key_id =&gt; "1234"
@@ -443,6 +444,7 @@ This file will only be loaded if <code class="literal">access_key_id</code> and
 <code class="literal">secret_access_key</code> aren&#8217;t set. The contents of the
 file should look like this:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">    :access_key_id: "12345"
     :secret_access_key: "54321"</pre>
 </div>
@@ -563,7 +565,7 @@ Value type is <a class="xref" href="configuration-file-structure.html#string" ti
 </ul>
 </div>
 <p>Controls this plugin&#8217;s compatibility with the
-<a href="https://www.elastic.co/guide/en/ecs/8.10" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
+<a href="https://www.elastic.co/guide/en/ecs/8.11" class="ulink" target="_top">Elastic Common Schema (ECS)</a>.
 See <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-ecs_metadata" title="Event Metadata and the Elastic Common Schema (ECS)">Event Metadata and the Elastic Common Schema (ECS)</a> for detailed information.</p>
 </div>
 
@@ -605,6 +607,7 @@ Default value is <code class="literal">nil</code>
 Consider using <a class="xref" href="plugins-inputs-s3.html#plugins-inputs-s3-prefix" title="prefix"><code class="literal">prefix</code></a> instead where possible.</p>
 <p>Example:</p>
 <div class="pre_wrapper lang-ruby">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-ruby">"exclude_pattern" =&gt; "\/2020\/04\/"</pre>
 </div>
 <p>This pattern excludes all logs containing "/2020/04/" in the path.</p>
@@ -862,9 +865,9 @@ Disabling this option causes the input to close itself after processing the file
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-s3-common-options"></a>Common Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
+<h3 class="title"><a id="plugins-inputs-s3-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
 </div></div></div>
-<p>The following configuration options are supported by all input plugins:</p>
+<p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
 <table border="1" cellpadding="4px">
 <colgroup>
@@ -913,13 +916,6 @@ Disabling this option causes the input to close itself after processing the file
 </tbody>
 </table>
 </div>
-</div>
-
-<div class="section">
-<div class="titlepage"><div><div>
-<h3 class="title"><a id="_details_39"></a>Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h3>
-</div></div></div>
-<p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
 <h4 class="title"><a id="plugins-inputs-s3-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-s3/edit/main/docs/index.asciidoc">edit</a></h4>
@@ -992,6 +988,7 @@ It is strongly recommended to set this ID in your configuration. This is particu
 when you have two or more plugins of the same type, for example, if you have 2 s3 inputs.
 Adding a named ID in this case will help in monitoring Logstash when using the monitoring APIs.</p>
 <div class="pre_wrapper lang-json">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-json">input {
   s3 {
     id =&gt; "my_plugin_id"
@@ -1095,6 +1092,9 @@ when sent to another Logstash server.</p>
                             </div>
                           </div>
                         </div>
+
+                        <!-- Feedback widget -->
+                        <div id="feedbackWidgetContainer"></div>
                       </div>
                     </div>
                   </div>
@@ -1106,16 +1106,19 @@ when sent to another Logstash server.</p>
         </div>
 
 
-<div id='elastic-footer'></div>
-<script src='https://www.elastic.co/elastic-footer.js'></script>
-<!-- Footer Section end-->
+        <div id='elastic-footer'></div>
+        <script src='https://www.elastic.co/elastic-footer.js'></script>
+        <!-- Footer Section end-->
 
       </section>
     </div>
 
-<script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-<script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
-<script type="text/javascript">
+    <!-- Feedback modal -->
+    <div id="feedbackModalContainer"></div>
+
+    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
 </html>

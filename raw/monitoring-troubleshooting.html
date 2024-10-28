@@ -6,7 +6,7 @@
 <meta class="elastic" name="content" content="Troubleshooting monitoring in Logstash | Logstash Reference">
 
 <link rel="home" href="index.html" title="Logstash Reference"/>
-<link rel="up" href="configuring-logstash.html" title="Monitoring Logstash"/>
+<link rel="up" href="configuring-logstash.html" title="Monitoring Logstash (legacy)"/>
 <link rel="prev" href="logstash-pipeline-viewer.html" title="Pipeline Viewer UI"/>
 <link rel="next" href="monitoring-logstash.html" title="Monitoring Logstash with APIs"/>
 <meta class="elastic" name="product_version" content=""/>
@@ -21,7 +21,7 @@
 <div class="breadcrumbs">
 <span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
 <span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="configuring-logstash.html">Monitoring Logstash</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="configuring-logstash.html">Monitoring Logstash (legacy)</a></span>
 </div>
 <div class="navheader">
 <span class="prev">
@@ -44,6 +44,7 @@ disabled for security reasons. To resume monitoring:</p>
 <li class="listitem">
 <p>Change the <code class="literal">logstash_system</code> password:</p>
 <div class="pre_wrapper lang-console">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-console">PUT _security/user/logstash_system/_password
 {
   "password": "newpassword"
@@ -54,6 +55,7 @@ disabled for security reasons. To resume monitoring:</p>
 <li class="listitem">
 <p>Re-enable the <code class="literal">logstash_system</code> user:</p>
 <div class="pre_wrapper lang-console">
+<div class="console_code_copy" title="Copy to clipboard"></div>
 <pre class="programlisting prettyprint lang-console">PUT _security/user/logstash_system/_enable</pre>
 </div>
 <div class="console_widget" data-snippet="snippets/6.console"></div>
