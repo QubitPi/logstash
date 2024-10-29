@@ -46,8 +46,9 @@ jobs:
           cd ../elastic-docs
           : # https://github.com/elastic/docs/blob/master/doc_build_aliases.sh#L40
           ./build_docs --respect_edit_url_overrides --doc ../logstash/docs/index.asciidoc --resource=../logstash-docs/docs/ --chunk 1
+      - name: Load CNAME
+        run: echo logstash.qubitpi.org >> ../elastic-docs/html_docs/CNAME
       - name: Deploy docs to GitHub Pages
-        if: github.ref == 'refs/heads/master'
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
