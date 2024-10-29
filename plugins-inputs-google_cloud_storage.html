@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,12 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="input-plugins.html">Input plugins</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="plugins-inputs-github.html">« Github input plugin</a>
@@ -115,9 +109,22 @@
 <a href="plugins-inputs-google_pubsub.html">Google_pubsub input plugin »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="input-plugins.html">Input plugins</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Google Cloud Storage Input Plugin</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="plugins-inputs-google_cloud_storage"></a>Google Cloud Storage Input Plugin<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="plugins-inputs-google_cloud_storage"></a>Google Cloud Storage Input Plugin</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 
 <div class="ulist itemizedlist">
@@ -137,14 +144,14 @@ Released on: 2023-08-22
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-google_cloud_storage-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_installation_2"></a>Installation<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_installation_2"></a>Installation</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>For plugins not bundled by default, it is easy to install by running <code class="literal">bin/logstash-plugin install logstash-input-google_cloud_storage</code>. See <a href="https://www.elastic.co/guide/en/logstash/master/working-with-plugins.html" class="ulink" target="_top">Working with plugins</a> for more details.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_22"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_getting_help_22"></a>Getting help</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage" class="ulink" target="_top">Github</a>.
 For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
@@ -152,7 +159,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-description"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-description"></a>Description</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Extracts events from files in a Google Cloud Storage bucket.</p>
 <p>Example use-cases:</p>
@@ -207,7 +214,7 @@ the bundled Ruby gem&#8217;s instance inside the Logstash&#8217;s installation <
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-metadata-attributes"></a>Metadata Attributes<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-metadata-attributes"></a>Metadata Attributes</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>The plugin exposes several metadata attributes about the object being read.
 You can access these later in the pipeline to augment the data or perform conditional logic.</p>
@@ -275,11 +282,11 @@ You can access these later in the pipeline to augment the data or perform condit
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-example-configurations"></a>Example Configurations<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-example-configurations"></a>Example Configurations</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="_basic"></a>Basic<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="_basic"></a>Basic</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Basic configuration to read JSON logs every minute from <code class="literal">my-logs-bucket</code>.
 For example, <a href="https://cloud.google.com/stackdriver/" class="ulink" target="_top">Stackdriver logs</a>.</p>
@@ -300,7 +307,7 @@ output { stdout { codec =&gt; rubydebug } }</pre>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="_idempotent_inserts_into_elasticsearch"></a>Idempotent Inserts into Elasticsearch<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="_idempotent_inserts_into_elasticsearch"></a>Idempotent Inserts into Elasticsearch</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>If your pipeline might insert the same file multiple times you can use the <code class="literal">line_id</code> metadata key as a deterministic id.</p>
 <p>The ID has the format: <code class="literal">gs://&lt;bucket_id&gt;/&lt;object_id&gt;:&lt;line_num&gt;@&lt;generation&gt;</code>.
@@ -325,7 +332,7 @@ output {
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="_from_cloud_storage_to_bigquery"></a>From Cloud Storage to BigQuery<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="_from_cloud_storage_to_bigquery"></a>From Cloud Storage to BigQuery</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Extract data from Cloud Storage, transform it with Logstash and load it into BigQuery.</p>
 <div class="pre_wrapper lang-ruby">
@@ -367,7 +374,7 @@ output {
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-additional-resources"></a>Additional Resources<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-additional-resources"></a>Additional Resources</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -389,7 +396,7 @@ output {
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-options"></a>Google Cloud Storage Input Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-options"></a>Google Cloud Storage Input Configuration Options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-google_cloud_storage.html#plugins-inputs-google_cloud_storage-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
@@ -459,7 +466,7 @@ output {
 input plugins.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-bucket_id"></a><code class="literal">bucket_id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-bucket_id"></a><code class="literal">bucket_id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -476,7 +483,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-json_key_file"></a><code class="literal">json_key_file</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-json_key_file"></a><code class="literal">json_key_file</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -495,7 +502,7 @@ This service user <em>should</em> have the <code class="literal">storage.objects
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-interval"></a><code class="literal">interval</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-interval"></a><code class="literal">interval</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -512,7 +519,7 @@ Default is: <code class="literal">60</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-file_matches"></a><code class="literal">file_matches</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-file_matches"></a><code class="literal">file_matches</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -530,7 +537,7 @@ All files match by default.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-file_exclude"></a><code class="literal">file_exclude</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-file_exclude"></a><code class="literal">file_exclude</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -548,7 +555,7 @@ No files are excluded by default.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-metadata_key"></a><code class="literal">metadata_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-metadata_key"></a><code class="literal">metadata_key</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -573,7 +580,7 @@ field manually.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-processed_db_path"></a><code class="literal">processed_db_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-processed_db_path"></a><code class="literal">processed_db_path</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -592,7 +599,7 @@ However, the data will not be shared across multiple running instances of Logsta
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-delete"></a><code class="literal">delete</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-delete"></a><code class="literal">delete</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -609,7 +616,7 @@ Default is: <code class="literal">false</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-unpack_gzip"></a><code class="literal">unpack_gzip</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-unpack_gzip"></a><code class="literal">unpack_gzip</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -630,7 +637,7 @@ if it has a bad magic number.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-google_cloud_storage-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-google_cloud_storage-common-options"></a>Common options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
@@ -683,7 +690,7 @@ if it has a bad magic number.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-add_field"></a><code class="literal">add_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -700,7 +707,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-codec"></a><code class="literal">codec</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-codec"></a><code class="literal">codec</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -717,7 +724,7 @@ Default value is <code class="literal">"plain"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-enable_metric"></a><code class="literal">enable_metric</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-enable_metric"></a><code class="literal">enable_metric</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -736,7 +743,7 @@ for a specific plugin.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-id"></a><code class="literal">id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-id"></a><code class="literal">id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -771,7 +778,7 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-tags"></a><code class="literal">tags</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-tags"></a><code class="literal">tags</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -789,7 +796,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-google_cloud_storage-type"></a><code class="literal">type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-google_cloud_storage-type"></a><code class="literal">type</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-google_cloud_storage/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -815,14 +822,14 @@ when sent to another Logstash server.</p>
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="plugins-inputs-github.html">« Github input plugin</a>
 </span>
 <span class="next">
 <a href="plugins-inputs-google_pubsub.html">Google_pubsub input plugin »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -881,8 +888,8 @@ when sent to another Logstash server.</p>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

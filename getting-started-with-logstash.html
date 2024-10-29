@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,11 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="introduction.html">« Logstash Introduction</a>
@@ -114,9 +109,21 @@
 <a href="installing-logstash.html">Installing Logstash »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Getting Started with Logstash</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/getting-started-with-logstash.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="chapter">
 <div class="titlepage"><div><div>
-<h1 class="title"><a id="getting-started-with-logstash"></a>Getting Started with Logstash<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/getting-started-with-logstash.asciidoc">edit</a></h1>
+<div class="position-relative"><h2 class="title"><a id="getting-started-with-logstash"></a>Getting Started with Logstash</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/getting-started-with-logstash.asciidoc">edit</a></div>
 </div></div></div>
 <p>This section guides you through the process of installing Logstash and verifying that everything is running properly.
 After learning how to stash your first event, you go on to create a more advanced pipeline that takes Apache web logs as
@@ -141,7 +148,7 @@ input, parses the logs, and writes the parsed data to an Elasticsearch cluster. 
 </li>
 </ul>
 </div>
-<h3><a id="ls-jvm"></a>Java (JVM) version<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h3>
+<div class="position-relative"><h3><a id="ls-jvm"></a>Java (JVM) version</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>Logstash requires one of these versions:</p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -172,7 +179,7 @@ If you have the LS_JAVA_HOME environment variable set to use a custom JDK, Logst
 will continue to use the JDK version you have specified, even after you upgrade.</p>
 </div>
 </div>
-<h4><a id="check-jvm"></a>Check your Java version<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h4>
+<div class="position-relative"><h4><a id="check-jvm"></a>Check your Java version</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>Run the following command:</p>
 <div class="pre_wrapper lang-shell">
 <div class="console_code_copy" title="Copy to clipboard"></div>
@@ -185,7 +192,7 @@ will continue to use the JDK version you have specified, even after you upgrade.
 OpenJDK Runtime Environment Temurin-17.0.12+7 (build 17.0.12+7)
 OpenJDK 64-Bit Server VM Temurin-17.0.12+7 (build 17.0.12+7, mixed mode)</pre>
 </div>
-<h4><a id="java-home"></a><code class="literal">LS_JAVA_HOME</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h4>
+<div class="position-relative"><h4><a id="java-home"></a><code class="literal">LS_JAVA_HOME</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>Logstash includes a bundled JDK which has been verified to work with each specific version
 of Logstash, and generally provides the best performance and reliability.
 If you need to use a JDK other than the bundled version, then set the <code class="literal">LS_JAVA_HOME</code>
@@ -197,10 +204,10 @@ Logstash uses Java during installation to automatically detect your environment 
 install the correct startup method (SysV init scripts, Upstart, or systemd). If
 Logstash is unable to find the <code class="literal">LS_JAVA_HOME</code> environment variable during package
 installation, you may get an error message, and Logstash will not start properly.</p>
-<h4><a id="jdk17-upgrade"></a>Using JDK 17<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h4>
+<div class="position-relative"><h4><a id="jdk17-upgrade"></a>Using JDK 17</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>Logstash uses JDK 17 by default, but you need to update settings in <code class="literal">jvm.options</code> and
 <code class="literal">log4j2.properties</code> if you are upgrading from  Logstash 7.11.x (or earlier) to 7.12 or later.</p>
-<h5><a id="_updates_to_jvm_options"></a>Updates to <code class="literal">jvm.options</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h5>
+<div class="position-relative"><h5><a id="_updates_to_jvm_options"></a>Updates to <code class="literal">jvm.options</code></h5><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>In the <code class="literal">config/jvm.options</code> file, remove all CMS related flags:</p>
 <div class="pre_wrapper lang-shell">
 <div class="console_code_copy" title="Copy to clipboard"></div>
@@ -210,7 +217,7 @@ installation, you may get an error message, and Logstash will not start properly
 -XX:+UseCMSInitiatingOccupancyOnly</pre>
 </div>
 <p>For more information about how to use <code class="literal">jvm.options</code>, please refer to <a class="xref" href="jvm-settings.html" title="JVM settings">JVM settings</a>.</p>
-<h5><a id="_updates_to_log4j2_properties"></a>Updates to <code class="literal">log4j2.properties</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></h5>
+<div class="position-relative"><h5><a id="_updates_to_log4j2_properties"></a>Updates to <code class="literal">log4j2.properties</code></h5><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/jvm.asciidoc">edit</a></div>
 <p>In the <code class="literal">config/log4j2.properties</code>:</p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -253,14 +260,14 @@ appender.routing.pipeline.strategy.max = 30</pre>
 
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="introduction.html">« Logstash Introduction</a>
 </span>
 <span class="next">
 <a href="installing-logstash.html">Installing Logstash »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -319,8 +326,8 @@ appender.routing.pipeline.strategy.max = 30</pre>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

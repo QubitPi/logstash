@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,12 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="monitoring-logstash.html">Monitoring Logstash with APIs</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="node-stats-api.html">« Node Stats API</a>
@@ -115,9 +109,22 @@
 <a href="logstash-health-report-api.html">Health report API »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="monitoring-logstash.html">Monitoring Logstash with APIs</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Hot Threads API</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="hot-threads-api"></a>Hot Threads API<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="hot-threads-api"></a>Hot Threads API</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <p>The hot threads API gets the current hot threads for Logstash. A hot thread is a
 Java thread that has high CPU usage and executes for a longer than normal period
@@ -139,7 +146,7 @@ Logstash.</p>
       "name" : "Ruby-0-Thread-7",
       "percent_of_cpu_time" : 0.0,
       "state" : "timed_waiting",
-      "path" : "/path/to/logstash-8.15.0/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/thread_pool.rb:187",
+      "path" : "/path/to/logstash-9.0.0/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/thread_pool.rb:187",
       "traces" : [ "java.lang.Object.wait(Native Method)", "org.jruby.RubyThread.sleep(RubyThread.java:1002)", "org.jruby.RubyKernel.sleep(RubyKernel.java:803)" ]
     }, {
       "name" : "[test2]&gt;worker3",
@@ -228,7 +235,7 @@ Logstash monitoring APIs.</p>
  Hot threads at 2017-06-06T18:31:17-07:00, busiestThreads=3:
  ================================================================================
  0.0 % of cpu usage, state: timed_waiting, thread name: 'Ruby-0-Thread-7'
- /path/to/logstash-8.15.0/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/thread_pool.rb:187
+ /path/to/logstash-9.0.0/vendor/bundle/jruby/1.9/gems/puma-2.16.0-java/lib/puma/thread_pool.rb:187
 	 java.lang.Object.wait(Native Method)
 	 org.jruby.RubyThread.sleep(RubyThread.java:1002)
 	 org.jruby.RubyKernel.sleep(RubyKernel.java:803)
@@ -244,14 +251,14 @@ Logstash monitoring APIs.</p>
 	 org.jruby.internal.runtime.NativeThread.join(NativeThread.java:75)</pre>
 </div>
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="node-stats-api.html">« Node Stats API</a>
 </span>
 <span class="next">
 <a href="logstash-health-report-api.html">Health report API »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -310,8 +317,8 @@ Logstash monitoring APIs.</p>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

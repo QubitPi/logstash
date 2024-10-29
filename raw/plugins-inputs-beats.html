@@ -17,12 +17,6 @@
 <meta name="DC.identifier" content=""/>
 </head>
 <body>
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="input-plugins.html">Input plugins</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="plugins-inputs-azure_event_hubs.html">« Azure Event Hubs plugin</a>
@@ -31,9 +25,22 @@
 <a href="plugins-inputs-cloudwatch.html">Cloudwatch input plugin »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="input-plugins.html">Input plugins</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Beats input plugin</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="plugins-inputs-beats"></a>Beats input plugin<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="plugins-inputs-beats"></a>Beats input plugin</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="note admon">
 <div class="icon"></div>
@@ -61,7 +68,7 @@ Released on: 2024-08-28
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/input-beats-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_9"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_getting_help_9"></a>Getting help</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-input-beats" class="ulink" target="_top">Github</a>.
 For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
@@ -69,7 +76,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_10"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_description_10"></a>Description</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This input plugin enables Logstash to receive events from the
 Beats framework.</p>
@@ -117,7 +124,7 @@ coming from Beats.</p>
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-memory"></a>Memory usage<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-memory"></a>Memory usage</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin uses "off-heap" direct memory in addition to heap memory.
 By default, a JVM&#8217;s off-heap direct memory limit is the same as the heap size.
@@ -135,7 +142,7 @@ Setting direct memory too low decreases the performance of ingestion.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-multiline"></a>Multi-line events<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-multiline"></a>Multi-line events</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>If you are shipping events that span multiple lines, you need to use
 the <a href="https://www.elastic.co/guide/en/beats/filebeat/master/multiline-examples.html" class="ulink" target="_top">configuration options available in
@@ -149,7 +156,7 @@ Logstash.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-beats-versioned-indexes"></a>Versioned indices<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-beats-versioned-indexes"></a>Versioned indices</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>To minimize the impact of future schema changes on your existing indices and
 mappings in Elasticsearch, configure the Elasticsearch output to write to
@@ -177,7 +184,7 @@ the <code class="literal">beat</code> metadata field, for example, <code class="
 </dt>
 <dd>
 Sets the second part of the name to the Beat
-version, for example, <code class="literal">8.15.0</code>.
+version, for example, <code class="literal">9.0.0</code>.
 </dd>
 <dt>
 <span class="term">
@@ -191,12 +198,12 @@ Logstash <code class="literal">@timestamp</code> field.
 </dl>
 </div>
 <p>This configuration results in daily index names like
-<code class="literal">filebeat-8.15.0-2024-10-28</code>.</p>
+<code class="literal">filebeat-9.0.0-2024-10-29</code>.</p>
 </div>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-beats-ecs_metadata"></a>Event enrichment and the Elastic Common Schema (ECS)<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-beats-ecs_metadata"></a>Event enrichment and the Elastic Common Schema (ECS)</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>When decoding Beats events, this plugin enriches each event with metadata about the event&#8217;s source, making this information available during further processing.
 You can use the <a class="xref" href="plugins-inputs-beats.html#plugins-inputs-beats-enrich" title="enrich"><code class="literal">enrich</code></a> option to activate or deactivate individual enrichment categories.</p>
@@ -318,7 +325,7 @@ When ECS compatibility is <em>disabled</em>, enrichment fields are added in a wa
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-beats-options"></a>Beats input configuration options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-beats-options"></a>Beats input configuration options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-inputs-beats.html#plugins-inputs-beats-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
@@ -464,7 +471,7 @@ input plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-add_hostname"></a><code class="literal">add_hostname</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-add_hostname"></a><code class="literal">add_hostname</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -488,7 +495,7 @@ Default value is <code class="literal">false</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-cipher_suites"></a><code class="literal">cipher_suites</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-cipher_suites"></a><code class="literal">cipher_suites</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -509,7 +516,7 @@ Value type is <a class="xref" href="configuration-file-structure.html#array" tit
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-client_inactivity_timeout"></a><code class="literal">client_inactivity_timeout</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-client_inactivity_timeout"></a><code class="literal">client_inactivity_timeout</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -526,7 +533,7 @@ Default value is <code class="literal">60</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ecs_compatibility"></a><code class="literal">ecs_compatibility</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ecs_compatibility"></a><code class="literal">ecs_compatibility</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -569,7 +576,7 @@ Otherwise, the default value is <code class="literal">disabled</code>.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-enrich"></a><code class="literal">enrich</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-enrich"></a><code class="literal">enrich</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -658,7 +665,7 @@ Default value is <code class="literal">[codec_metadata, source_metadata]</code> 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-event_loop_threads"></a><code class="literal">event_loop_threads</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-event_loop_threads"></a><code class="literal">event_loop_threads</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -680,7 +687,7 @@ See <a class="xref" href="plugins-inputs-beats.html#plugins-inputs-beats-executo
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-executor_threads"></a><code class="literal">executor_threads</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-executor_threads"></a><code class="literal">executor_threads</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -706,7 +713,7 @@ either by increasing number of Logstash nodes or increasing the JVM&#8217;s Dire
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-host"></a><code class="literal">host</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-host"></a><code class="literal">host</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -723,7 +730,7 @@ Default value is <code class="literal">"0.0.0.0"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-include_codec_tag"></a><code class="literal">include_codec_tag</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-include_codec_tag"></a><code class="literal">include_codec_tag</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -746,7 +753,7 @@ Default value is <code class="literal">true</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-port"></a><code class="literal">port</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-port"></a><code class="literal">port</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -766,7 +773,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl"></a><code class="literal">ssl</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl"></a><code class="literal">ssl</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -792,7 +799,7 @@ the <code class="literal">ssl_certificate</code> and <code class="literal">ssl_k
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_certificate"></a><code class="literal">ssl_certificate</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_certificate"></a><code class="literal">ssl_certificate</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -809,7 +816,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -829,7 +836,7 @@ to <code class="literal">optional</code> or <code class="literal">required</code
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -849,7 +856,7 @@ For example, the ChaCha20 family of ciphers is not supported in older versions.<
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_client_authentication"></a><code class="literal">ssl_client_authentication</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_client_authentication"></a><code class="literal">ssl_client_authentication</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -877,7 +884,7 @@ Please note that the server does not validate the client certificate CN (Common 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_enabled"></a><code class="literal">ssl_enabled</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_enabled"></a><code class="literal">ssl_enabled</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -895,7 +902,7 @@ the <a class="xref" href="plugins-inputs-beats.html#plugins-inputs-beats-ssl_cer
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_handshake_timeout"></a><code class="literal">ssl_handshake_timeout</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_handshake_timeout"></a><code class="literal">ssl_handshake_timeout</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -912,7 +919,7 @@ Default value is <code class="literal">10000</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_key"></a><code class="literal">ssl_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_key"></a><code class="literal">ssl_key</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -936,7 +943,7 @@ For example, the command to convert a PEM encoded PKCS1 private key to a PEM enc
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_key_passphrase"></a><code class="literal">ssl_key_passphrase</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_key_passphrase"></a><code class="literal">ssl_key_passphrase</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -953,7 +960,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_peer_metadata"></a><code class="literal">ssl_peer_metadata</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_peer_metadata"></a><code class="literal">ssl_peer_metadata</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -978,7 +985,7 @@ Default value is <code class="literal">false</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1009,7 +1016,7 @@ the <span class="strong strong"><strong>$JDK_HOME/conf/security/java.security</s
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-ssl_verify_mode"></a><code class="literal">ssl_verify_mode</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-ssl_verify_mode"></a><code class="literal">ssl_verify_mode</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1047,7 +1054,7 @@ Please note that the server does not validate the client certificate CN (Common 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-tls_max_version"></a><code class="literal">tls_max_version</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-tls_max_version"></a><code class="literal">tls_max_version</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1069,7 +1076,7 @@ The value must be the one of the following: 1.1 for TLS 1.1, 1.2 for TLS 1.2, 1.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-tls_min_version"></a><code class="literal">tls_min_version</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-tls_min_version"></a><code class="literal">tls_min_version</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1093,7 +1100,7 @@ The value must be one of the following: 1.1 for TLS 1.1, 1.2 for TLS 1.2, 1.3 fo
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-inputs-beats-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-inputs-beats-common-options"></a>Common options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>These configuration options are supported by all input plugins:</p>
 <div class="informaltable">
@@ -1146,7 +1153,7 @@ The value must be one of the following: 1.1 for TLS 1.1, 1.2 for TLS 1.2, 1.3 fo
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-add_field"></a><code class="literal">add_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1163,7 +1170,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-codec"></a><code class="literal">codec</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-codec"></a><code class="literal">codec</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1180,7 +1187,7 @@ Default value is <code class="literal">"plain"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-enable_metric"></a><code class="literal">enable_metric</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-enable_metric"></a><code class="literal">enable_metric</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1199,7 +1206,7 @@ for a specific plugin.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-id"></a><code class="literal">id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-id"></a><code class="literal">id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1234,7 +1241,7 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-tags"></a><code class="literal">tags</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-tags"></a><code class="literal">tags</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1252,7 +1259,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-inputs-beats-type"></a><code class="literal">type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-inputs-beats-type"></a><code class="literal">type</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-input-beats/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1287,14 +1294,14 @@ Logstash, it is ignored.</p>
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="plugins-inputs-azure_event_hubs.html">« Azure Event Hubs plugin</a>
 </span>
 <span class="next">
 <a href="plugins-inputs-cloudwatch.html">Cloudwatch input plugin »</a>
 </span>
-</div>
 </div>
 </body>
 </html>

@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,12 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="filter-plugins.html">Filter plugins</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="plugins-filters-jdbc_static.html">« Jdbc_static filter plugin</a>
@@ -115,9 +109,22 @@
 <a href="plugins-filters-json.html">JSON filter plugin »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="filter-plugins.html">Filter plugins</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Jdbc_streaming filter plugin</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="plugins-filters-jdbc_streaming"></a>Jdbc_streaming filter plugin<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="plugins-filters-jdbc_streaming"></a>Jdbc_streaming filter plugin</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 
 <div class="ulist itemizedlist">
@@ -140,7 +147,7 @@ Released on: 2024-08-09
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-jdbc_streaming-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_148"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_getting_help_148"></a>Getting help</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums.
 For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-integration-jdbc" class="ulink" target="_top">Github</a>.
@@ -149,7 +156,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_147"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_description_147"></a>Description</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <p>This filter executes a SQL query and stores the result set in the field
 specified as <code class="literal">target</code>.
@@ -174,7 +181,7 @@ It will cache the results locally in an LRU cache with expiry.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statements"></a>Prepared Statements<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statements"></a>Prepared Statements</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <p>Using server side prepared statements can speed up execution times as the server optimises the query plan and execution.</p>
 <div class="note admon">
@@ -213,7 +220,7 @@ Some technologies may require connection string properties to be set, see MySQL 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-jdbc_streaming-options"></a>Jdbc_streaming Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-jdbc_streaming-options"></a>Jdbc_streaming Filter Configuration Options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-jdbc_streaming.html#plugins-filters-jdbc_streaming-common-options" title="Common options">Common options</a> described later.</p>
 <div class="informaltable">
@@ -344,7 +351,7 @@ filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-cache_expiration"></a><code class="literal">cache_expiration</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-cache_expiration"></a><code class="literal">cache_expiration</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -368,7 +375,7 @@ cache_expiration period.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-cache_size"></a><code class="literal">cache_size</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-cache_size"></a><code class="literal">cache_size</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -386,7 +393,7 @@ The least recently used entry will be evicted.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-default_hash"></a><code class="literal">default_hash</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-default_hash"></a><code class="literal">default_hash</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -404,7 +411,7 @@ Ensure that the key names of this object match the columns from the statement.</
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_connection_string"></a><code class="literal">jdbc_connection_string</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_connection_string"></a><code class="literal">jdbc_connection_string</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -424,7 +431,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_driver_class"></a><code class="literal">jdbc_driver_class</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_driver_class"></a><code class="literal">jdbc_driver_class</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -444,7 +451,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_driver_library"></a><code class="literal">jdbc_driver_library</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_driver_library"></a><code class="literal">jdbc_driver_library</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -461,7 +468,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_password"></a><code class="literal">jdbc_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_password"></a><code class="literal">jdbc_password</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -478,7 +485,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_user"></a><code class="literal">jdbc_user</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_user"></a><code class="literal">jdbc_user</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -495,7 +502,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_validate_connection"></a><code class="literal">jdbc_validate_connection</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_validate_connection"></a><code class="literal">jdbc_validate_connection</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -513,7 +520,7 @@ Validate connection before use.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_validation_timeout"></a><code class="literal">jdbc_validation_timeout</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-jdbc_validation_timeout"></a><code class="literal">jdbc_validation_timeout</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -531,7 +538,7 @@ How often to validate a connection (in seconds).</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-parameters"></a><code class="literal">parameters</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-parameters"></a><code class="literal">parameters</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -548,7 +555,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_bind_values"></a><code class="literal">prepared_statement_bind_values</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_bind_values"></a><code class="literal">prepared_statement_bind_values</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -565,7 +572,7 @@ Default value is <code class="literal">[]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_name"></a><code class="literal">prepared_statement_name</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_name"></a><code class="literal">prepared_statement_name</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -583,7 +590,7 @@ You need to supply this if <code class="literal">use_prepared_statements</code> 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_warn_on_constant_usage"></a><code class="literal">prepared_statement_warn_on_constant_usage</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-prepared_statement_warn_on_constant_usage"></a><code class="literal">prepared_statement_warn_on_constant_usage</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -601,7 +608,7 @@ a String constant is detected that might be intended as a field reference.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-sequel_opts"></a><code class="literal">sequel_opts</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-sequel_opts"></a><code class="literal">sequel_opts</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -622,7 +629,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-statement"></a><code class="literal">statement</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-statement"></a><code class="literal">statement</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -643,7 +650,7 @@ To use parameters, use named parameter syntax, for example "SELECT * FROM MYTABL
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-tag_on_default_use"></a><code class="literal">tag_on_default_use</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-tag_on_default_use"></a><code class="literal">tag_on_default_use</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -660,7 +667,7 @@ Default value is <code class="literal">["_jdbcstreamingdefaultsused"]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-tag_on_failure"></a><code class="literal">tag_on_failure</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-tag_on_failure"></a><code class="literal">tag_on_failure</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -677,7 +684,7 @@ Default value is <code class="literal">["_jdbcstreamingfailure"]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-target"></a><code class="literal">target</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-target"></a><code class="literal">target</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -698,7 +705,7 @@ Field is overwritten if exists.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-use_cache"></a><code class="literal">use_cache</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-use_cache"></a><code class="literal">use_cache</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -715,7 +722,7 @@ Default value is <code class="literal">true</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-use_prepared_statements"></a><code class="literal">use_prepared_statements</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-use_prepared_statements"></a><code class="literal">use_prepared_statements</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -734,7 +741,7 @@ Default value is <code class="literal">false</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-jdbc_streaming-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-jdbc_streaming-common-options"></a>Common options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
@@ -792,7 +799,7 @@ Default value is <code class="literal">false</code>
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-add_field"></a><code class="literal">add_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -835,7 +842,7 @@ event. The second example would also add a hardcoded field.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-add_tag"></a><code class="literal">add_tag</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-add_tag"></a><code class="literal">add_tag</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -874,7 +881,7 @@ would add a tag <code class="literal">foo_hello</code> (and the second example w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-enable_metric"></a><code class="literal">enable_metric</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-enable_metric"></a><code class="literal">enable_metric</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -893,7 +900,7 @@ for a specific plugin.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-id"></a><code class="literal">id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-id"></a><code class="literal">id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -928,7 +935,7 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-periodic_flush"></a><code class="literal">periodic_flush</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-periodic_flush"></a><code class="literal">periodic_flush</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -946,7 +953,7 @@ Optional.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-remove_field"></a><code class="literal">remove_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-remove_field"></a><code class="literal">remove_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -985,7 +992,7 @@ example would remove an additional, non-dynamic field.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-jdbc_streaming-remove_tag"></a><code class="literal">remove_tag</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-jdbc_streaming-remove_tag"></a><code class="literal">remove_tag</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-integration-jdbc/edit/main/docs/filter-jdbc_streaming.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1026,14 +1033,14 @@ would remove a sad, unwanted tag as well.</p>
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="plugins-filters-jdbc_static.html">« Jdbc_static filter plugin</a>
 </span>
 <span class="next">
 <a href="plugins-filters-json.html">JSON filter plugin »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -1092,8 +1099,8 @@ would remove a sad, unwanted tag as well.</p>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

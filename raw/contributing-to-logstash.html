@@ -17,11 +17,6 @@
 <meta name="DC.identifier" content=""/>
 </head>
 <body>
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="health-report-pipeline-flow-worker-utilization.html">« Health Report Pipeline Flow: Worker Utilization</a>
@@ -30,12 +25,24 @@
 <a href="input-new-plugin.html">How to write a Logstash input plugin »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Contributing to Logstash</h1></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="chapter">
 <div class="titlepage"><div><div>
-<h1 class="title"><a id="contributing-to-logstash"></a>Contributing to Logstash</h1>
+<div class="position-relative"><h2 class="title"><a id="contributing-to-logstash"></a>Contributing to Logstash</h2></div>
 </div></div></div>
 <p>You can add your own input, codec, filter, or output plugins to Logstash.</p>
-<h4><a id="plugin-acceptance"></a>Acceptance guidelines</h4>
+<div class="position-relative"><h4><a id="plugin-acceptance"></a>Acceptance guidelines</h4></div>
 <p>Start with the end in mind.
 These guidelines and best practices can help you build a better plugin, even if you choose not to share it with the world.</p>
 <div class="ulist itemizedlist">
@@ -72,7 +79,7 @@ Step 3. Have specs in the spec folder.
 </li>
 </ul>
 </div>
-<h3><a id="add-plugin"></a>Add a plugin</h3>
+<div class="position-relative"><h3><a id="add-plugin"></a>Add a plugin</h3></div>
 <p>Plugins can be developed and deployed independently of the Logstash core.
 Here are some documents to guide you through the process of coding, deploying, and sharing your plugin:</p>
 <div class="ulist itemizedlist">
@@ -123,7 +130,7 @@ Here are some documents to guide you through the process of coding, deploying, a
 </li>
 </ul>
 </div>
-<h5><a id="shutdown-apis"></a>Plugin Shutdown APIs</h5>
+<div class="position-relative"><h5><a id="shutdown-apis"></a>Plugin Shutdown APIs</h5></div>
 <p>You have three options for shutting down a plugin: <code class="literal">stop</code>, <code class="literal">stop?</code>, and <code class="literal">close</code>.</p>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -153,14 +160,14 @@ Plugin Base class.</p>
 
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="health-report-pipeline-flow-worker-utilization.html">« Health Report Pipeline Flow: Worker Utilization</a>
 </span>
 <span class="next">
 <a href="input-new-plugin.html">How to write a Logstash input plugin »</a>
 </span>
-</div>
 </div>
 </body>
 </html>

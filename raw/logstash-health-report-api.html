@@ -17,12 +17,6 @@
 <meta name="DC.identifier" content=""/>
 </head>
 <body>
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="monitoring-logstash.html">Monitoring Logstash with APIs</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="hot-threads-api.html">« Hot Threads API</a>
@@ -31,9 +25,22 @@
 <a href="working-with-plugins.html">Working with plugins »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="monitoring-logstash.html">Monitoring Logstash with APIs</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Health report API</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="logstash-health-report-api"></a>Health report API<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="logstash-health-report-api"></a>Health report API</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <p>An API that reports the health status of Logstash.</p>
 <div class="pre_wrapper lang-js">
@@ -42,7 +49,7 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_description"></a>Description</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <p>The health API returns a report with the health status of Logstash and the pipelines that are running inside of it.
 The report contains a list of indicators that compose Logstash functionality.</p>
@@ -65,7 +72,7 @@ A diagnosis contains a cause detailing a root cause analysis, an action containi
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_response_body"></a>Response body<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_response_body"></a>Response body</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <div class="variablelist">
 <dl class="variablelist">
@@ -320,13 +327,13 @@ A more detailed step-by-step guide to remediate the problem is provided by the <
 
 <div class="section child_attributes">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="logstash-health-api-response-details"></a>Indicator Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="logstash-health-api-response-details"></a>Indicator Details</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <p>Each health indicator in the health API returns a set of details that further explains the state of the system.
 The details have contents and a structure that is unique to each indicator.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="logstash-health-api-response-details-pipeline"></a>Pipeline Indicator Details<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="logstash-health-api-response-details-pipeline"></a>Pipeline Indicator Details</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/monitoring/monitoring-apis.asciidoc">edit</a></div>
 </div></div></div>
 <div class="variablelist">
 <dl class="variablelist">
@@ -475,14 +482,14 @@ the <em>lifetime</em> rate, since the pipeline was started
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="hot-threads-api.html">« Hot Threads API</a>
 </span>
 <span class="next">
 <a href="working-with-plugins.html">Working with plugins »</a>
 </span>
-</div>
 </div>
 </body>
 </html>

@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,12 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="filter-plugins.html">Filter plugins</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="plugins-filters-elastic_integration.html">« Elastic Integration filter plugin</a>
@@ -115,9 +109,22 @@
 <a href="plugins-filters-environment.html">Environment filter plugin »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="filter-plugins.html">Filter plugins</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Elasticsearch filter plugin</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="plugins-filters-elasticsearch"></a>Elasticsearch filter plugin<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="plugins-filters-elasticsearch"></a>Elasticsearch filter plugin</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 
 <div class="ulist itemizedlist">
@@ -137,7 +144,7 @@ Released on: 2023-09-29
 <a href="https://www.elastic.co/guide/en/logstash-versioned-plugins/current/filter-elasticsearch-index.html" class="ulink" target="_top">Versioned plugin docs</a>.</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_getting_help_138"></a>Getting help<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_getting_help_138"></a>Getting help</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>For questions about the plugin, open a topic in the <a href="http://discuss.elastic.co" class="ulink" target="_top">Discuss</a> forums. For bugs or feature requests, open an issue in <a href="https://github.com/logstash-plugins/logstash-filter-elasticsearch" class="ulink" target="_top">Github</a>.
 For the list of Elastic supported plugins, please consult the <a href="https://www.elastic.co/support/matrix#logstash_plugins" class="ulink" target="_top">Elastic Support Matrix</a>.</p>
@@ -145,7 +152,7 @@ For the list of Elastic supported plugins, please consult the <a href="https://w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="_description_137"></a>Description<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="_description_137"></a>Description</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Search Elasticsearch for a previous log event and copy some fields from it
 into the current event. Below are two complete examples of how this filter might
@@ -223,7 +230,7 @@ template, as shown in the example above.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elasticsearch-auth"></a>Authentication<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-elasticsearch-auth"></a>Authentication</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Authentication to a secure Elasticsearch cluster is possible using <em>one</em> of the following options:</p>
 <div class="ulist itemizedlist">
@@ -246,7 +253,7 @@ template, as shown in the example above.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elasticsearch-autz"></a>Authorization<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-elasticsearch-autz"></a>Authorization</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>Authorization to a secure Elasticsearch cluster requires <code class="literal">read</code> permission at index level and <code class="literal">monitoring</code> permissions at cluster level.
 The <code class="literal">monitoring</code> permission at cluster level is necessary to perform periodic connectivity checks.</p>
@@ -254,7 +261,7 @@ The <code class="literal">monitoring</code> permission at cluster level is neces
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elasticsearch-options"></a>Elasticsearch Filter Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-elasticsearch-options"></a>Elasticsearch Filter Configuration Options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin supports the following configuration options plus the <a class="xref" href="plugins-filters-elasticsearch.html#plugins-filters-elasticsearch-common-options" title="Common options">Common options</a> and the <a class="xref" href="plugins-filters-elasticsearch.html#plugins-filters-elasticsearch-deprecated-options" title="Elasticsearch Filter Deprecated Configuration Options">Elasticsearch Filter Deprecated Configuration Options</a> described later.</p>
 <div class="informaltable">
@@ -450,7 +457,7 @@ filter plugins.</p>
 <p>&nbsp;</p>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-aggregation_fields"></a><code class="literal">aggregation_fields</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-aggregation_fields"></a><code class="literal">aggregation_fields</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -478,7 +485,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-api_key"></a><code class="literal">api_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-api_key"></a><code class="literal">api_key</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -498,7 +505,7 @@ Elasticsearch <a href="https://www.elastic.co/guide/en/elasticsearch/reference/m
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ca_trusted_fingerprint"></a><code class="literal">ca_trusted_fingerprint</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ca_trusted_fingerprint"></a><code class="literal">ca_trusted_fingerprint</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -518,7 +525,7 @@ Use of this option <em>requires</em> Logstash 8.3+
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-cloud_auth"></a><code class="literal">cloud_auth</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-cloud_auth"></a><code class="literal">cloud_auth</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -537,7 +544,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-cloud_id"></a><code class="literal">cloud_id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-cloud_id"></a><code class="literal">cloud_id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -556,7 +563,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-docinfo_fields"></a><code class="literal">docinfo_fields</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-docinfo_fields"></a><code class="literal">docinfo_fields</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -585,7 +592,7 @@ Default value is <code class="literal">{}</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-enable_sort"></a><code class="literal">enable_sort</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-enable_sort"></a><code class="literal">enable_sort</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -602,7 +609,7 @@ Default value is <code class="literal">true</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-fields"></a><code class="literal">fields</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-fields"></a><code class="literal">fields</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -630,7 +637,7 @@ found via elasticsearch are copied to the current event&#8217;s
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-hosts"></a><code class="literal">hosts</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-hosts"></a><code class="literal">hosts</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -647,7 +654,7 @@ Default value is <code class="literal">["localhost:9200"]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-index"></a><code class="literal">index</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-index"></a><code class="literal">index</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -665,7 +672,7 @@ Field substitution (e.g. <code class="literal">index-name-%{date_field}</code>) 
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-password"></a><code class="literal">password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-password"></a><code class="literal">password</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -682,7 +689,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-proxy"></a><code class="literal">proxy</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-proxy"></a><code class="literal">proxy</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -701,7 +708,7 @@ environment variables e.g. <code class="literal">proxy =&gt; '${LS_PROXY:}'</cod
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-query"></a><code class="literal">query</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-query"></a><code class="literal">query</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -721,7 +728,7 @@ Use either <code class="literal">query</code> or <code class="literal">query_tem
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-query_template"></a><code class="literal">query_template</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-query_template"></a><code class="literal">query_template</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -740,7 +747,7 @@ Use either <code class="literal">query</code> or <code class="literal">query_tem
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-result_size"></a><code class="literal">result_size</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-result_size"></a><code class="literal">result_size</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -757,7 +764,7 @@ Default value is <code class="literal">1</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-retry_on_failure"></a><code class="literal">retry_on_failure</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-retry_on_failure"></a><code class="literal">retry_on_failure</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -775,7 +782,7 @@ Default value is <code class="literal">0</code> (retries disabled)
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-retry_on_status"></a><code class="literal">retry_on_status</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-retry_on_status"></a><code class="literal">retry_on_status</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -792,7 +799,7 @@ Default value is an empty list <code class="literal">[]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-sort"></a><code class="literal">sort</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-sort"></a><code class="literal">sort</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -809,7 +816,7 @@ Default value is <code class="literal">"@timestamp:desc"</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_certificate"></a><code class="literal">ssl_certificate</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_certificate"></a><code class="literal">ssl_certificate</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -832,7 +839,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_certificate_authorities"></a><code class="literal">ssl_certificate_authorities</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -855,7 +862,7 @@ There is no default value for this setting
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_cipher_suites"></a><code class="literal">ssl_cipher_suites</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -873,7 +880,7 @@ Supported cipher suites vary depending on the Java and protocol versions.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_enabled"></a><code class="literal">ssl_enabled</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_enabled"></a><code class="literal">ssl_enabled</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -892,7 +899,7 @@ If no explicit protocol is specified plain HTTP will be used.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_key"></a><code class="literal">ssl_key</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_key"></a><code class="literal">ssl_key</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -915,7 +922,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_password"></a><code class="literal">ssl_keystore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_password"></a><code class="literal">ssl_keystore_password</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -932,7 +939,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_path"></a><code class="literal">ssl_keystore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_path"></a><code class="literal">ssl_keystore_path</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -956,7 +963,7 @@ It can be either <code class="literal">.jks</code> or <code class="literal">.p12
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_type"></a><code class="literal">ssl_keystore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_keystore_type"></a><code class="literal">ssl_keystore_type</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -973,7 +980,7 @@ If not provided, the value will be inferred from the keystore filename.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_supported_protocols"></a><code class="literal">ssl_supported_protocols</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1004,7 +1011,7 @@ the <span class="strong strong"><strong>$JDK_HOME/conf/security/java.security</s
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_password"></a><code class="literal">ssl_truststore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_password"></a><code class="literal">ssl_truststore_password</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1021,7 +1028,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_path"></a><code class="literal">ssl_truststore_path</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_path"></a><code class="literal">ssl_truststore_path</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1045,7 +1052,7 @@ It can be either <code class="literal">.jks</code> or <code class="literal">.p12
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_type"></a><code class="literal">ssl_truststore_type</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_truststore_type"></a><code class="literal">ssl_truststore_type</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1062,7 +1069,7 @@ If not provided, the value will be inferred from the truststore filename.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl_verification_mode"></a><code class="literal">ssl_verification_mode</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl_verification_mode"></a><code class="literal">ssl_verification_mode</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1089,7 +1096,7 @@ has a hostname or IP address that matches the names within the certificate.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-tag_on_failure"></a><code class="literal">tag_on_failure</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-tag_on_failure"></a><code class="literal">tag_on_failure</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1106,7 +1113,7 @@ Default value is <code class="literal">["_elasticsearch_lookup_failure"]</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-user"></a><code class="literal">user</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-user"></a><code class="literal">user</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1125,7 +1132,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elasticsearch-deprecated-options"></a>Elasticsearch Filter Deprecated Configuration Options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-elasticsearch-deprecated-options"></a>Elasticsearch Filter Deprecated Configuration Options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>This plugin supports the following deprecated configurations.</p>
 <div class="warning admon">
@@ -1169,7 +1176,7 @@ There is no default value for this setting.
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ca_file"></a><code class="literal">ca_file</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ca_file"></a><code class="literal">ca_file</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1193,7 +1200,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-ssl"></a><code class="literal">ssl</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-ssl"></a><code class="literal">ssl</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1217,7 +1224,7 @@ Default value is <code class="literal">false</code>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-keystore"></a><code class="literal">keystore</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-keystore"></a><code class="literal">keystore</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1241,7 +1248,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-keystore_password"></a><code class="literal">keystore_password</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-keystore_password"></a><code class="literal">keystore_password</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="warning admon">
 <div class="icon"></div>
@@ -1267,7 +1274,7 @@ There is no default value for this setting.
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="plugins-filters-elasticsearch-common-options"></a>Common options<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="plugins-filters-elasticsearch-common-options"></a>Common options</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <p>These configuration options are supported by all filter plugins:</p>
 <div class="informaltable">
@@ -1325,7 +1332,7 @@ There is no default value for this setting.
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-add_field"></a><code class="literal">add_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-add_field"></a><code class="literal">add_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1368,7 +1375,7 @@ event. The second example would also add a hardcoded field.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-add_tag"></a><code class="literal">add_tag</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-add_tag"></a><code class="literal">add_tag</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1407,7 +1414,7 @@ would add a tag <code class="literal">foo_hello</code> (and the second example w
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-enable_metric"></a><code class="literal">enable_metric</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-enable_metric"></a><code class="literal">enable_metric</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1426,7 +1433,7 @@ for a specific plugin.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-id"></a><code class="literal">id</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-id"></a><code class="literal">id</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1461,7 +1468,7 @@ Adding a named ID in this case will help in monitoring Logstash when using the m
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-periodic_flush"></a><code class="literal">periodic_flush</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-periodic_flush"></a><code class="literal">periodic_flush</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1479,7 +1486,7 @@ Optional.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-remove_field"></a><code class="literal">remove_field</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-remove_field"></a><code class="literal">remove_field</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1518,7 +1525,7 @@ example would remove an additional, non-dynamic field.</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="plugins-filters-elasticsearch-remove_tag"></a><code class="literal">remove_tag</code><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="plugins-filters-elasticsearch-remove_tag"></a><code class="literal">remove_tag</code></h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/logstash-plugins/logstash-filter-elasticsearch/edit/main/docs/index.asciidoc">edit</a></div>
 </div></div></div>
 <div class="ulist itemizedlist">
 <ul class="itemizedlist">
@@ -1559,14 +1566,14 @@ would remove a sad, unwanted tag as well.</p>
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="plugins-filters-elastic_integration.html">« Elastic Integration filter plugin</a>
 </span>
 <span class="next">
 <a href="plugins-filters-environment.html">Environment filter plugin »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -1625,8 +1632,8 @@ would remove a sad, unwanted tag as well.</p>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

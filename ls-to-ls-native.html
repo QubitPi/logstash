@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,12 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="ls-to-ls.html">Logstash-to-Logstash communication</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="ls-to-ls-http.html">« Logstash-to-Logstash: HTTP output to HTTP input</a>
@@ -115,9 +109,22 @@
 <a href="config-management.html">Managing Logstash »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="ls-to-ls.html">Logstash-to-Logstash communication</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>Logstash-to-Logstash: Output to Input</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="section">
 <div class="titlepage"><div><div>
-<h2 class="title"><a id="ls-to-ls-native"></a>Logstash-to-Logstash: Output to Input<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></h2>
+<div class="position-relative"><h2 class="title"><a id="ls-to-ls-native"></a>Logstash-to-Logstash: Output to Input</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
 </div></div></div>
 <p>The Logstash output to Logstash input is the default approach for Logstash-to-Logstash communication.</p>
 <div class="note admon">
@@ -128,7 +135,7 @@
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h3 class="title"><a id="overview-ls-ls"></a>Configuration overview<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></h3>
+<div class="position-relative"><h3 class="title"><a id="overview-ls-ls"></a>Configuration overview</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
 </div></div></div>
 <p>To connect two Logstash instances:</p>
 <div class="olist orderedlist">
@@ -146,7 +153,7 @@ Secure the communication between Logstash input and Logstash output
 </div>
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="configure-downstream-logstash-input"></a>Configure the downstream Logstash to use Logstash input<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="configure-downstream-logstash-input"></a>Configure the downstream Logstash to use Logstash input</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
 </div></div></div>
 <p>Configure the Logstash input on the downstream (receiving) Logstash to receive connections.
 The minimum configuration requires this option:</p>
@@ -169,7 +176,7 @@ The minimum configuration requires this option:</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="configure-upstream-logstash-output"></a>Configure the upstream Logstash to use Logstash output<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="configure-upstream-logstash-output"></a>Configure the upstream Logstash to use Logstash output</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
 </div></div></div>
 <p>In order to obtain the best performance when sending data from one Logstash to another, the data is batched and compressed. As such, the upstream Logstash (the sending Logstash) only needs to be concerned about configuring the receiving endpoint with these options:</p>
 <div class="ulist itemizedlist">
@@ -197,7 +204,7 @@ The minimum configuration requires this option:</p>
 
 <div class="section">
 <div class="titlepage"><div><div>
-<h4 class="title"><a id="securing-logstash-to-logstash"></a>Secure Logstash to Logstash<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></h4>
+<div class="position-relative"><h4 class="title"><a id="securing-logstash-to-logstash"></a>Secure Logstash to Logstash</h4><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/ls-ls-native.asciidoc">edit</a></div>
 </div></div></div>
 <p>It is important that you secure the communication between Logstash instances.
 Use SSL/TLS mutual authentication in order to ensure that the upstream Logstash instance sends encrypted data to a trusted downstream Logstash instance, and vice versa.</p>
@@ -313,14 +320,14 @@ Add these settings to the Logstash output configuration:</p>
 </div>
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="ls-to-ls-http.html">« Logstash-to-Logstash: HTTP output to HTTP input</a>
 </span>
 <span class="next">
 <a href="config-management.html">Managing Logstash »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -379,8 +386,8 @@ Add these settings to the Logstash output configuration:</p>
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>

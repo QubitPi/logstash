@@ -57,10 +57,10 @@
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-    <link rel="stylesheet" type="text/css" href="/QubitPi/elastic-docs/guide/static/styles.css" />
+    <link rel="stylesheet" type="text/css" href="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/styles-v1.css" />
   </head>
 
-  <!--© 2015-2022 Elasticsearch B.V. -->
+  <!--© 2015-2025 Elasticsearch B.V. -->
   <!-- All Elastic documentation is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License. -->
   <!-- http://creativecommons.org/licenses/by-nc-nd/4.0/ -->
 
@@ -101,11 +101,6 @@
                 <div class="col-12 order-1 col-md-8 order-md-2 col-lg-7 order-lg-2 guide-section" id="middle_col">
                   <!-- start body -->
                   
-<div id="content">
-<div class="breadcrumbs">
-<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
-<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
-</div>
 <div class="navheader">
 <span class="prev">
 <a href="multiple-input-output-plugins.html">« Stitching Together Multiple Input and Output Plugins</a>
@@ -114,16 +109,28 @@
 <a href="execution-model.html">Execution Model »</a>
 </span>
 </div>
+<div class="book" lang="en">
+<div class="titlepage">
+<div class="breadcrumbs">
+<span class="breadcrumb-link"><a href="/guide/">Elastic Docs</a></span>
+<span class="chevron-right">›</span><span class="breadcrumb-link"><a href="index.html">Logstash Reference</a></span>
+</div>
+<div>
+<div><h1 class="title"><a id="id-1"></a>How Logstash Works</h1><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
+</div>
+<!--EXTRA-->
+</div>
+<div id="content">
 <div class="chapter">
 <div class="titlepage"><div><div>
-<h1 class="title"><a id="pipeline"></a>How Logstash Works<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></h1>
+<div class="position-relative"><h2 class="title"><a id="pipeline"></a>How Logstash Works</h2><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
 </div></div></div>
 <p>The Logstash event processing pipeline has three stages: inputs &#8594; filters &#8594;
 outputs. Inputs generate events, filters modify them, and outputs ship them
 elsewhere. Inputs and outputs support codecs that enable you to encode or decode
 the data as it enters or exits the pipeline without having to use a separate
 filter.</p>
-<h3><a id="_inputs"></a>Inputs<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></h3>
+<div class="position-relative"><h3><a id="_inputs"></a>Inputs</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
 <p>You use inputs to get data into Logstash. Some of the more commonly-used inputs
 are:</p>
 <div class="ulist itemizedlist">
@@ -148,7 +155,7 @@ queues Logstash events from remote Logstash "shippers".
 </div>
 <p>For more information about the available inputs, see
 <a class="xref" href="input-plugins.html" title="Input plugins">Input Plugins</a>.</p>
-<h3><a id="_filters"></a>Filters<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></h3>
+<div class="position-relative"><h3><a id="_filters"></a>Filters</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
 <p>Filters are intermediary processing devices in the Logstash pipeline. You can
 combine filters with conditionals to perform an action on an event if it meets
 certain criteria. Some useful filters include:</p>
@@ -178,7 +185,7 @@ displays amazing charts in Kibana!)
 </div>
 <p>For more information about the available filters, see
 <a class="xref" href="filter-plugins.html" title="Filter plugins">Filter Plugins</a>.</p>
-<h3><a id="_outputs"></a>Outputs<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></h3>
+<div class="position-relative"><h3><a id="_outputs"></a>Outputs</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
 <p>Outputs are the final phase of the Logstash pipeline. An event can pass through
 multiple outputs, but once all output processing is complete, the event has
 finished its execution. Some commonly used outputs include:</p>
@@ -206,7 +213,7 @@ useful for you!
 </div>
 <p>For more information about the available outputs, see
 <a class="xref" href="output-plugins.html" title="Output plugins">Output Plugins</a>.</p>
-<h3><a id="_codecs"></a>Codecs<a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></h3>
+<div class="position-relative"><h3><a id="_codecs"></a>Codecs</h3><a class="edit_me" rel="nofollow" title="Edit this page on GitHub" href="https://github.com/QubitPi/logstash/edit/master/docs/static/life-of-an-event.asciidoc">edit</a></div>
 <p>Codecs are basically stream filters that can operate as part of an input or
 output. Codecs enable you to easily separate the transport of your messages from
 the serialization process. Popular codecs include <code class="literal">json</code>, <code class="literal">msgpack</code>, and <code class="literal">plain</code>
@@ -228,14 +235,14 @@ stacktrace messages into a single event.
 
 
 </div>
-<div class="navfooter">
+</div>
+</div><div class="navfooter">
 <span class="prev">
 <a href="multiple-input-output-plugins.html">« Stitching Together Multiple Input and Output Plugins</a>
 </span>
 <span class="next">
 <a href="execution-model.html">Execution Model »</a>
 </span>
-</div>
 </div>
 
                   <!-- end body -->
@@ -294,8 +301,8 @@ stacktrace messages into a single event.
     <!-- Feedback modal -->
     <div id="feedbackModalContainer"></div>
 
-    <script src="/QubitPi/elastic-docs/guide/static/jquery.js"></script>
-    <script type="text/javascript" src="/QubitPi/elastic-docs/guide/static/docs.js"></script>
+    <script src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/jquery.js"></script>
+    <script type="text/javascript" src="https://qubitpi.github.io/QubitPi/elastic-docs/guide/static/docs-v1.js"></script>
     <script type="text/javascript">
   window.initial_state = {}</script>
   </body>
